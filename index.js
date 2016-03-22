@@ -29,39 +29,22 @@ app.get('/login', userCtrl.read);
 
 
 /* ---------- haunt action endpoints ---------- */
-var Action = require('./schemas/hauntAction.js');
+var actionCtrl = require('./controls/hauntCtrl.js');
+app.post('/api/haunt', actionCtrl.create);
+app.get('/api/haunt', actionCtrl.findAll);
+app.get('/api/haunt/:id', actionCtrl.findOne);
+app.put('/api/haunt/:id', actionCtrl.update);
+app.delete('/api/haunt/:id', actionCtrl.destroy);
 
-app.post('/haunt', function(req, res, next) {
-  var action = new Action(req.body);
-  action.save(function(err, r) {
-    return err ? res.status(500).send(err) : res.status(200).send(r);
-  })
+/* ---------- who to haunt endpoints ---------- */
+var person = require('./controls/personCtrl.js');
+app.post('/api/person', actionCtrl.create);
+app.get('/api/person', actionCtrl.findAll);
+app.get('/api/person/:id', actionCtrl.findOne);
+app.put('/api/person/:id', actionCtrl.update);
+app.delete('/api/person/:id', actionCtrl.destroy);
 
-  // res.status(200).send('post works');
-})
 
-app.get('/haunt', function(req, res, next) {
-  // var query = {};
-  Action.find({}, function(err, r) {
-    return err ? res.status(500).send(err) : res.status(200).send(r);
-  })
-})
-
-app.get('/haunt/:id', function(req, res, next) {
-  var query = req.params.id;
-  Action.findById(query, function(err, r) {
-    return err ? res.status(500).send(err) : res.status(200).send(r);
-  })
-})
-
-app.delete('/haunt/:id', function(req, res, next) {
-  var query = {
-    _id: req.params.id
-  }
-  Action.remove(query, function(err, r) {
-    return err ? res.status(500).send(err) : res.status(200).send(r);
-  })
-})
 
 
 

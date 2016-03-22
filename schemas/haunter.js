@@ -1,5 +1,6 @@
 var mongoose = require('mongoose'),
-    Schema = mongoose.Schema;
+    Schema = mongoose.Schema,
+    person = require('./whoToHaunt.js');
 
 // var validateEmail = function(email) {
 //   var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -29,7 +30,10 @@ var haunterSchema = new Schema({
     unique: true,
     // index: true,
     // validate: [validateEmail, 'Please enter a valid email address']
-  }
+  },
+  people: [{
+    type: person
+  }]
 });
 
 module.exports = mongoose.model('User', haunterSchema);

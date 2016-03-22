@@ -1,6 +1,6 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
-    haunt = require('hauntAction.js');
+    haunt = require('./hauntAction.js');
 
 var whoToHauntSchema = new Schema({
   name: {
@@ -19,7 +19,13 @@ var whoToHauntSchema = new Schema({
   reason: {
     type: String
   },
-  haunting: [haunt]
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  },
+  hauntings: [{
+    type: haunt
+  }]
 })
 
 module.exports = mongoose.model('Person', whoToHauntSchema);
