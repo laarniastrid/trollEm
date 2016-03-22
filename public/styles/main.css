@@ -1,0 +1,9 @@
+html, body {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  paddng: 0;
+  /*background: teal;*/
+}
