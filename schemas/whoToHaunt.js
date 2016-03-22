@@ -26,6 +26,6 @@ var whoToHauntSchema = new Schema({
   hauntings: [{
     type: haunt
   }]
-})
+});
 
 module.exports = mongoose.model('Person', whoToHauntSchema);

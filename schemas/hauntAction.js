@@ -14,6 +14,6 @@ var hauntActionSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Person'
   }
-})
+});
 
 module.exports = mongoose.model('Action', hauntActionSchema);

@@ -51,4 +51,4 @@ app.delete('/api/person/:id', personCtrl.destroy);
 
 app.listen(port, function() { // app listen for port
   console.log('listening on port', port);
-})
+});
