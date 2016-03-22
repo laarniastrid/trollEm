@@ -36,13 +36,14 @@ app.get('/api/haunt/:id', actionCtrl.findOne);
 app.put('/api/haunt/:id', actionCtrl.update);
 app.delete('/api/haunt/:id', actionCtrl.destroy);
 
+
 /* ---------- who to haunt endpoints ---------- */
-var person = require('./controls/personCtrl.js');
-app.post('/api/person', actionCtrl.create);
-app.get('/api/person', actionCtrl.findAll);
-app.get('/api/person/:id', actionCtrl.findOne);
-app.put('/api/person/:id', actionCtrl.update);
-app.delete('/api/person/:id', actionCtrl.destroy);
+var personCtrl = require('./controls/personCtrl.js');
+app.post('/api/person', personCtrl.create);
+app.get('/api/person', personCtrl.findAll);
+app.get('/api/person/:id', personCtrl.findOne);
+app.put('/api/person/:id', personCtrl.update);
+app.delete('/api/person/:id', personCtrl.destroy);
 
 
 

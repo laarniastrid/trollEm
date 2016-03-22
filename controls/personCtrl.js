@@ -20,9 +20,19 @@ module.exports = {
     })
   },
   update: function(req, res, next) {
-    
+    var query = {
+      _id: req.params.id
+    }
+    Person.update(query, req.body, function(err, r) {
+      return err ? res.status(500).send(err) : res.status(200).send(r);
+    })
   },
   destroy: function(req, res, next) {
-
+    var query = {
+      _id: req.params.id
+    }
+    Person.remove(query, function(err, r) {
+      return err ? res.status(500).send(err) : res.status(200).send(r);
+    })
   }
 }
