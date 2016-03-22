@@ -2,7 +2,7 @@
 var express = require('express'),
     bodyParser = require('body-parser'),
     mongoose = require('mongoose'),
-    port = 9000,
+    port = 9010,
     app = express();
 
 /* ---------- app.use to do stuff with app ---------- */
@@ -28,8 +28,9 @@ app.post('/signup', userCtrl.create);
 app.get('/login', userCtrl.read);
 
 
-/* ---------- haunt action  endpoints ---------- */
+/* ---------- haunt action endpoints ---------- */
 var Action = require('./schemas/hauntAction.js');
+
 app.post('/haunt', function(req, res, next) {
   var action = new Action(req.body);
   action.save(function(err, r) {
@@ -38,25 +39,21 @@ app.post('/haunt', function(req, res, next) {
 
   // res.status(200).send('post works');
 })
+
 app.get('/haunt', function(req, res, next) {
-  var query = {};
-  if (req.query.status) {
-    query = {
-      status: req.query.status
-    }
-  }
-  Action.find(query, function(err, r) {
+  // var query = {};
+  Action.find({}, function(err, r) {
     return err ? res.status(500).send(err) : res.status(200).send(r);
   })
 })
-app.get('haunt/:id', function(req, res, next) {
-  var query = {
-    _id: req.params.id
-  }
-  Action.find(query, function(err, r) {
+
+app.get('/haunt/:id', function(req, res, next) {
+  var query = req.params.id;
+  Action.findById(query, function(err, r) {
     return err ? res.status(500).send(err) : res.status(200).send(r);
   })
 })
+
 app.delete('/haunt/:id', function(req, res, next) {
   var query = {
     _id: req.params.id
