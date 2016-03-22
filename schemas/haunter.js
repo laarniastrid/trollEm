@@ -1,10 +1,10 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-var validateEmail = function(email) {
-  var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  return re.test(email);
-}
+// var validateEmail = function(email) {
+//   var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+//   return re.test(email);
+// }
 
 var haunterSchema = new Schema({
   name: {
@@ -27,9 +27,9 @@ var haunterSchema = new Schema({
     type: String,
     required: true,
     unique: true,
-    index: true,
-    validate: [validateEmail, 'Please enter a valid email address']
+    // index: true,
+    // validate: [validateEmail, 'Please enter a valid email address']
   }
 });
 
-module.exports = mongoose.model('User', schema);
+module.exports = mongoose.model('User', haunterSchema);
