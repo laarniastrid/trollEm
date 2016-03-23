@@ -3,7 +3,13 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     mongoose = require('mongoose'),
     port = 9010,
-    app = express();
+    app = express(),
+    passport = require('passport'),
+    LocalStrategy = require('passport-local').Strategy,
+    keys = require('./keys.js'),
+    cookieParser = require('cookie-parser'),
+    session = require('express-session'),
+    router = express.Router();
 
 /* ---------- app.use to do stuff with app ---------- */
 app.use(bodyParser.json());
@@ -21,6 +27,33 @@ mongoose.connection.once('open', function(err) {  // show mongoose is connected 
     console.log('connected to MongoDB');
   }
 });
+
+/* ---------- passport local auth ---------- */
+passport.use(new LocalStrategy(
+  function(username, password, done) {
+    User.findOne({ username: username }, function(err, user) {
+      if (err) { return done(err); }
+      if (!user) {
+        return done(null, false, { message: 'Incorrect username' });
+      }
+      if (!user.validPassword(password)) {
+        return done(null, false, { message: 'Incorrect password' });
+      }
+      return done(null, user);
+    });
+  }
+));
+
+app.use(express.static('public'));
+app.use(cookieParser());
+app.use(bodyParser());
+app.use(session({ secret: keys.mySecret }));
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+
+
 
 /* ---------- login page endpoints ---------- */
 var userCtrl = require('./controls/userCtrl.js');
