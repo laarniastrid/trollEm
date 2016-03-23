@@ -4,7 +4,7 @@
   height: auto;
   font-size: 65px;
   color: #111111;
-  background: linear-gradient(teal, rgba(255,0,0,0));
+  background: linear-gradient(#005151, rgba(255,0,0,0));
   position: fixed;
   top: 0;
 }
@@ -39,7 +39,7 @@
   height: auto;
   font-size: 65px;
   color: #111111;
-  background: linear-gradient(rgba(255, 0, 0, 0), teal);
+  background: linear-gradient(rgba(255, 0, 0, 0), #005151);
   position: fixed;
   bottom: 0;
 }
