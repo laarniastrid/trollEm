@@ -1,15 +1,11 @@
 <div class="login-page">
-  <form class="login" action="/login" method="post">
-    <div>
-      <label>Username:</label>
-      <input type="text" name="username" />
+  <form class="login" >
+    <div class="form-top">
+        <input type="text" placeholder="Username" ng-model="user.username" name="username" />
+        <input type="password" placeholder="Password" ng-model="user.password" name="password" />
     </div>
-    <div>
-      <label>Password:</label>
-      <input type="password" name="password" />
-    </div>
-    <div>
-      <button type="submit" value="Log In">Log In</button>
+    <div class="form-bottom">
+        <button type="submit" ng-click="login(user)">Log In</button>
     </div>
   </form>
 </div>

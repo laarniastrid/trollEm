@@ -13,8 +13,8 @@ angular.module('myApp', ['ui.router'])
       templateUrl: 'signup.html',
       controller: 'mainCtrl'
     })
-    .state('home', {
-      url: '/',
+    .state('people', {
+      url: '/people',
       templateUrl: './views/people.html',
       controller: 'peopleCtrl'
     })
@@ -29,5 +29,5 @@ angular.module('myApp', ['ui.router'])
       controller: 'mainCtrl'
     });
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/login');
 }); // end confif
