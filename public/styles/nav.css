@@ -10,14 +10,7 @@
 }
 
 .nav-top-wrapper i {
-  /*display: inline-flex;*/
-}
 
-.nav-top-wrapper i {
-  font-size: 100px;
-  /*display: inline-block;*/
-  /*display: flex;*/
-  /*position: absolute;*/
 }
 
 .nav-top {
@@ -38,26 +31,6 @@
 
 .nav-top-right {
   padding-right: 10px;
-  /*display: flex;*/
-  /*flex-direction: row;*/
-  /*float: left;*/
-}
-
-.nav-top-mid {
-  /*float: left;*/
-  /*margin: auto 50% auto 50%;*/
-  /*display: fixed;*/
-  /*left: 50%;*/
-  /*right: 50%;*/
-  /*float: left;*/
-  position: fixed;
-  top: 0;
-  left: 40%;
-  right: auto;
-}
-
-.nav-top-right {
-
 }
 
 /* ---------- nav bot styles ---------- */
