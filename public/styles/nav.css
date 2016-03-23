@@ -7,14 +7,10 @@
   background: linear-gradient(teal, rgba(255,0,0,0));
   position: fixed;
   top: 0;
-  /*display: inline-flex;*/
 }
 
 .nav-top-wrapper i {
-  font-size: 100px;
-  /*display: inline-block;*/
-  /*display: flex;*/
-  /*position: absolute;*/
+
 }
 
 .nav-top {
@@ -24,26 +20,17 @@
 }
 
 .nav-top-left {
-  /*display: flex;*/
-  /*flex-direction: row;*/
-  /*float: left;*/
+
 }
 
 .nav-top-mid {
-  /*float: left;*/
-  /*margin: auto 50% auto 50%;*/
-  /*display: fixed;*/
-  /*left: 50%;*/
-  /*right: 50%;*/
-  /*float: left;*/
-  position: fixed;
-  top: 0;
-  left: 40%;
-  right: auto;
+  display: flex;
+  justify-content: center;
+
 }
 
 .nav-top-right {
-  /*float: right;*/
+  padding-right: 10px;
 }
 
 /* ---------- nav bot styles ---------- */
@@ -78,5 +65,9 @@
 }
 
 .nav-bot-right {
+  padding-right: 10px;
+}
 
+.nav-bot-right > div {
+  margin: 10px;
 }
