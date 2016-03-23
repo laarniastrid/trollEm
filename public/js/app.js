@@ -4,7 +4,7 @@ angular.module('myApp', ['ui.router'])
 
   $stateProvider
     .state('login', {
-      url: '/',
+      url: '/login',
       templateUrl: './views/login.html',
       controller: 'mainCtrl'
     })
@@ -13,8 +13,8 @@ angular.module('myApp', ['ui.router'])
       templateUrl: 'signup.html',
       controller: 'mainCtrl'
     })
-    .state('people', {
-      url: '/people',
+    .state('home', {
+      url: '/',
       templateUrl: './views/people.html',
       controller: 'peopleCtrl'
     })
