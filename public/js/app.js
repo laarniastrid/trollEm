@@ -29,5 +29,5 @@ angular.module('myApp', ['ui.router'])
       controller: 'mainCtrl'
     });
 
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/');
 }); // end confif
