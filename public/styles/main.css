@@ -5,5 +5,10 @@ html, body {
 body {
   margin: 0;
   paddng: 0;
-  /*background: teal;*/
+  background: #333333;
+}
+
+.main-wrapper {
+  width: 100%;
+  height: 100%;
 }

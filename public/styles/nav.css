@@ -1,0 +1,82 @@
+/* ---------- nav top styles ---------- */
+.nav-top-wrapper {
+  width: 100%;
+  height: auto;
+  font-size: 65px;
+  color: #111111;
+  background: linear-gradient(teal, rgba(255,0,0,0));
+  position: fixed;
+  top: 0;
+  /*display: inline-flex;*/
+}
+
+.nav-top-wrapper i {
+  font-size: 100px;
+  /*display: inline-block;*/
+  /*display: flex;*/
+  /*position: absolute;*/
+}
+
+.nav-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-top-left {
+  /*display: flex;*/
+  /*flex-direction: row;*/
+  /*float: left;*/
+}
+
+.nav-top-mid {
+  /*float: left;*/
+  /*margin: auto 50% auto 50%;*/
+  /*display: fixed;*/
+  /*left: 50%;*/
+  /*right: 50%;*/
+  /*float: left;*/
+  position: fixed;
+  top: 0;
+  left: 40%;
+  right: auto;
+}
+
+.nav-top-right {
+  /*float: right;*/
+}
+
+/* ---------- nav bot styles ---------- */
+.nav-bot-wrapper {
+  width: 100%;
+  height: auto;
+  font-size: 65px;
+  color: #111111;
+  background: linear-gradient(rgba(255, 0, 0, 0), teal);
+  position: fixed;
+  bottom: 0;
+}
+
+.nav-bot-wrapper i {
+  font-size: 100px;
+}
+
+.nav-bot {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-bot-left {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-bot-left > div {
+  margin: 10px;
+}
+
+.nav-bot-right {
+
+}
