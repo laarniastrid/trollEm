@@ -1,0 +1,99 @@
+{
+  "_id": "56f1734a987880880f1a7e01",
+  "name": "john doe",
+  "username": "iamjohn",
+  "password": "johnjohn",
+  "email": "john@test.com",
+  "__v": 0,
+  "people": [
+    {
+      "_id": "56f1bccf2e262014294e49d8",
+      "name": "minion 01",
+      "phone": "1234567890",
+      "email": "min@min.com",
+      "reason": "my reason",
+      "__v": 0,
+      "hauntings": [
+        {
+          "_id": "56f194daad225170046581b1",
+          "message": "hello there",
+          "__v": 0,
+          "time": "2016-01-01T00:00:00.000Z"
+        },
+        {
+          "_id": "56f194ddad225170046581b2",
+          "message": "this is a message",
+          "__v": 0,
+          "time": "2016-01-01T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "_id": "56f1bcec2e262014294e49d9",
+      "name": "minion 02",
+      "phone": "",
+      "email": "min@min.com",
+      "reason": "",
+      "__v": 0,
+      "hauntings": [
+        {
+          "_id": "56f194d5ad225170046581af",
+          "message": "update new",
+          "__v": 0,
+          "time": "2016-01-01T00:00:00.000Z"
+        },
+        {
+          "_id": "56f194d7ad225170046581b0",
+          "message": "more stuff",
+          "__v": 0,
+          "time": "2016-01-01T00:00:00.000Z"
+        },
+        {
+          "_id": "56f194daad225170046581b1",
+          "message": "hello there",
+          "__v": 0,
+          "time": "2016-01-01T00:00:00.000Z"
+        },
+        {
+          "_id": "56f194ddad225170046581b2",
+          "message": "this is a message",
+          "__v": 0,
+          "time": "2016-01-01T00:00:00.000Z"
+        }
+      ]
+    }
+  ]
+},
+{
+  "_id": "56f17370987880880f1a7e02",
+  "name": "jane doe",
+  "username": "janeishere",
+  "password": "janejane",
+  "email": "jane@test.com",
+  "__v": 0,
+  "people": [
+    {
+      "_id": "56f1c1f931fd54dc26d10290",
+      "name": "not another one",
+      "phone": "",
+      "email": "min@min.com",
+      "reason": "",
+      "user": "56f1734a987880880f1a7e01",
+      "__v": 0,
+      "hauntings": [
+        {
+          "_id": "56f194d7ad225170046581b0",
+          "message": "more stuff",
+          "__v": 0,
+          "time": "2016-01-01T00:00:00.000Z"
+        },
+        {
+          "_id": "56f194daad225170046581b1",
+          "message": "hello there",
+          "__v": 0,
+          "time": "2016-01-01T00:00:00.000Z"
+        }
+      ]
+    }
+  ]
+}
