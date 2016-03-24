@@ -22,12 +22,12 @@ angular.module('myApp', ['ui.router'])
           return mainSvc.getPeople();
         }
       }
+    })
+    .state('list', {
+      url: '/list',
+      templateUrl: './views/list.html',
+      controller: 'listCtrl'
     });
-    // .state('list', {
-    //   url: '/list',
-    //   templateUrl: './views/list.html',
-    //   controller: 'listCtrl'
-    // })
     // .state('admin', {
     //   url: '/admin',
     //   templateUrl: '/views/admin.html',

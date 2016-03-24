@@ -7,7 +7,7 @@ body {
   height: 100%;
   margin: 0;
   paddng: 0;
-  background: #333333;
+  background: #999999;
 }
 
 .main-wrapper {
@@ -59,4 +59,22 @@ body {
   margin: 10px;
 }
 
-/* ----------  ---------- */
+/* ---------- page content styles ---------- */
+.page-content {
+  width: 70%;
+  height: auto;
+  border-radius: 10px;
+  background: grey;
+  position: absolute;
+  top: 25%;
+  left: 15%;
+  right: auto;
+}
+
+.user {
+
+}
+
+.people {
+
+}

@@ -1,11 +1,13 @@
-<div>
-  <div>
-    {{currentUser.name}}
+<div class="page-content">
+  <div class="user">
+    <div>
+      {{currentUser.name}}
+    </div>
   </div>
-</div>
 
-<div class="people">
-  <ul ng-model="people">
-    <li>{{person}}</li>
-  </ul>
+  <div class="people">
+    <ul ng-repeat="person in people">
+      <li>{{person.name}} <br /> {{person.phone}} <br /> {{person.email}} <br /> {{person.reason}}</li>
+    </ul>
+  </div>
 </div>
