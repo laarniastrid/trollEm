@@ -9,17 +9,18 @@ module.exports = {
         userFound = true;
       }
     });
-    if (userFOund) res.send({ userFOund: true });
+    if (userFound) res.send({ userFound: true });
     else res.send({ userFound: false });
   },
   getPeople: function(req, res, next) {
-    var personArray = [];
-    req.session.currentUser.people.forEach(function(person) {
-      personArray.push(person);
-    });
+    // var personArray = [];
+    // req.session.currentUser.people.forEach(function(person) {
+    //   personArray.push(person);
+    // });
     res.send({
       currentUser: req.session.currentUser,
-      peopleList: personArray
+      // peopleList: personArray
+      people: req.session.currentUser.people
     });
   }
 };

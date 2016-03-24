@@ -68,8 +68,8 @@ app.get('api/people', testCtrl.getPeople);
 
 /* ---------- login page endpoints ---------- */
 var userCtrl = require('./controls/userCtrl.js');
-app.post('/signup', userCtrl.create);
-app.get('/login', userCtrl.read);
+// app.post('/signup', userCtrl.create);
+// app.get('/login', userCtrl.read);
 
 
 /* ---------- haunt action endpoints ---------- */

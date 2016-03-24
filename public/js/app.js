@@ -4,7 +4,7 @@ angular.module('myApp', ['ui.router'])
 
   $stateProvider
     .state('login', {
-      url: '/login',
+      url: '/',
       templateUrl: './views/login.html',
       controller: 'mainCtrl'
     })
@@ -16,18 +16,23 @@ angular.module('myApp', ['ui.router'])
     .state('people', {
       url: '/people',
       templateUrl: './views/people.html',
-      controller: 'peopleCtrl'
-    })
-    .state('list', {
-      url: '/list',
-      templateUrl: './views/list.html',
-      controller: 'listCtrl'
-    })
-    .state('admin', {
-      url: '/admin',
-      templateUrl: '/views/admin.html',
-      controller: 'mainCtrl'
+      controller: 'peopleCtrl',
+      resolve: {
+        userInfo: function(mainSvc) {
+          return mainSvc.getPeople();
+        }
+      }
     });
+    // .state('list', {
+    //   url: '/list',
+    //   templateUrl: './views/list.html',
+    //   controller: 'listCtrl'
+    // })
+    // .state('admin', {
+    //   url: '/admin',
+    //   templateUrl: '/views/admin.html',
+    //   controller: 'mainCtrl'
+    // });
 
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/');
 }); // end confif
