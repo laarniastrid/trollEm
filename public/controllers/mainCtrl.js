@@ -18,9 +18,4 @@ angular.module('myApp')
     });
   };
 
-  $scope.myGithub = 'fa fa-github-alt';
-  $scope.myLinkedin = 'fa fa-linkedin';
-  $scope.myTwitter = 'fa fa-twitter';
-  $scope.myYoutube = 'fa fa-youtube-play';
-
 });  // end mainCtrl

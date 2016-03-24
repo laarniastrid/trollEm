@@ -2,7 +2,7 @@
 .nav-top-wrapper {
   width: 100%;
   height: auto;
-  font-size: 65px;
+  font-size: 30px;
   color: #111111;
   background: linear-gradient(#005151, rgba(255,0,0,0));
   position: fixed;
@@ -37,7 +37,7 @@
 .nav-bot-wrapper {
   width: 100%;
   height: auto;
-  font-size: 65px;
+  font-size: 30px;
   color: #111111;
   background: linear-gradient(rgba(255, 0, 0, 0), #005151);
   position: fixed;
@@ -45,7 +45,7 @@
 }
 
 .nav-bot-wrapper i {
-  font-size: 100px;
+  font-size: 45px;
 }
 
 .nav-bot {
