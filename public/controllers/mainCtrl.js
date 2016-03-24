@@ -11,7 +11,7 @@ angular.module('myApp')
         console.log('user is found');
         $location.path('people');
       } else {
-        alert('User not found');
+        console.log('User not found');
       }
     });
   };
