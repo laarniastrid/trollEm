@@ -26,7 +26,12 @@ angular.module('myApp', ['ui.router'])
     .state('list', {
       url: '/list',
       templateUrl: './views/list.html',
-      controller: 'listCtrl'
+      controller: 'listCtrl',
+      resolve: {
+        personInfo: function(mainSvc) {
+          return mainSvc.getHauntings();
+        }
+      }
     });
     // .state('admin', {
     //   url: '/admin',

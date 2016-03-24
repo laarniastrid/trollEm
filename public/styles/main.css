@@ -78,12 +78,14 @@ body {
 .people {
   font-size: 30px;
   display: flex;
-
+  flex-flow: wrap row;
+  justify-content: center;
 }
 
-.people li {
+.people div div {
   width: auto;
   height: auto;
+  margin: 10px;
   border: 5px black solid;
   padding: 10px;
 }

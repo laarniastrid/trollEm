@@ -27,7 +27,7 @@ module.exports = {
   },
   getHauntings: function(req, res,next) {
     res.send({
-      currentUser: req.session.currentUser.people,
+      currentPerson: req.session.currentUser.people,
       hauntings: req.session.currentUser.people.hauntings
     });
   }

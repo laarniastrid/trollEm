@@ -1,4 +1,5 @@
 <div class="page-content">
+
   <div class="user">
     <div>
       {{currentUser.name}}
@@ -6,8 +7,9 @@
   </div>
 
   <div class="people">
-    <ul ng-repeat="person in people">
-      <li>{{person.name}} <br /> {{person.phone}} <br /> {{person.email}} <br /> {{person.reason}}</li>
-    </ul>
+    <div ng-repeat="person in people">
+      <div ng-click="test()" >{{person.name}} <br /> {{person.phone}} <br /> {{person.email}} <br /> {{person.reason}}</div>
+    </div>
   </div>
+
 </div>

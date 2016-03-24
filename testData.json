@@ -97,5 +97,61 @@
         ]
       }
     ]
+  },
+  {
+    "_id": "56f17370987880880f1a7e02",
+    "name": "test",
+    "username": "testtest",
+    "password": "testtest",
+    "email": "test@test.com",
+    "__v": 0,
+    "people": [
+      {
+        "_id": "56f1c1f931fd54dc26d10290",
+        "name": "not another one",
+        "phone": "",
+        "email": "min@min.com",
+        "reason": "",
+        "user": "56f1734a987880880f1a7e01",
+        "__v": 0,
+        "hauntings": [
+          {
+            "_id": "56f194d7ad225170046581b0",
+            "message": "more stuff",
+            "__v": 0,
+            "time": "2016-01-01T00:00:00.000Z"
+          },
+          {
+            "_id": "56f194daad225170046581b1",
+            "message": "hello there",
+            "__v": 0,
+            "time": "2016-01-01T00:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "_id": "56f1c1f931fd54dc26d10290",
+        "name": "not another one",
+        "phone": "",
+        "email": "min@min.com",
+        "reason": "",
+        "user": "56f1734a987880880f1a7e01",
+        "__v": 0,
+        "hauntings": [
+          {
+            "_id": "56f194d7ad225170046581b0",
+            "message": "more stuff",
+            "__v": 0,
+            "time": "2016-01-01T00:00:00.000Z"
+          },
+          {
+            "_id": "56f194daad225170046581b1",
+            "message": "hello there",
+            "__v": 0,
+            "time": "2016-01-01T00:00:00.000Z"
+          }
+        ]
+      }
+    ]
   }
 ]

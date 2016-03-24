@@ -11,6 +11,12 @@ angular.module('myApp')
       .then(function(response) {
         return response.data;
       });
+    },
+    getHauntings: function() {
+      return $http.get('/api/people/hauntings')
+      .then(function(response) {
+        return response.data;
+      });
     }
   };
 
