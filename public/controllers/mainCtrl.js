@@ -1,6 +1,6 @@
 angular.module('myApp')
 
-.controller('mainCtrl', function($scope, mainSvc) {
+.controller('mainCtrl', function($scope, $location, mainSvc) {
 
   // $scope.test = "hello there";
 
