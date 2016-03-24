@@ -24,5 +24,11 @@ module.exports = {
       // peopleList: personArray
       people: req.session.currentUser.people
     });
+  },
+  getHauntings: function(req, res,next) {
+    res.send({
+      currentUser: req.session.currentUser.people,
+      hauntings: req.session.currentUser.people.hauntings
+    });
   }
 };

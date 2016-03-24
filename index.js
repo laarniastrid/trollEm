@@ -61,7 +61,7 @@ var testCtrl = require('./controls/testCtrl.js');
 app.use(session({ secret: keys.mySecret }));
 app.post('/api/login', testCtrl.login);
 app.get('/api/people', testCtrl.getPeople);
-
+app.get('/api/people/hauntings', testCtrl.getHauntings);
 
 
 

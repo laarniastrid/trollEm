@@ -72,9 +72,18 @@ body {
 }
 
 .user {
-
+  font-size: 40px;
 }
 
 .people {
+  font-size: 30px;
+  display: flex;
 
+}
+
+.people li {
+  width: auto;
+  height: auto;
+  border: 5px black solid;
+  padding: 10px;
 }
