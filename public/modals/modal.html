@@ -1,0 +1,18 @@
+<div bn-modals ng-show="subview" class="m-modals" ng-switch="subview">
+  <form ng-switch-when="prompt" ng-controller="modalCtrl.js" ng-submit="submit()" class="modal">
+    <p>
+      {{message}}
+    </p>
+    <p ng-if="errorMessage">
+      <strong>Sorry:</strong> {{errorMessage}}
+    </p>
+    <p>
+      <input type="text" ng-model="form.input" />
+    </p>
+    <p>
+      <a ng-click="submit()">Submit</a>
+      &mdash;
+      <a ng-click="cancel()">Cancel</a>
+    </p>
+  </form>
+</div>
