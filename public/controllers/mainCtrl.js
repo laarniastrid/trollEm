@@ -6,7 +6,7 @@ angular.module('myApp')
     mainSvc.login(user).then(function(response) {
     // console.log('testing');
       if (response.data.userFound) {
-        console.log('user is found');
+        // console.log('user is found');
         $location.path('people');
       } else {
         console.log('User not found');

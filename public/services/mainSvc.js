@@ -5,29 +5,29 @@ angular.module('myApp')
   this.aPerson = {};
 
   return {
-    login: function(user) {
+    login: function(user) {  // login for user
       return $http.post('/api/login', user);
     },
-    getPeople: function() {
+    getPeople: function() {  // gets people listed under user
       return $http.get('/api/people')
       .then(function(response) {
         return response.data;
       });
     },
-    getHauntings: function() {
-      return $http.get('/api/people/hauntings')
-      .then(function(response) {
-        return response.data;
-      });
+    // getHauntings: function() {  // not currently needed
+    //   return $http.get('/api/people/hauntings')
+    //   .then(function(response) {
+    //     return response.data;
+    //   });
+    // },
+    setPerson: function(n) {  // set the correct person being clicked on
+      aPerson = n;
     },
-    getPerson: function() {
+    getPerson: function() {  // get person name
       return aPerson.name;
     },
-    getPersonList: function() {
+    getPersonList: function() {  // get haunting list of selected person
       return aPerson.hauntings;
-    },
-    setPerson: function(n) {
-      aPerson = n;
     }
   };
 

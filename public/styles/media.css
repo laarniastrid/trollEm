@@ -68,6 +68,10 @@ and (max-device-width: 450px) {
     font-size: 40px;
   }
 
+  .add-new {
+    
+  }
+
   .people {
     font-size: 30px;
     display: flex;

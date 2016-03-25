@@ -92,6 +92,12 @@ i {
   justify-content: space-between;
 }
 
+/*.user button {
+  width: 50px;
+  font-size: 30px;
+  background: grey;
+}*/
+
 .add-new {
 
 }
