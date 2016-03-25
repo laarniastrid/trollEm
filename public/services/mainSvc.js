@@ -14,12 +14,12 @@ angular.module('myApp')
         return response.data;
       });
     },
-    // getHauntings: function() {  // not currently needed
-    //   return $http.get('/api/people/hauntings')
-    //   .then(function(response) {
-    //     return response.data;
-    //   });
-    // },
+    getHauntings: function() {  // not currently needed maybe?
+      return $http.get('/api/people/hauntings')
+      .then(function(response) {
+        return response.data;
+      });
+    },
     setPerson: function(n) {  // set the correct person being clicked on
       aPerson = n;
     },

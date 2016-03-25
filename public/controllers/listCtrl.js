@@ -1,6 +1,6 @@
 angular.module('myApp')
 
-.controller('listCtrl', function($scope, personInfo, mainSvc) {
+.controller('listCtrl', function($scope, personInfo, mainSvc, modals) {
 
   // $scope.currentPerson = personInfo.currentPerson;
   // $scope.hauntings = personInfo.hauntings;
@@ -13,13 +13,6 @@ angular.module('myApp')
   $scope.addListItem = function() {
     console.log('clicked');
 
-    prompt()
-      .title('this is a test title')
-      .textContent('testing content')
-      .placholder('this is a placeholder')
-      .label('a label')
-      .ok('okay')
-      .cancel('cancelled');
   };
 
 
