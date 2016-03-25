@@ -7,7 +7,8 @@ body {
   height: 100%;
   margin: 0;
   paddng: 0;
-  background: #999999;
+  /*background: #999999;*/
+  background: #eeeeee;
 }
 
 .main-wrapper {

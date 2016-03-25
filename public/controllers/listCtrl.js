@@ -1,6 +1,6 @@
 angular.module('myApp')
 
-.controller('listCtrl', function($scope, personInfo, mainSvc, modals) {
+.controller('listCtrl', function($scope, personInfo, mainSvc) {
 
   // $scope.currentPerson = personInfo.currentPerson;
   // $scope.hauntings = personInfo.hauntings;
