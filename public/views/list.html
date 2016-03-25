@@ -2,13 +2,18 @@
 
   <div class="user">
     <div>
-      {{currentPerson.name}}
+      {{personName}}
     </div>
   </div>
 
+  <!-- {{listTest}} -->
+
+  <!-- {{currentPerson}} -->
+
+
   <div class="people">
-    <div ng-repeat="person in people">
-      <div ng-click="test()" >{{person.name}} <br /> {{person.phone}} <br /> {{person.email}} <br /> {{person.reason}}</div>
+    <div ng-repeat="item in list">
+      <div class="item" ng-click="" >{{item.message}} <br />{{item.time}}</div>
     </div>
   </div>
 
