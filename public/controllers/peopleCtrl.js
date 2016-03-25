@@ -14,6 +14,13 @@ angular.module('myApp')
 
 
 
+
+  $scope.addPerson = function() {
+    console.log('clicked');
+
+  };
+
+
 /*
 $scope.login = function(user) {
   mainSvc.login(user).then(function(response) {
