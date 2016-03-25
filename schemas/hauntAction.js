@@ -8,7 +8,7 @@ var hauntActionSchema = new Schema({
   },
   time: {
     type: Date,
-    default: Date.now()
+    default: new Date()
   },
   person: {
     type: Schema.Types.ObjectId,

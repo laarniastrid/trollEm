@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
-  // console.log('document ready');
-
+  console.log('document is ready');
 
 
 });

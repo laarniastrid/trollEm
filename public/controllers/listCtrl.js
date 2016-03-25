@@ -8,5 +8,7 @@ angular.module('myApp')
   $scope.personName = mainSvc.getPerson();
   $scope.list = mainSvc.getPersonList();
 
+  
+
 
 });  // end listCtrl
