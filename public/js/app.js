@@ -1,4 +1,4 @@
-angular.module('myApp', ['ui.router'])
+angular.module('myApp', ['ui.router', 'ngDialog'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
@@ -40,4 +40,4 @@ angular.module('myApp', ['ui.router'])
     // });
 
     $urlRouterProvider.otherwise('/');
-}); // end confif
+}); // end config
