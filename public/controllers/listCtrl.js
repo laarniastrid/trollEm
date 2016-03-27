@@ -20,7 +20,12 @@ angular.module('myApp')
   $scope.clickToOpen = function() {
     ngDialog.open({
       template: './templates/listPopup.html',
-      className: 'ngdialog-theme-default'
+      className: 'ngdialog-theme-default',
+      link: function(scope, ele, attr) {
+        $(scope).on('click', function() {
+          ngDialog.close();
+        });
+      }
     });
   };
 
