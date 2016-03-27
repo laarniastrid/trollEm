@@ -7,7 +7,7 @@ angular.module('myApp')
 
   $scope.findHaunts = function(person) {
     // console.log('hello');
-    console.log(person);
+    // console.log(person);
     mainSvc.setPerson(person);
     $location.path('list');
   };

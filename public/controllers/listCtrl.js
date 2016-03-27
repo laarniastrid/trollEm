@@ -10,17 +10,17 @@ angular.module('myApp')
 
 
 
-  $scope.addListItem = function() {
-    console.log('clicked');
-
-  };
+  // $scope.addListItem = function() {
+  //   console.log('clicked');
+  //
+  // };
 
 
 
   $scope.clickToOpen = function() {
     ngDialog.open({
-      template: './templates/popup.html',
-      className: 'ngdialog-these-default'
+      template: './templates/listPopup.html',
+      className: 'ngdialog-theme-default'
     });
   };
 
