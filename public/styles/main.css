@@ -138,6 +138,12 @@ i {
   left: 0;
 }
 
+.modal i {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 .modal-overlay {
   width: 100vw;
   height: 100vh;
@@ -146,10 +152,44 @@ i {
 }
 
 .modal-content {
+  width: auto;
+  height: auto;
+  border-radius: 5px;
   position: absolute;
   z-index: 200;
   background: #FFF;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.modal-content-wrapper {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-content-wrapper h2 {
+  margin: 0;
+}
+
+
+.modal-form {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-form textarea {
+  width: 275px;
+  height: 150px;
+  margin: 5px;
+}
+
+.modal-form button {
+  width: 150px;
+  margin: 5px;
 }

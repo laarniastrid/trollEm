@@ -5,14 +5,23 @@ angular.module('myApp')
   // $scope.currentPerson = personInfo.currentPerson;
   // $scope.hauntings = personInfo.hauntings;
 
-  $scope.personName = mainSvc.getPerson();
+  $scope.person = mainSvc.getPerson();
+  $scope.personName = mainSvc.getPersonName();
   $scope.list = mainSvc.getPersonList();
 
 
-  $scope.showModal = false;
-  $scope.modalToggle = function() {
-    console.log('hello');
-    $scope.showModal = !$scope.showModal;
+  // $scope.showModal = false;
+  // $scope.modalToggle = function() {
+  //   console.log('hello');
+  //   $scope.showModal = !$scope.showModal;
+  // };
+
+  $scope.modalVal = mainSvc.getModalVal();
+  $scope.changeToggle = mainSvc.changeToggle();
+
+
+  $scope.sendMessage = function(mesasge) {
+
   };
 
 });  // end listCtrl
