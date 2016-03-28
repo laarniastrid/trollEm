@@ -31,6 +31,10 @@
   align-items: center;
 }
 
+.nav-top-mid h3 {
+  /*margin: 0;*/
+}
+
 .nav-top-right {
   padding-right: 10px;
 }

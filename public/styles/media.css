@@ -124,7 +124,10 @@ and (max-device-width: 450px) {
   .nav-top-mid {
     display: flex;
     justify-content: center;
+  }
 
+  .nav-top-mid h3 {
+    margin-top: 125px;
   }
 
   .nav-top-right {
@@ -175,4 +178,91 @@ and (max-device-width: 450px) {
     color: #111111;
   }
 
+}
+
+/* ---------- modal styles ---------- */
+.modal {
+  font-size: 30px;
+}
+
+.modal i {
+
+}
+
+.modal-overlay {
+
+}
+
+.modal-content {
+
+}
+
+.modal-content .fa {
+
+}
+
+.modal-content p {
+
+}
+
+.modal-content-wrapper {
+
+}
+
+.modal-content-wrapper h2 {
+
+}
+
+
+.modal-form {
+
+}
+
+.modal-form textarea {
+
+}
+
+.modal-form button {
+
+}
+
+/* ---------- contact stuff below ---------- */
+.contact {
+
+}
+
+.contact-form {
+
+}
+
+.form-top {
+
+}
+
+.form-top-left {
+
+}
+
+.form-top-left input {
+  width: 450px;
+  font-size: 30px;
+}
+
+.form-top-right {
+
+}
+
+.form-top-right textarea {
+  width: 450px;
+  height: 225px;
+  margin: 10px;
+  font-size: 30px;
+}
+
+.form-bottom {
+
+}
+
+.form-bottom button {
+  font-size: 30px;
 }
