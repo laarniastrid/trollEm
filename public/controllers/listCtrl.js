@@ -10,14 +10,14 @@ angular.module('myApp')
   $scope.list = mainSvc.getPersonList();
 
 
-  // $scope.showModal = false;
-  // $scope.modalToggle = function() {
-  //   console.log('hello');
-  //   $scope.showModal = !$scope.showModal;
-  // };
+  $scope.showModal = false;
+  $scope.modalToggle = function() {
+    console.log('hello');
+    $scope.showModal = !$scope.showModal;
+  };
 
-  $scope.modalVal = mainSvc.getModalVal();
-  $scope.changeToggle = mainSvc.changeToggle();
+  // $scope.modalVal = mainSvc.getModalVal();
+  // $scope.changeToggle = mainSvc.modalToggle();
 
 
   $scope.sendMessage = function(mesasge) {

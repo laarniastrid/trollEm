@@ -63,14 +63,5 @@ angular.module('myApp')
     return person.hauntings;
   };
 
-  // modal functions
-  this.showModal = false;
-  this.modalToggle = function() {
-    // console.log('hello');
-    this.showModal = !this.showModal;
-  };
-
-  this.getModalVal = function() { return showModal; };
-  this.changeToggle = this.modalToggle();
 
 });  // end mainSvc

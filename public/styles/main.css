@@ -163,6 +163,15 @@ i {
   transform: translate(-50%, -50%);
 }
 
+.modal-content .fa {
+  margin-right: 5px;
+  font-size: 30px;
+}
+
+.modal-content p {
+  margin: 10px;
+}
+
 .modal-content-wrapper {
   margin: 10px;
   display: flex;
