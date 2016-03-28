@@ -34,6 +34,32 @@ i {
   font-size: 45px;
 }
 
+
+input {
+  width: 275px;
+  font-size: 16px;
+  margin: 10px;
+  border: none;
+  border-bottom: 5px black solid;
+  background: rgb(255, 0, 0, 0);
+  border-radius: 5px;
+  line-height: 30px;
+}
+
+textarea {
+  width: 275px;
+  height: 168px;
+  font-size: 16px;
+  margin: 10px;
+  border: none;
+  border-bottom: 5px black solid;
+  border-right: 5px black solid;
+  /*background: #E0DCF5;*/
+  background: rgb(255, 0, 0, 0);
+  border-radius: 5px;
+  /*rows: 10;*/
+}
+
 /* ---------- login styles ---------- */
 .login-page {
   width: 70%;
@@ -84,6 +110,7 @@ i {
 .login input {
   font-size: 20px;
   margin: 10px;
+  border: none;
   border-radius: 5px;
 }
 
@@ -134,6 +161,7 @@ i {
   height: auto;
   margin: 10px;
   border: 5px black solid;
+  border-radius: 10px;
   padding: 10px;
 }
 
@@ -189,10 +217,14 @@ i {
 }
 
 .modal-content-wrapper h2 {
-  font-size: 25px;
+  font-size: 30px;
   margin: 10px 0 0 0;
 }
 
+.modal-content-wrapper input {
+  width: 275px;
+  margin: 5px;
+}
 
 .modal-form {
   width: auto;
@@ -248,33 +280,11 @@ i {
 }
 
 .form-top-left input {
-  width: 275px;
-  font-size: 16px;
-  margin: 15px;
-  border: none;
-  border-bottom: 5px black solid;
   /*background: #E0DCF5;*/
-  background: rgb(255, 0, 0, 0);
-  border-radius: 5px;
-  line-height: 30px;
 }
 
 .form-top-right {
 
-}
-
-.form-top-right textarea {
-  width: 275px;
-  height: 168px;
-  font-size: 16px;
-  margin: 10px;
-  border: none;
-  border-bottom: 5px black solid;
-  border-right: 5px black solid;
-  /*background: #E0DCF5;*/
-  background: rgb(255, 0, 0, 0);
-  border-radius: 5px;
-  /*rows: 10;*/
 }
 
 .form-bottom {

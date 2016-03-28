@@ -1,4 +1,4 @@
-@media only screen
+@media screen
 and (min-device-width: 300px)
 and (max-device-width: 450px) {
   /* ----------  ---------- */
@@ -237,7 +237,7 @@ and (max-device-width: 450px) {
 }
 
 .form-top-left input {
-  width: 450px;
+  /*width: 450px;*/
   /*font-size: 30px;*/
 }
 
@@ -246,9 +246,9 @@ and (max-device-width: 450px) {
 }
 
 .form-top-right textarea {
-  width: 450px;
-  height: 225px;
-  margin: 10px;
+  /*width: 450px;*/
+  /*height: 225px;*/
+  /*margin: 10px;*/
   /*font-size: 30px;*/
 }
 

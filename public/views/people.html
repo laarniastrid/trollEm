@@ -25,11 +25,14 @@
       <!-- <div>modal heading</div> -->
       <!-- <div>modal stuff</div> -->
       <h2>Add new person!<h2>
-      <form ng-submit="sendMessage(person) && modalToggle()" class="modal-form">
-        <textarea placeholder="message" ng-model="person.message" required></textarea>
-        <!-- <input type="date" value="new Data()" /> -->
-        <button type="submit">Send Message</button>
-      </form>
+        <form ng-submit="sendMessage(person)" class="modal-form">
+          <input name="name" type="text" placeholder="name" ng-model="person.name" required />
+          <input name="phone" type="phone" placeholder="phone number" ng-model="person.phone" />
+          <input name="email" type="email" placeholder="email" ng-model="person.email" required />
+          <textarea placeholder="reasons to add to troll list" ng-model="person.reason" required></textarea>
+          <!-- <input type="date" value="new Data()" /> -->
+          <button type="submit">Send Message</button>
+        </form>
     </div>
   </div>
 </div>
