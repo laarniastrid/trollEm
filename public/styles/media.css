@@ -30,8 +30,8 @@ and (max-device-width: 450px) {
 
   }
 
-  .login-page h1 {
-    font-size: 50px;
+  .login-page h2 {
+    font-size: 40px;
   }
 
   .login {
@@ -135,7 +135,7 @@ and (max-device-width: 450px) {
   .nav-bot-wrapper {
     width: 100%;
     height: auto;
-    font-size: 65px;
+    font-size: 60px;
     color: #111111;
     background: linear-gradient(rgba(255, 0, 0, 0), #005151);
     position: fixed;

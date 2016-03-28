@@ -1,5 +1,8 @@
+@import url(https://fonts.googleapis.com/css?family=Kaushan+Script);
+
 html, body {
   box-sizing: border-box;
+  font-family: Verdana, Arial;
 }
 
 body {
@@ -51,13 +54,13 @@ i {
   justify-content: center;
 }
 
-.login-page h1 {
-
+.login-page h2 {
+  margin: 15px auto auto 0;
 }
 
 .login {
   width: 100%;
-  height: 300px;
+  height: 250px;
   /*font-size: 20px;*/
   /*border-radius: 5px;*/
   display: flex;
@@ -201,4 +204,77 @@ i {
 .modal-form button {
   width: 150px;
   margin: 5px;
+}
+
+/* ---------- contact stuff below ---------- */
+.contact {
+  /*width: 100%;*/
+  height: auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  margin-top: 5%;
+}
+
+.contact-form {
+  width: auto;
+  height: auto;
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-top {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.form-top-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-top-left input {
+  width: 275px;
+  margin: 15px;
+  border: none;
+  border-bottom: 5px black solid;
+  /*background: #E0DCF5;*/
+  background: rgb(255, 0, 0, 0);
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.form-top-right {
+
+}
+
+.form-top-right textarea {
+  width: 275px;
+  height: 168px;
+  margin: 10px;
+  border: none;
+  border-bottom: 5px black solid;
+  border-right: 5px black solid;
+  /*background: #E0DCF5;*/
+  background: rgb(255, 0, 0, 0);
+  font-size: 16px;
+  border-radius: 5px;
+  /*rows: 10;*/
+}
+
+.form-bottom {
+
+}
+
+.form-bottom button {
+  margin: 5px;
+  font-size: 16px;
 }
