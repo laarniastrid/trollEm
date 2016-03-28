@@ -38,22 +38,24 @@
     <div class="modal-content">
       <i class="fa fa-times" ng-click="modalToggle('contact')"></i>
       <div>
+
         <div class="contact">
-          <form class="contact-form" ng-submit="addPost(contact)">
+          <form class="contact-form" ng-submit="addPost(formInfo)">
             <div class="form-top">
               <div class="form-top-left">
-                <input name="name" ng-model="contact.name" type="text" placeholder="Your name :" required />
-                <input name="email" ng-model="contact.email" type="email" placeholder="Your email :" required />
-                <input name="phone" ng-model="contact.phone" type="phone" placeholder="Your phone (optional) :" />
+                <input name="name" ng-model="formInfo.name" type="text" placeholder="Your name :" />
+                <input name="email" ng-model="formInfo.email" type="email" placeholder="Your email :" />
+                <input name="phone" ng-model="formInfo.phone" type="phone" placeholder="Your phone (optional) :" />
               </div>
               <div class="form-top-right">
-                <textarea name="text" ng-model="contact.text" placeholder="Type your message here :" required></textarea>
+                <textarea name="text" ng-model="formInfo.text" placeholder="Type your message here :" ></textarea>
               </div>
             </div>
             <div class="form-bottom">
-              <button type="submit" ng-disabled="contact.name == undefined || contact.email == undefined" class="contact-submit" type="submit">Send Away!!</button>
+              <button type="submit" class="contact-submit" type="submit">Send Away!!</button>
             </div>
           </form>
+
         </div>
       </div>
     </div>

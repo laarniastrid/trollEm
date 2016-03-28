@@ -13,7 +13,32 @@ angular.module('myApp')
     }
   };
 
+  $scope.addPost = function(data) {
+    // $.ajax({
+    //   url: "http://formspree.io/laarni.astrid@gmail.com",
+    //   method: "POST",
+    //   data: {
+    //     name: data.name,
+    //     email: data.email,
+    //     phone: data.phone,
+    //     message: data.text,
+    //   },
+    //   dataType: "json"
+    // });
 
-  
+    data.name = '';
+    data.email = '';
+    data.phone = '';
+    data.text = '';
+
+    
+
+    $scope.modalToggle('contact');
+  };
+
+  // $scope.clearForm = function(formInfo) {
+  //   console.log(formInfo);
+  //   formInfo = '';
+  // };
 
 });  // end navCtrl
