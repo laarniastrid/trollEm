@@ -63,7 +63,7 @@ angular.module('myApp')
     return person.hauntings;
   };
 
-
+  // modal functions
   this.showModal = false;
   this.modalToggle = function() {
     // console.log('hello');
