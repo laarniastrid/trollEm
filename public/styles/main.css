@@ -89,20 +89,23 @@ i {
 
 /* ---------- page content styles ---------- */
 .page-content {
-  width: 70%;
+  width: 80%;
   height: auto;
   margin-bottom: 75px;
   border-radius: 10px;
   background: grey;
   position: absolute;
   top: 20%;
-  left: 15%;
+  left: 10%;
   right: auto;
   z-index: -1;
+  /*top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);*/
 }
 
 .user {
-  font-size: 40px;
+  font-size: 30px;
   margin: auto 15px auto 15px;
   display: flex;
   justify-content: space-between;
@@ -119,7 +122,7 @@ i {
 }
 
 .people {
-  font-size: 30px;
+  font-size: 25px;
   margin-bottom: 25px;
   display: flex;
   flex-flow: wrap row;
@@ -134,8 +137,9 @@ i {
   padding: 10px;
 }
 
-/* ---------- modal ---------- */
+/* ---------- modal styles ---------- */
 .modal {
+  font-size: 20px;
   position: absolute;
   z-index: 100;
   left: 0;
@@ -172,6 +176,7 @@ i {
 }
 
 .modal-content p {
+  width: 400px;
   margin: 10px;
 }
 
@@ -180,10 +185,12 @@ i {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .modal-content-wrapper h2 {
-  margin: 0;
+  font-size: 25px;
+  margin: 10px 0 0 0;
 }
 
 
@@ -210,7 +217,7 @@ i {
 .contact {
   /*width: 100%;*/
   height: auto;
-  padding: 20px;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -242,13 +249,13 @@ i {
 
 .form-top-left input {
   width: 275px;
+  font-size: 16px;
   margin: 15px;
   border: none;
   border-bottom: 5px black solid;
   /*background: #E0DCF5;*/
   background: rgb(255, 0, 0, 0);
   border-radius: 5px;
-  font-size: 16px;
   line-height: 30px;
 }
 
@@ -259,13 +266,13 @@ i {
 .form-top-right textarea {
   width: 275px;
   height: 168px;
+  font-size: 16px;
   margin: 10px;
   border: none;
   border-bottom: 5px black solid;
   border-right: 5px black solid;
   /*background: #E0DCF5;*/
   background: rgb(255, 0, 0, 0);
-  font-size: 16px;
   border-radius: 5px;
   /*rows: 10;*/
 }

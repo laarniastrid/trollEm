@@ -35,4 +35,11 @@ $scope.login = function(user) {
 };
 */
 
+$scope.showModal = false;
+$scope.modalToggle = function() {
+  console.log('hello');
+  $scope.showModal = !$scope.showModal;
+};
+
+
 });  // end peopleCtrl

@@ -63,14 +63,7 @@ and (max-device-width: 450px) {
 
   /* ---------- page content styles ---------- */
   .page-content {
-    width: 70%;
-    height: auto;
-    border-radius: 10px;
-    background: grey;
-    position: absolute;
-    top: 25%;
-    left: 15%;
-    right: auto;
+
   }
 
   .user {
@@ -182,7 +175,7 @@ and (max-device-width: 450px) {
 
 /* ---------- modal styles ---------- */
 .modal {
-  font-size: 30px;
+  /*font-size: 30px;*/
 }
 
 .modal i {
@@ -245,7 +238,7 @@ and (max-device-width: 450px) {
 
 .form-top-left input {
   width: 450px;
-  font-size: 30px;
+  /*font-size: 30px;*/
 }
 
 .form-top-right {
@@ -256,7 +249,7 @@ and (max-device-width: 450px) {
   width: 450px;
   height: 225px;
   margin: 10px;
-  font-size: 30px;
+  /*font-size: 30px;*/
 }
 
 .form-bottom {
@@ -264,5 +257,5 @@ and (max-device-width: 450px) {
 }
 
 .form-bottom button {
-  font-size: 30px;
+  /*font-size: 30px;*/
 }

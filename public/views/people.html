@@ -4,7 +4,7 @@
     <div>
       {{currentUser.name}}
     </div>
-    <div class="add-new">
+    <div class="add-new" ng-click="modalToggle()">
       <i class="fa fa-plus"></i>
     </div>
   </div>
@@ -15,4 +15,21 @@
     </div>
   </div>
 
+</div>
+
+<div class="modal" ng-if="showModal">
+  <div class="modal-overlay" ng-click="modalToggle()"></div>
+  <div class="modal-content">
+    <i class="fa fa-times" ng-click="modalToggle()"></i>
+    <div class="modal-content-wrapper">
+      <!-- <div>modal heading</div> -->
+      <!-- <div>modal stuff</div> -->
+      <h2>Add new person!<h2>
+      <form ng-submit="sendMessage(person) && modalToggle()" class="modal-form">
+        <textarea placeholder="message" ng-model="person.message" required></textarea>
+        <!-- <input type="date" value="new Data()" /> -->
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
 </div>

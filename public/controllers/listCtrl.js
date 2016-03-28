@@ -12,16 +12,20 @@ angular.module('myApp')
 
   $scope.showModal = false;
   $scope.modalToggle = function() {
-    console.log('hello');
+    // console.log('hello');
     $scope.showModal = !$scope.showModal;
   };
+
+  $scope.sendMessage = function(message) {
+    console.log(message);
+    message = '';
+    $scope.modalToggle();
+  };
+
 
   // $scope.modalVal = mainSvc.getModalVal();
   // $scope.changeToggle = mainSvc.modalToggle();
 
 
-  $scope.sendMessage = function(mesasge) {
-
-  };
 
 });  // end listCtrl
