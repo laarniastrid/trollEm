@@ -5,13 +5,12 @@
       {{personName}}
     </div>
     <!-- <button class="add-new"> -->
-    <div ng-click="clickToOpen()">
+    <div ng-click="modalToggle()">
       <i class="fa fa-plus"></i>
     </div>
   </div>
 
   <!-- {{listTest}} -->
-
 
   <div class="people">
     <div ng-repeat="item in list">
@@ -19,4 +18,13 @@
     </div>
   </div>
 
+</div>
+
+<div class="modal" ng-if="showModal">
+  <div class="modal-overlay" ng-click="modalToggle()"></div>
+  <div class="modal-content">
+    <i class="fa fa-times" ng-click="modalToggle()"></i>
+    <div>modal heading</div>
+    <div>modal stuff</div>
+  </div>
 </div>
