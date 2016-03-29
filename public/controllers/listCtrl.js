@@ -16,8 +16,22 @@ angular.module('myApp')
     $scope.showModal = !$scope.showModal;
   };
 
-  $scope.sendMessage = function(message) {
-    console.log(message);
+  $scope.sendMessage = function(text) {
+    var getPerson = mainSvc.getPerson();
+
+    var input = {
+      message: text,
+      time: new Date(),
+      person: getPerson._id
+    };
+
+    // console.log(personId);
+    // console.log(personId._id);
+
+    mainSvc.setNewItem(input);
+    getPerson.hauntings.push(input);
+
+    console.log(mainSvc.getPerson());
     message = '';
     $scope.modalToggle();
   };

@@ -120,7 +120,7 @@
     "people": [
       {
         "_id": "56f1c1f931fd54dc26d10290",
-        "name": "not another one",
+        "name": "person 01",
         "phone": "",
         "email": "min@min.com",
         "reason": "",
@@ -149,7 +149,7 @@
       },
       {
         "_id": "56f1c1f931fd54dc26d10290",
-        "name": "not another one",
+        "name": "person 02",
         "phone": "",
         "email": "min@min.com",
         "reason": "",
