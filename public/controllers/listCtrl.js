@@ -7,7 +7,7 @@ angular.module('myApp')
 
   $scope.person = mainSvc.getPerson();
   $scope.personName = mainSvc.getPersonName();
-  $scope.list = mainSvc.getPersonList();
+  $scope.list = mainSvc.getPersonList(person._id);
 
 
   $scope.showModal = false;
@@ -29,7 +29,7 @@ angular.module('myApp')
     // console.log(personId._id);
 
     mainSvc.setNewItem(input);
-    getPerson.hauntings.push(input);
+    // getPerson.hauntings.push(input);
 
     console.log(mainSvc.getPerson());
     message = '';

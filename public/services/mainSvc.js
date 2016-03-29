@@ -13,8 +13,9 @@ angular.module('myApp')
       return response.data;
     });
   };
-  this.getHauntings = function() {  // not currently needed maybe?
-    return $http.get('/api/people/hauntings')
+  this.getHauntings = function(input) {  // not currently needed maybe?
+    // return $http.get('/api/people/hauntings')
+    return $http.get('/api/haunt', input)
     .then(function(response) {
       return response.data;
     });
