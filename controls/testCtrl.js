@@ -14,14 +14,13 @@ module.exports = {
 
     // res.send(req.query.password); // testing
   },
-  getPeople: function(req, res, next) {
+  userData: function(req, res, next) {
     // var personArray = [];
     // req.session.currentUser.people.forEach(function(person) {
     //   personArray.push(person);
     // });
     res.send({
       currentUser: req.session.currentUser,
-      // peopleList: personArray
       people: req.session.currentUser.people
     });
   },

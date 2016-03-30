@@ -29,7 +29,7 @@ angular.module('myApp')
     // console.log(personId._id);
 
     mainSvc.setNewItem(input);
-    // getPerson.actionss.push(input);
+    // getPerson.actions.push(input);
 
     console.log(mainSvc.getPerson());
     message = '';

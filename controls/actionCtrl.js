@@ -13,7 +13,7 @@ module.exports = {
     //   return err ? res.status(500).send(err) : res.status(200).send(r);
     // });
 
-    Actions.find(query).populate('person').exec(function(err, r) {
+    Actions.find(query).populate('actions').exec(function(err, r) {
       return err ? res.status(500).send(err) : res.status(200).send(r);
     });
   },

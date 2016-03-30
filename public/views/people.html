@@ -11,7 +11,7 @@
 
   <div class="people">
     <div ng-repeat="person in people">
-      <div class="aBox" ng-click="findHaunts(this.person)" >{{person.name}} <br /> {{person.phone}} <br /> {{person.email}} <br /> {{person.reason}}</div>
+      <div class="aBox" ng-click="peopleList(this.person)" >{{person.name}} <br /> {{person.phone}} <br /> {{person.email}} <br /> {{person.reason}}</div>
     </div>
   </div>
 
@@ -25,7 +25,7 @@
       <!-- <div>modal heading</div> -->
       <!-- <div>modal stuff</div> -->
       <h2>Add new person!<h2>
-        <form ng-submit="sendMessage(person)" class="modal-form">
+        <form ng-submit="addPerson(person)" class="modal-form">
           <input name="name" type="text" placeholder="name" ng-model="person.name" required />
           <input name="phone" type="phone" placeholder="phone number" ng-model="person.phone" />
           <input name="email" type="email" placeholder="email" ng-model="person.email" required />

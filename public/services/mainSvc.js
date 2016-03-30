@@ -3,6 +3,7 @@ angular.module('myApp')
 .service('mainSvc', function($http) {
 
   this.person = {};
+  this.user = {};
 
   this.login = function(user) {  // login for user
     return $http.post('/api/login', user);
@@ -20,6 +21,12 @@ angular.module('myApp')
       return response.data;
     });
   };
+  // this.setUser = function(input) {  // set user
+  //   user = input;
+  // };
+  // this.getUser = function() {
+  //   return user;
+  // };
   this.setPerson = function(input) {  // set the correct person being clicked on
     person = input;
   };
@@ -34,6 +41,9 @@ angular.module('myApp')
   };
   this.setNewItem = function(input) {  // create new item under person
     return $http.post('/api/haunt', input);
+  };
+  this.addNewPerson = function(input) {
+    return $http.post('/api/people', input);
   };
 
 

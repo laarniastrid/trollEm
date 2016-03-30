@@ -5,7 +5,7 @@ angular.module('myApp')
   $scope.currentUser = userInfo.currentUser;
   $scope.people = userInfo.people;
 
-  $scope.findHaunts = function(person) {
+  $scope.peopleList = function(person) {
     // console.log('hello');
     // console.log(person);
     mainSvc.setPerson(person);
@@ -13,18 +13,26 @@ angular.module('myApp')
   };
 
 
-  $scope.addPerson = function() {
-    console.log('clicked');
+  $scope.addPerson = function(input) {
+    console.log(input);
 
+    mainSvc.addNewPerson(input)
+      .then(function(response) {
+        $scope.currentUser.people.push(response.data._id);
+        console.log(response);
+      });
+
+    console.log($scope.currentUser);
+    $scope.showModal = !$scope.showModal;
   };
 
 
-
-$scope.showModal = false;
-$scope.modalToggle = function() {
-  console.log('hello');
-  $scope.showModal = !$scope.showModal;
-};
+  /* ---------- show/hide modal ---------- */
+  $scope.showModal = false;
+  $scope.modalToggle = function() {
+    // console.log('hello');
+    $scope.showModal = !$scope.showModal;
+  };
 
 
 });  // end peopleCtrl

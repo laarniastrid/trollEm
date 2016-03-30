@@ -17,7 +17,7 @@ app.use(express.static(__dirname + '/public'));  // use to connect with with fro
 
 /* ---------- connect to mongoose ---------- */
 mongoose.set('debug', true);
-mongoose.connect('mongodb://localhost/hauntEm', function(err) {  // hauntEm : name of database
+mongoose.connect('mongodb://localhost/trollEm', function(err) {  // hauntEm : name of database
   if (err) throw err;
 });
 mongoose.connection.once('open', function(err) {  // show mongoose is connected once open to mongodb
@@ -66,13 +66,14 @@ app.post('/api/login', testCtrl.login);
 // app.get('/api/people', testCtrl.getPeople);
 // app.get('/api/people/hauntings', testCtrl.getHauntings);
 
-/* ---------- login page endpoints ---------- */
+/* ---------- user endpoints ---------- */
 // app.post('/signup', userCtrl.create);
 // app.get('/login', userCtrl.read);
+app.get('/api/user', testCtrl.userData);
 
 /* ---------- people endpoints ---------- */
 app.post('/api/people', peopleCtrl.create);
-// app.get('/api/people', peopleCtrl.findAll);
+app.get('/api/people', peopleCtrl.findAll);
 app.get('/api/people/:id', peopleCtrl.findOne);
 app.put('/api/people/:id', peopleCtrl.update);
 app.delete('/api/people/:id', peopleCtrl.destroy);

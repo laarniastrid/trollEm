@@ -4,7 +4,7 @@ angular.module('myApp')
 
   $scope.login = function(user) {
     mainSvc.login(user).then(function(response) {
-    // console.log('testing');
+      // console.log(response);
       if (response.data.userFound) {
         // console.log('user is found');
         $location.path('people');

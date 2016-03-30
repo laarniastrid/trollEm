@@ -19,7 +19,7 @@ angular.module('myApp', ['ui.router'])
       controller: 'peopleCtrl',
       resolve: {
         userInfo: function(mainSvc) {
-          return mainSvc.getPeople();
+          return mainSvc.getUser();
         }
       }
     })
