@@ -8,8 +8,8 @@ angular.module('myApp')
   this.login = function(user) {  // login for user
     return $http.post('/api/login', user);
   };
-  this.getPeople = function() {  // gets people listed under user
-    return $http.get('/api/people')
+  this.getUser = function() {  // gets people listed under user
+    return $http.get('/api/userData')
     .then(function(response) {
       return response.data;
     });

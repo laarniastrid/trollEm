@@ -69,7 +69,7 @@ app.post('/api/login', testCtrl.login);
 /* ---------- user endpoints ---------- */
 // app.post('/signup', userCtrl.create);
 // app.get('/login', userCtrl.read);
-app.get('/api/user', testCtrl.userData);
+app.get('/api/userData', testCtrl.userData);
 
 /* ---------- people endpoints ---------- */
 app.post('/api/people', peopleCtrl.create);
