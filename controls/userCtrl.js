@@ -20,5 +20,13 @@ module.exports = {
     User.find(query, function(err, r) {
       return err ? res.status(500).send(err) : res.status(200).send(r);
     });
+  },
+  update: function(req, res, next) {
+    var query = {
+      _id: req.body._id
+    };
+    User.findByIdAndUpdate(query, req.body, function(err, r) {
+      return err ? res.status(500).send(err) : res.status(200).send(r);
+    });
   }
 };

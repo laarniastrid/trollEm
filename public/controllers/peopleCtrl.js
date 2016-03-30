@@ -19,8 +19,9 @@ angular.module('myApp')
     mainSvc.addNewPerson(input)
       .then(function(response) {
         $scope.currentUser.people.push(response.data._id);
+        mainSvc.updateUser($scope.currentUser);
         // console.log(response);
-        console.log(response.data._id);
+        // console.log(response.data._id);
         console.log($scope.currentUser);
       });
 

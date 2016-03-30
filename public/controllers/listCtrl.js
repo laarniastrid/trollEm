@@ -28,7 +28,7 @@ angular.module('myApp')
     // console.log(personId);
     // console.log(personId._id);
 
-    mainSvc.setNewItem(input);
+    mainSvc.adNewItem(input);
     // getPerson.actions.push(input);
 
     console.log(mainSvc.getPerson());

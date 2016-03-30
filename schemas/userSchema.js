@@ -7,7 +7,7 @@ var mongoose = require('mongoose'),
 //   return re.test(email);
 // }
 
-var haunterSchema = new Schema({
+var userSchema = new Schema({
   name: {
     type: String,
     required: true
@@ -15,6 +15,7 @@ var haunterSchema = new Schema({
   username: {
     type: String,
     required: true,
+    unique: true,
     min: [6, 'Username is too short'],
     max: [15, 'Username is too long']
   },
@@ -37,4 +38,4 @@ var haunterSchema = new Schema({
   }]
 });
 
-module.exports = mongoose.model('User', haunterSchema);
+module.exports = mongoose.model('User', userSchema);

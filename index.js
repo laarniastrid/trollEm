@@ -60,16 +60,17 @@ var userCtrl = require('./controls/userCtrl.js');
 var peopleCtrl = require('./controls/peopleCtrl.js');
 var actionCtrl = require('./controls/actionCtrl.js');
 
-/* ---------- test session for login ---------- */
+/* ---------- test for login ---------- */
 app.use(session({ secret: keys.mySecret }));
 app.post('/api/login', testCtrl.login);
+app.get('/api/userData', testCtrl.userData);
+app.put('/user', userCtrl.update);
 // app.get('/api/people', testCtrl.getPeople);
 // app.get('/api/people/hauntings', testCtrl.getHauntings);
 
 /* ---------- user endpoints ---------- */
-app.post('/signup', userCtrl.create);
+// app.post('/signup', userCtrl.create);
 // app.get('/login', userCtrl.read);
-app.get('/api/userData', testCtrl.userData);
 
 /* ---------- people endpoints ---------- */
 app.post('/api/people', peopleCtrl.create);
