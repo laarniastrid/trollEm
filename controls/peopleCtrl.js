@@ -1,5 +1,5 @@
-var People = require('../schemas/peopleSchema.js');
-var User = require('../schemas/userSchema.js');
+var People = require('../schemas/peopleSchema.js'),
+    User = require('../schemas/userSchema.js');
 
 module.exports = {
   create: function(req, res, next) {

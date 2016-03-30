@@ -1,4 +1,5 @@
-var Actions = require('../schemas/actionSchema.js');
+var Actions = require('../schemas/actionSchema.js'),
+    People = require('../schemas/peopleSchema.js');
 
 module.exports = {
   create: function(req, res, next) {
@@ -8,7 +9,8 @@ module.exports = {
     });
   },
   findAll: function(req, res, next) {
-    var query = {};
+    var query = req.body;
+    // var query = {};
     // Action.find({}, function(err, r) {
     //   return err ? res.status(500).send(err) : res.status(200).send(r);
     // });

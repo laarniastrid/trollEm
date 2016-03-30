@@ -17,8 +17,8 @@ angular.module('myApp')
   this.getPeople = function(input) {
     return $http.get('/api/people', input);
   };
-  // this.getHauntings = function(input) {  // not currently needed maybe?
-  //   // return $http.get('/api/people/hauntings')
+  // this.getActions = function(input) {  // not currently needed maybe?
+  //   // return $http.get('/api/people/actions')
   //   return $http.get('/api/haunt', input)
   //   .then(function(response) {
   //     return response.data;
@@ -40,7 +40,7 @@ angular.module('myApp')
     return person.name;
   };
   this.getPersonList = function() {  // get haunting list of selected person
-    return person.hauntings;
+    return person.actions;
   };
 
   this.adNewItem = function(input) {  // create new item under person
@@ -65,8 +65,8 @@ angular.module('myApp')
   //       return response.data;
   //     });
   //   },
-  //   getHauntings: function() {  // not currently needed maybe?
-  //     return $http.get('/api/people/hauntings')
+  //   getActions: function() {  // not currently needed maybe?
+  //     return $http.get('/api/people/actions')
   //     .then(function(response) {
   //       return response.data;
   //     });
@@ -81,7 +81,7 @@ angular.module('myApp')
   //     return person.name;
   //   },
   //   getPersonList: function() {  // get haunting list of selected person
-  //     return person.hauntings;
+  //     return person.actions;
   //   }
   // };
 

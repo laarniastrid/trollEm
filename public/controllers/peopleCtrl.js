@@ -6,7 +6,7 @@ angular.module('myApp')
   // $scope.people = userInfo.people;
   $scope.people = mainSvc.getPeople(userInfo.currentUser)
       .then(function(response) {
-        console.log(response.data);
+        // console.log(response.data);
         $scope.list = response.data.people;
       });
 
@@ -22,11 +22,11 @@ angular.module('myApp')
     $scope.showModal = !$scope.showModal;
   };
 
-
-  $scope.peopleList = function(person) {
+  $scope.actions = function(input) {
     // console.log('hello');
-    // console.log(person);
-    mainSvc.setPerson(person);
+    console.log(input);
+
+    mainSvc.setPerson(input);
     $location.path('list');
   };
 

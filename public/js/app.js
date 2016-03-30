@@ -29,7 +29,7 @@ angular.module('myApp', ['ui.router'])
       controller: 'listCtrl',
       resolve: {
         personInfo: function(mainSvc) {
-          return mainSvc.getHauntings();
+          // return mainSvc.getHauntings();
         }
       }
     });
