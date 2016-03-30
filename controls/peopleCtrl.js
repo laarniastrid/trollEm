@@ -1,4 +1,5 @@
 var People = require('../schemas/peopleSchema.js');
+var User = require('../schemas/userSchema.js');
 
 module.exports = {
   create: function(req, res, next) {
@@ -9,12 +10,13 @@ module.exports = {
     });
   },
   findAll: function(req, res, next) {
-    var query = {};
+    // var query = {};
+    var query = req.body;
     // Person.find(query, function(err, r) {
     //   return err ? res.status(500).send(err) : res.status(200).send(r);
     // });
 
-    People.find(query).populate('people').exec(function(err, r) {
+    User.findOne(req.body).populate('people').exec(function(err, r) {
       return err ? res.status(500).send(err) : res.status(200).send(r);
     });
   },

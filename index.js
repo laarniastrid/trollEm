@@ -64,12 +64,12 @@ var actionCtrl = require('./controls/actionCtrl.js');
 app.use(session({ secret: keys.mySecret }));
 app.post('/api/login', testCtrl.login);
 app.get('/api/userData', testCtrl.userData);
-app.put('/user', userCtrl.update);
+app.put('/api/user', userCtrl.update);
 // app.get('/api/people', testCtrl.getPeople);
 // app.get('/api/people/hauntings', testCtrl.getHauntings);
 
 /* ---------- user endpoints ---------- */
-// app.post('/signup', userCtrl.create);
+app.post('/api/signup', userCtrl.create);
 // app.get('/login', userCtrl.read);
 
 /* ---------- people endpoints ---------- */

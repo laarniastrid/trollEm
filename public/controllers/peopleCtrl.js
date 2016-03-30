@@ -3,7 +3,25 @@ angular.module('myApp')
 .controller('peopleCtrl', function($scope, $location, userInfo, mainSvc) {
 
   $scope.currentUser = userInfo.currentUser;
-  $scope.people = userInfo.people;
+  // $scope.people = userInfo.people;
+  $scope.people = mainSvc.getPeople(userInfo.currentUser)
+      .then(function(response) {
+        console.log(response.data);
+        $scope.list = response.data.people;
+      });
+
+  $scope.addPerson = function(input) {
+    // console.log(input);
+    mainSvc.addNewPerson(input)
+      .then(function(response) {
+        $scope.currentUser.people.push(response.data._id);
+        mainSvc.updateUser($scope.currentUser);
+        // console.log($scope.currentUser);
+
+      });
+    $scope.showModal = !$scope.showModal;
+  };
+
 
   $scope.peopleList = function(person) {
     // console.log('hello');
@@ -12,21 +30,6 @@ angular.module('myApp')
     $location.path('list');
   };
 
-
-  $scope.addPerson = function(input) {
-    console.log(input);
-
-    mainSvc.addNewPerson(input)
-      .then(function(response) {
-        $scope.currentUser.people.push(response.data._id);
-        mainSvc.updateUser($scope.currentUser);
-        // console.log(response);
-        // console.log(response.data._id);
-        console.log($scope.currentUser);
-      });
-
-    $scope.showModal = !$scope.showModal;
-  };
 
 
   /* ---------- show/hide modal ---------- */

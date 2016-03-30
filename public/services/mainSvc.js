@@ -14,6 +14,9 @@ angular.module('myApp')
       return response.data;
     });
   };
+  this.getPeople = function(input) {
+    return $http.get('/api/people', input);
+  };
   // this.getHauntings = function(input) {  // not currently needed maybe?
   //   // return $http.get('/api/people/hauntings')
   //   return $http.get('/api/haunt', input)
@@ -47,7 +50,7 @@ angular.module('myApp')
     return $http.post('/api/people', input);
   };
   this.updateUser = function(input) {
-    return $http.put('/user', input);
+    return $http.put('/api/user', input);
   };
 
 

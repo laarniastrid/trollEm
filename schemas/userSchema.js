@@ -34,7 +34,7 @@ var userSchema = new Schema({
   },
   people: [{
     type: Schema.Types.ObjectId,
-    ref: 'person'
+    ref: 'Person'
   }]
 });
 

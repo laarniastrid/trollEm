@@ -10,7 +10,9 @@
   </div>
 
   <div class="people">
-    <div ng-repeat="person in people">
+    <!-- <div ng-repeat="person in people"> -->
+    <div ng-repeat="person in list">
+      <!-- {{person._id}} -->
       <div class="aBox" ng-click="peopleList(this.person)" >{{person.name}} <br /> {{person.phone}} <br /> {{person.email}} <br /> {{person.reason}}</div>
     </div>
   </div>
