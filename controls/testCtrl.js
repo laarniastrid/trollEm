@@ -25,10 +25,10 @@ module.exports = {
       people: req.session.currentUser.people
     });
   },
-  getHauntings: function(req, res,next) {
-    res.send({
-      currentPerson: req.session.currentUser.people,
-      hauntings: req.session.currentUser.people.hauntings
-    });
-  }
+  // getHauntings: function(req, res,next) {
+  //   res.send({
+  //     currentPerson: req.session.currentUser.people,
+  //     hauntings: req.session.currentUser.people.hauntings
+  //   });
+  // }
 };

@@ -55,40 +55,35 @@ mongoose.connection.once('open', function(err) {  // show mongoose is connected 
 
 
 
+var testCtrl = require('./controls/testCtrl.js');
+var userCtrl = require('./controls/userCtrl.js');
+var peopleCtrl = require('./controls/peopleCtrl.js');
+var actionCtrl = require('./controls/actionCtrl.js');
 
 /* ---------- test session for login ---------- */
-var testCtrl = require('./controls/testCtrl.js');
 app.use(session({ secret: keys.mySecret }));
 app.post('/api/login', testCtrl.login);
-app.get('/api/people', testCtrl.getPeople);
-app.get('/api/people/hauntings', testCtrl.getHauntings);
-
-
-
+// app.get('/api/people', testCtrl.getPeople);
+// app.get('/api/people/hauntings', testCtrl.getHauntings);
 
 /* ---------- login page endpoints ---------- */
-var userCtrl = require('./controls/userCtrl.js');
 // app.post('/signup', userCtrl.create);
 // app.get('/login', userCtrl.read);
 
+/* ---------- people endpoints ---------- */
+app.post('/api/people', peopleCtrl.create);
+// app.get('/api/people', peopleCtrl.findAll);
+app.get('/api/people/:id', peopleCtrl.findOne);
+app.put('/api/people/:id', peopleCtrl.update);
+app.delete('/api/people/:id', peopleCtrl.destroy);
+
 
 /* ---------- haunt action endpoints ---------- */
-var actionCtrl = require('./controls/hauntCtrl.js');
-app.post('/api/haunt', actionCtrl.create);
-app.get('/api/haunt', actionCtrl.findAll);
-app.get('/api/haunt/:id', actionCtrl.findOne);
-app.put('/api/haunt/:id', actionCtrl.update);
-app.delete('/api/haunt/:id', actionCtrl.destroy);
-
-
-/* ---------- who to haunt endpoints ---------- */
-var personCtrl = require('./controls/personCtrl.js');
-app.post('/api/person', personCtrl.create);
-app.get('/api/person', personCtrl.findAll);
-app.get('/api/person/:id', personCtrl.findOne);
-app.put('/api/person/:id', personCtrl.update);
-app.delete('/api/person/:id', personCtrl.destroy);
-
+app.post('/api/actions', actionCtrl.create);
+app.get('/api/actions', actionCtrl.findAll);
+app.get('/api/actions/:id', actionCtrl.findOne);
+app.put('/api/actions/:id', actionCtrl.update);
+app.delete('/api/actions/:id', actionCtrl.destroy);
 
 
 

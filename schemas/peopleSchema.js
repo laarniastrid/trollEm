@@ -1,8 +1,8 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
-    haunt = require('./hauntAction.js');
+    haunt = require('./actionSchema.js');
 
-var whoToHauntSchema = new Schema({
+var people = new Schema({
   name: {
     type: String,
     required: true
@@ -19,13 +19,14 @@ var whoToHauntSchema = new Schema({
   reason: {
     type: String
   },
-  user: {
+  // user: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'User'
+  // },
+  actions: [{
     type: Schema.Types.ObjectId,
-    ref: 'User'
-  },
-  hauntings: [{
-    type: haunt
+    ref: 'Action'
   }]
 });
 
-module.exports = mongoose.model('Person', whoToHauntSchema);
+module.exports = mongoose.model('Person', people);

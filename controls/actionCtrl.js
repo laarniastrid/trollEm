@@ -1,21 +1,25 @@
-var Person = require('../schemas/whoToHaunt.js');
+var Actions = require('../schemas/actionSchema.js');
 
 module.exports = {
   create: function(req, res, next) {
-    var person = new Person(req.body);
-    person.save(function(err, r) {
+    var action = new Actions(req.body);
+    action.save(function(err, r) {
       return err ? res.status(500).send(err) : res.status(200).send(r);
     });
   },
   findAll: function(req, res, next) {
     var query = {};
-    Person.find(query, function(err, r) {
+    // Action.find({}, function(err, r) {
+    //   return err ? res.status(500).send(err) : res.status(200).send(r);
+    // });
+
+    Actions.find(query).populate('person').exec(function(err, r) {
       return err ? res.status(500).send(err) : res.status(200).send(r);
     });
   },
   findOne: function(req, res, next) {
     var query = req.params.id;
-    Person.findById(query, function(err, r) {
+    Actions.findById(query, function(err, r) {
       return err ? res.status(500).send(err) : res.status(200).send(r);
     });
   },
@@ -23,7 +27,7 @@ module.exports = {
     var query = {
       _id: req.params.id
     };
-    Person.update(query, req.body, function(err, r) {
+    Actions.update(query, req.body, function(err, r) {
       return err ? res.status(500).send(err) : res.status(200).send(r);
     });
   },
@@ -31,7 +35,7 @@ module.exports = {
     var query = {
       _id: req.params.id
     };
-    Person.remove(query, function(err, r) {
+    Actions.remove(query, function(err, r) {
       return err ? res.status(500).send(err) : res.status(200).send(r);
     });
   }

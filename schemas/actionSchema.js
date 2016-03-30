@@ -9,11 +9,11 @@ var hauntActionSchema = new Schema({
   time: {
     type: Date,
     default: new Date()
-  },
-  person: {
-    type: Schema.Types.ObjectId,
-    ref: 'Person'
   }
+  // person: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'Person'
+  // }
 });
 
 module.exports = mongoose.model('Action', hauntActionSchema);

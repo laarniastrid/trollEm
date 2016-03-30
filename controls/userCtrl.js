@@ -1,4 +1,4 @@
-var User = require('../schemas/haunter.js');
+var User = require('../schemas/userSchema.js');
 
 module.exports = {
   create: function(req, res, next) {
