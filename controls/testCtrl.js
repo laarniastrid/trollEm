@@ -21,6 +21,7 @@ module.exports = {
     // });
     res.send({
       currentUser: req.session.currentUser,
+      // peopleList: personArray
       people: req.session.currentUser.people
     });
   },

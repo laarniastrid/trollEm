@@ -19,10 +19,11 @@ angular.module('myApp')
     mainSvc.addNewPerson(input)
       .then(function(response) {
         $scope.currentUser.people.push(response.data._id);
-        console.log(response);
+        // console.log(response);
+        console.log(response.data._id);
+        console.log($scope.currentUser);
       });
 
-    console.log($scope.currentUser);
     $scope.showModal = !$scope.showModal;
   };
 

@@ -4,7 +4,8 @@ module.exports = {
   create: function(req, res, next) {
     var person = new People(req.body);
     person.save(function(err, r) {
-      return err ? res.status(500).send(err) : res.status(200).send(r);
+      // return err ? res.status(500).send(err) : res.status(200).send(r);
+      // return err ? res.status(500).send(err) : res.status(200).send(mongoose.Types.);
     });
   },
   findAll: function(req, res, next) {

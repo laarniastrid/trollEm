@@ -67,7 +67,7 @@ app.post('/api/login', testCtrl.login);
 // app.get('/api/people/hauntings', testCtrl.getHauntings);
 
 /* ---------- user endpoints ---------- */
-// app.post('/signup', userCtrl.create);
+app.post('/signup', userCtrl.create);
 // app.get('/login', userCtrl.read);
 app.get('/api/userData', testCtrl.userData);
 
