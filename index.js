@@ -64,15 +64,17 @@ var testCtrl = require('./controls/testCtrl.js'),
 app.use(session({ secret: keys.mySecret }));
 app.post('/api/login', testCtrl.login);
 app.get('/api/userData', testCtrl.userData);
-app.put('/api/user', userCtrl.update);
+// app.put('/api/user', userCtrl.update);
 // app.get('/api/people', testCtrl.getPeople);
 // app.get('/api/people/hauntings', testCtrl.getHauntings);
 
+
 //********** test **********//
-app.post('/api/test/:id', userCtrl.update);
+
 
 /* ---------- user endpoints ---------- */
 app.post('/api/signup', userCtrl.create);
+app.post('/api/user/:id', userCtrl.update); // update user info (people list)
 // app.get('/login', userCtrl.read);
 
 /* ---------- people endpoints ---------- */

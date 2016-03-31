@@ -44,17 +44,17 @@ angular.module('myApp')
     return $http.post('/api/actions', input);
   };
 
-  this.updateUser = function(input) {
-    return $http.put('/api/user', input);
-  };
+  // this.updateUser = function(input) {
+  //   return $http.put('/api/user', input);
+  // };
   this.updatePerson = function(input) {
     return $http.put('/api/actions', input);
   };
 
  // test update
-  this.test = function(user, input) {
-    console.log('gets to mainsvc');  // works to here //
-    return $http.post('/api/test/' + user, input);
+  this.updateUser = function(user, input) {
+    // console.log('gets to mainsvc');  // works to here //
+    return $http.post('/api/user/' + user, input);
   };
 
 });  // end mainSvc

@@ -28,7 +28,7 @@ angular.module('myApp')
         //   tempPersonId: response.data._id
         // }
         // mainSvc.test($scope.currentUser._id, response.data._id);
-        mainSvc.test($scope.currentUser._id, temp);
+        mainSvc.updateUser($scope.currentUser._id, temp);
         $state.reload();
       });
     $scope.showModal = !$scope.showModal;
