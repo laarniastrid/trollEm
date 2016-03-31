@@ -55,10 +55,10 @@ mongoose.connection.once('open', function(err) {  // show mongoose is connected 
 
 
 
-var testCtrl = require('./controls/testCtrl.js');
-var userCtrl = require('./controls/userCtrl.js');
-var peopleCtrl = require('./controls/peopleCtrl.js');
-var actionCtrl = require('./controls/actionCtrl.js');
+var testCtrl = require('./controls/testCtrl.js'),
+    userCtrl = require('./controls/userCtrl.js'),
+    peopleCtrl = require('./controls/peopleCtrl.js'),
+    actionCtrl = require('./controls/actionCtrl.js');
 
 /* ---------- test for login ---------- */
 app.use(session({ secret: keys.mySecret }));
@@ -67,6 +67,9 @@ app.get('/api/userData', testCtrl.userData);
 app.put('/api/user', userCtrl.update);
 // app.get('/api/people', testCtrl.getPeople);
 // app.get('/api/people/hauntings', testCtrl.getHauntings);
+
+//********** test **********//
+app.post('/api/test/:id', userCtrl.update);
 
 /* ---------- user endpoints ---------- */
 app.post('/api/signup', userCtrl.create);

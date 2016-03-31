@@ -1,6 +1,6 @@
 angular.module('myApp')
 
-.controller('peopleCtrl', function($scope, $location, userInfo, mainSvc) {
+.controller('peopleCtrl', function($scope, $location, $state, userInfo, mainSvc) {
 
   $scope.currentUser = userInfo.currentUser;
   // $scope.people = userInfo.people;
@@ -14,18 +14,29 @@ angular.module('myApp')
     // console.log(input);
     mainSvc.addNewPerson(input)
       .then(function(response) {
-        $scope.currentUser.people.push(response.data._id);
-        mainSvc.updateUser($scope.currentUser);
+        // $scope.currentUser.people.push(response.data._id);
+        // mainSvc.updateUser($scope.currentUser);
         // console.log($scope.currentUser);
 
-        $scope.reloadPage();
+        // $scope.reloadPage();
+        // console.log('here');
+        var temp = {
+          people: response.data._id
+        };
+        // var temp = {
+        //   tempUserId: $scope.currentUser._id,
+        //   tempPersonId: response.data._id
+        // }
+        // mainSvc.test($scope.currentUser._id, response.data._id);
+        mainSvc.test($scope.currentUser._id, temp);
+        $state.reload();
       });
     $scope.showModal = !$scope.showModal;
   };
 
-  $scope.reloadPage = setTimeout(function () {
-    $location.path('people');
-  }, 10);
+  // $scope.reloadPage = setTimeout(function () {
+  //   $location.path('people');
+  // }, 10);
 
   $scope.actions = function(input) {
     // console.log('hello');

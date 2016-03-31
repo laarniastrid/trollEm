@@ -51,51 +51,10 @@ angular.module('myApp')
     return $http.put('/api/actions', input);
   };
 
+ // test update
+  this.test = function(user, input) {
+    console.log('gets to mainsvc');  // works to here //
+    return $http.post('/api/test/' + user, input);
+  };
 
 });  // end mainSvc
-
-/* ---------- garbage ---------- */
-// this.getActions = function(input) {  // not currently needed maybe?
-//   // return $http.get('/api/people/actions')
-//   return $http.get('/api/haunt', input)
-//   .then(function(response) {
-//     return response.data;
-//   });
-// };
-// this.setUser = function(input) {  // set user
-//   user = input;
-// };
-// this.getUser = function() {
-//   return user;
-// };
-
-/* ---------- prev stuff ---------- */
-// return {
-//   login: function(user) {  // login for user
-//     return $http.post('/api/login', user);
-//   },
-//   getPeople: function() {  // gets people listed under user
-//     return $http.get('/api/people')
-//     .then(function(response) {
-//       return response.data;
-//     });
-//   },
-//   getActions: function() {  // not currently needed maybe?
-//     return $http.get('/api/people/actions')
-//     .then(function(response) {
-//       return response.data;
-//     });
-//   },
-//   setPerson: function(input) {  // set the correct person being clicked on
-//     person = input;
-//   },
-//   getPerson: function() {
-//     return person;
-//   },
-//   getPersonName: function() {  // get person name
-//     return person.name;
-//   },
-//   getPersonList: function() {  // get haunting list of selected person
-//     return person.actions;
-//   }
-// };
