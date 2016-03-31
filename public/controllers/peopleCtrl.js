@@ -18,9 +18,14 @@ angular.module('myApp')
         mainSvc.updateUser($scope.currentUser);
         // console.log($scope.currentUser);
 
+        $scope.reloadPage();
       });
     $scope.showModal = !$scope.showModal;
   };
+
+  $scope.reloadPage = setTimeout(function () {
+    $location.path('people');
+  }, 10);
 
   $scope.actions = function(input) {
     // console.log('hello');

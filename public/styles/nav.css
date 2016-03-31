@@ -4,7 +4,8 @@
   height: 60px;
   font-size: 30px;
   color: #111111;
-  background: linear-gradient(#005151, rgba(255,0,0,0));
+  background: linear-gradient(#008080, rgba(255,0,0,0));
+  /*background: #005151;*/
   position: fixed;
   top: 0;
 }
