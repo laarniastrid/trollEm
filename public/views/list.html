@@ -13,8 +13,9 @@
   <!-- {{listTest}} -->
 
   <div class="people">
-    <div ng-repeat="item in list">
-      <div class="item" ng-click="" >{{item.message}} <br />{{item.time}}</div>
+    <div ng-repeat="action in actions">
+      {{actions}}
+      <!-- <div class="item" ng-click="" >{{item.message}} <br />{{item.time}}</div> -->
     </div>
   </div>
 
@@ -28,7 +29,7 @@
       <!-- <div>modal heading</div> -->
       <!-- <div>modal stuff</div> -->
       <h2>Send new message!</h2>
-      <form ng-submit="sendMessage(message)" class="modal-form">
+      <form ng-submit="addAction(message)" class="modal-form">
         <textarea placeholder="message" ng-model="message" required></textarea>
         <!-- <input type="date" value="new Data()" /> -->
         <button type="submit">Send Message</button>

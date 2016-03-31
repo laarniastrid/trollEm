@@ -26,6 +26,8 @@ module.exports = {
     });
   },
   update: function(req, res, next) {
+    // console.log(req.body);
+    // console.log(req.body._id);
     var query = {
       _id: req.params.id
     };

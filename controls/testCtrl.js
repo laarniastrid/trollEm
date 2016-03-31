@@ -20,7 +20,6 @@ module.exports = {
     });
     // if (userFound) res.send({ userFound: true });
     // else res.send({ userFound: false });
-
     // res.send(req.query.password); // testing
   },
   userData: function(req, res, next) {
