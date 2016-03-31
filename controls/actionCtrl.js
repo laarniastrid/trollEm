@@ -10,11 +10,6 @@ module.exports = {
   },
   findAll: function(req, res, next) {
     var query = req.body;
-    // var query = {};
-    // Action.find({}, function(err, r) {
-    //   return err ? res.status(500).send(err) : res.status(200).send(r);
-    // });
-
     Actions.find(query).populate('actions').exec(function(err, r) {
       return err ? res.status(500).send(err) : res.status(200).send(r);
     });
@@ -26,8 +21,6 @@ module.exports = {
     });
   },
   update: function(req, res, next) {
-    // console.log(req.body);
-    // console.log(req.body._id);
     var query = {
       _id: req.params.id
     };

@@ -2,11 +2,6 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
     person = require('./peopleSchema.js');
 
-// var validateEmail = function(email) {
-//   var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-//   return re.test(email);
-// }
-
 var userSchema = new Schema({
   name: {
     type: String,

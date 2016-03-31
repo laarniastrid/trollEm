@@ -2,9 +2,12 @@ angular.module('myApp')
 
 .service('mainSvc', function($http) {
 
+  // ---------- vars ----------
   this.person = {};
   this.user = {};
 
+
+  // ---------- getters  ----------
   this.login = function(user) {  // login for user
     return $http.post('/api/login', user);
   };
@@ -20,20 +23,18 @@ angular.module('myApp')
   this.getActions = function(input) {
     return $http.get('/api/actions', input);
   };
-
-  this.setPerson = function(input) {  // set the correct person being clicked on
-    person = input;
-  };
   this.getPerson = function() {
     return person;
   };
-  // this.getPersonName = function() {  // get person name
-  //   return person.name;
-  // };
   this.getPersonList = function() {  // get haunting list of selected person
     return person.actions;
   };
 
+
+  // ---------- setters ----------
+  this.setPerson = function(input) {  // set the correct person being clicked on
+    person = input;
+  };
   this.adNewItem = function(input) {  // create new item under person
     return $http.post('/api/haunt', input);
   };
@@ -44,16 +45,16 @@ angular.module('myApp')
     return $http.post('/api/actions', input);
   };
 
-  // this.updateUser = function(input) {
-  //   return $http.put('/api/user', input);
+  // this.getPersonName = function() {  // get person name
+  //   return person.name;
   // };
+
+
+  // ---------- updates (setters/getters?) ----------
   this.updatePerson = function(input) {
     return $http.put('/api/actions', input);
   };
-
- // test update
   this.updateUser = function(user, input) {
-    // console.log('gets to mainsvc');  // works to here //
     return $http.post('/api/user/' + user, input);
   };
 

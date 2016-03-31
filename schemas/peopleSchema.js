@@ -19,10 +19,6 @@ var people = new Schema({
   reason: {
     type: String
   },
-  // user: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: 'User'
-  // },
   actions: [{
     type: Schema.Types.ObjectId,
     ref: 'Action'
