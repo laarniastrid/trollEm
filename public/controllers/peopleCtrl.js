@@ -20,7 +20,8 @@ angular.module('myApp')
         mainSvc.updateUser($scope.currentUser._id, temp);
         $state.reload();
       });
-    $scope.showModal = !$scope.showModal;
+    // $scope.showModal = !$scope.showModal;
+    $scope.modalToggle();
   };
 
   $scope.actions = function(input) {
@@ -29,6 +30,7 @@ angular.module('myApp')
     mainSvc.setPerson(input);
     $location.path('list');
   };
+
 
   /* ---------- show/hide modal ---------- */
   $scope.showModal = false;

@@ -75,6 +75,7 @@ app.get('/api/userData', testCtrl.userData);
 /* ---------- user endpoints ---------- */
 app.post('/api/signup', userCtrl.create);
 app.post('/api/user/:id', userCtrl.update); // update user info (people list)
+app.post('/api/person/:id', peopleCtrl.update);
 // app.get('/login', userCtrl.read);
 
 /* ---------- people endpoints ---------- */

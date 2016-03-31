@@ -1,47 +1,41 @@
 angular.module('myApp')
 
-.controller('listCtrl', function($scope, personInfo, mainSvc) {
-
-  // $scope.currentPerson = personInfo.currentPerson;
-  // $scope.hauntings = personInfo.hauntings;
+.controller('listCtrl', function($scope, $state , personInfo, mainSvc) {
 
   $scope.currentPerson = mainSvc.getPerson();
-  // $scope.personName = mainSvc.getPersonName();
   $scope.personName = $scope.currentPerson.name;
-  // $scope.list = mainSvc.getPersonList(person._id);
   $scope.actions = mainSvc.getActions($scope.currentPerson)
     .then(function(response) {
-      // console.log(response);
       console.log(response.data);
+      $scope.list = response.data.actions;
     });
 
   $scope.addAction = function(input) {
     console.log(input);
+    console.log($scope.currentPerson._id);
     // var getPerson = mainSvc.getPerson();
 
-    var temp = {
+    var tempAction = {
       message: input,
       time: new Date(),
       person: $scope.currentPerson._id
     };
 
-    mainSvc.addNewAction(temp)
+    mainSvc.addNewAction(tempAction)
       .then(function(response) {
-        console.log(response.data._id);
-        $scope.currentPerson.actions.push(response.data._id);
-        mainSvc.updatePerson($scope.currentPerson);
-        console.log($scope.currentPerson);
+        // console.log(response.data);
+        var temp = {
+          action: response.data._id
+        };
+        // console.log(response.data._id);
+        // $scope.currentPerson.actions.push(response.data._id);
+        mainSvc.updatePerson($scope.currentPerson._id, temp);
+        $state.reload();
+        // console.log($scope.currentPerson);
       });
-
-    // console.log(personId);
-    // console.log(personId._id);
-    // mainSvc.adNewItem(temp);
-    // getPerson.actions.push(input);
-    // console.log(mainSvc.getPerson());
-    message = '';
+    // message = '';
     $scope.modalToggle();
   };
-
 
 
   /* ---------- show/hide modal ---------- */

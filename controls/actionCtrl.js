@@ -8,9 +8,16 @@ module.exports = {
       return err ? res.status(500).send(err) : res.status(200).send(r);
     });
   },
+  // findAll: function(req, res, next) {
+  //   var query = req.body;
+  //   Actions.find(query).populate('actions').exec(function(err, r) {
+  //     return err ? res.status(500).send(err) : res.status(200).send(r);
+  //   });
+  // },
   findAll: function(req, res, next) {
     var query = req.body;
-    Actions.find(query).populate('actions').exec(function(err, r) {
+
+    People.findOne(req.body).populate('actions').exec(function(err, r) {
       return err ? res.status(500).send(err) : res.status(200).send(r);
     });
   },

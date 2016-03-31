@@ -26,12 +26,27 @@ module.exports = {
       return err ? res.status(500).send(err) : res.status(200).send(r);
     });
   },
+  // update: function(req, res, next) {
+  //   var query = {
+  //     _id: req.params.id
+  //   };
+  //   People.update(query, req.body, function(err, r) {
+  //     return err ? res.status(500).send(err) : res.status(200).send(r);
+  //   });
+  // },
   update: function(req, res, next) {
-    var query = {
-      _id: req.params.id
-    };
-    People.update(query, req.body, function(err, r) {
-      return err ? res.status(500).send(err) : res.status(200).send(r);
+    console.log('here');
+    People.findById(req.params.id, function(err, r) {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        // console.log(r.actions); // before push
+        r.actions.push(req.body.action);
+        // console.log(r.actions); // after push
+        r.save(function(err, r) {
+          return err ? res.status(500).send(err) : res.status(200).send(r);
+        });
+      }
     });
   },
   destroy: function(req, res, next) {
