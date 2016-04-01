@@ -4,12 +4,10 @@ var express = require('express'),
     mongoose = require('mongoose'),
     port = 9000,
     app = express(),
-    // passport = require('passport'),
-    // LocalStrategy = require('passport-local').Strategy,
     keys = require('./keys.js'),
-    // cookieParser = require('cookie-parser'),
     session = require('express-session');
-    // router = express.Router();
+    // nodemailer = require('nodemailer');
+    // transporter = nodemailer.createTransport('smtps://user%40-gmail.com:pass@smtp.gmail.com');
 
 /* ---------- app.use to do stuff with app ---------- */
 app.use(bodyParser.json());
@@ -91,6 +89,15 @@ app.get('/api/actions', actionCtrl.findAll);
 app.get('/api/actions/:id', actionCtrl.findOne);
 app.put('/api/actions/:id', actionCtrl.update);
 app.delete('/api/actions/:id', actionCtrl.destroy);
+
+
+
+
+/* ---------- nodemailer stuff here ---------- */
+var mailCtrl = require('./controls/mailCtrl.js');
+app.post('/api/messages', mailCtrl.create);
+
+
 
 
 

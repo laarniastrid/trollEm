@@ -2,7 +2,7 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
     haunt = require('./actionSchema.js');
 
-var people = new Schema({
+var peopleSchema = new Schema({
   name: {
     type: String,
     required: true
@@ -25,4 +25,4 @@ var people = new Schema({
   }]
 });
 
-module.exports = mongoose.model('Person', people);
+module.exports = mongoose.model('Person', peopleSchema);
