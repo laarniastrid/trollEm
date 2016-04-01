@@ -3,8 +3,8 @@ angular.module('myApp')
 .service('mainSvc', function($http) {
 
   // ---------- vars ----------
-  this.person = {};
-  this.user = {};
+  var person = {};
+  var username = {};
 
 
   // ---------- setters ----------
@@ -20,7 +20,9 @@ angular.module('myApp')
   this.addNewAction = function(input) {
     return $http.post('/api/actions', input);
   };
-
+  this.setUsername = function(input) {
+    username = input;
+  };
 
   // this.getPersonName = function() {  // get person name
   //   return person.name;
@@ -50,6 +52,9 @@ angular.module('myApp')
   this.getPersonList = function() {  // get haunting list of selected person
     return person.actions;
   };
+  this.getUsername = function() {
+    return username;
+  };
 
 
   // ---------- updates (setters/getters?) ----------
@@ -59,5 +64,8 @@ angular.module('myApp')
   this.updatePerson = function(person, input) {
     return $http.post('/api/person/' + person, input);
   };
+
+
+
 
 });  // end mainSvc

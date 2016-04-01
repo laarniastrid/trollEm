@@ -46,6 +46,18 @@ angular.module('myApp')
   };
 
   /* ---------- testing mailer ---------- */
+  // $scope.sendMessage = function(to, text) {
+  //   console.log('placeholder');
+  //   $scope.username = mainSvc.getUsername();
+  //
+  //   mainSvc.setMailOptions(to, text, $scope.username); // set mail options
+  //   $scope.mailOptions = mainSvc.getMailOptions();
+  //   mainSvc.sendMail($scope.mailOptions)
+  //   .then(function(response) {
+  //     console.log(response);
+  //   });
+  //
+  // };
 
 
 });  // end listCtrl

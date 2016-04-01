@@ -21,16 +21,17 @@
 
 </div>
 
-<div ng-controller="mailCtrl">
-  <div class="modal" ng-if="showModal">
-    <div class="modal-overlay" ng-click="modalToggle()"></div>
-    <div class="modal-content">
-      <i class="fa fa-times" ng-click="modalToggle()"></i>
-      <div class="modal-content-wrapper">
-        <!-- <div>modal heading</div> -->
-        <!-- <div>modal stuff</div> -->
-        <h2>Send new message!</h2>
-        <form ng-submit="addAction(message)" class="modal-form">
+<div class="modal" ng-if="showModal">
+  <div class="modal-overlay" ng-click="modalToggle()"></div>
+  <div class="modal-content">
+    <i class="fa fa-times" ng-click="modalToggle()"></i>
+    <div class="modal-content-wrapper">
+      <!-- <div>modal heading</div> -->
+      <!-- <div>modal stuff</div> -->
+      <h2>Send new message!</h2>
+      <div ng-controller="mailCtrl">
+        <form ng-submit="addAction(message); sendMessage(message)" class="modal-form">
+        <!-- <form ng-submit="sendMessage(message)" class="modal-form"> -->
           <textarea placeholder="message" ng-model="message" required></textarea>
           <!-- <input type="date" value="new Data()" /> -->
           <button type="submit">Send Message</button>

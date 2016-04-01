@@ -3,6 +3,7 @@ angular.module('myApp')
 .controller('peopleCtrl', function($scope, $location, $state, userInfo, mainSvc) {
 
   $scope.currentUser = userInfo.currentUser;
+  // $scope.setUserName = $scope.currentUser.username;
   // $scope.people = userInfo.people;
   $scope.people = mainSvc.getPeople(userInfo.currentUser)
     .then(function(response) {
@@ -28,6 +29,7 @@ angular.module('myApp')
     // console.log('hello');
     // console.log(input);
     mainSvc.setPerson(input);
+    mainSvc.setUsername($scope.currentUser.username);
     $location.path('list');
   };
 

@@ -2,21 +2,21 @@ angular.module('myApp')
 
 .controller('mailCtrl', function($scope, mainSvc, mailSvc) {
 
-  $scope.mail = function(to, text) {
-    
+  $scope.sendMessage = function(text) {
+    $scope.username = mainSvc.getUsername();
 
-    mailSvc.setMailOptions(to, text); // set mail options
+    $scope.thisTest = mainSvc.getUser()
+    .then(function(response) {
+      $scope.mailTo = response.currentUser.email;
 
+      mailSvc.setMailOptions($scope.mailTo, text, $scope.username); // set mail options
+      $scope.mailOptions = mailSvc.getMailOptions();
+      mailSvc.sendMail($scope.mailOptions)
+      .then(function(response) {
+        console.log(response);
+      });
+
+    });
   };
-
-  // $scope.sendMessage
-
-  /*
-  this.setMailOptions = function(to, text, html) {
-    this.to = to;
-    this.text = text;
-    this.html = '<p>' + html + '</p>';
-  };
-  */
 
 });  // end mailCtr

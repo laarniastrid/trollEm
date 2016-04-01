@@ -3,27 +3,24 @@ angular.module('myApp')
 .service('mailSvc', function($http) {
 
   /* ---------- mailSvc vars ---------- */
-  this.from = 'epictrollem@gmail.com';
-  this.subject = 'You\'ve been trolled!!';
-
+  var email = 'epictrollem@gmail.com';
+  var subject = 'You\'ve been trolled!!';
+  var temp = {};
 
   /* ---------- setters ---------- */
   this.setMailOptions = function(to, text, username) {
-    this.to = to;
-    this.text = text;
-    this.html = '';
+    temp.from = email;
+    temp.to = to;
+    temp.subject = subject;
+    temp.text = text;
+    temp.html = '<h2>Surprise!!</h2><p><strong>' + username + '</strong> has trolled you:</p><p>' + temp.text + '</p>';
   };
 
 
   /* ---------- getters ---------- */
   this.getMailOptions = function() { // mail object to send to post
-    return {
-      from: this.from,
-      to: this.to,
-      subject: this.subject,
-      text: this.text,
-      html: this.html
-    };
+    // console.log(temp);
+    return temp;
   };
 
 
