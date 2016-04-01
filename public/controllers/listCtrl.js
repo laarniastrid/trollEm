@@ -45,4 +45,7 @@ angular.module('myApp')
     $scope.showModal = !$scope.showModal;
   };
 
+  /* ---------- testing mailer ---------- */
+
+
 });  // end listCtrl

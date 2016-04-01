@@ -54,7 +54,6 @@ mongoose.connection.once('open', function(err) {  // show mongoose is connected 
 
 
 
-
 var testCtrl = require('./controls/testCtrl.js'),
     userCtrl = require('./controls/userCtrl.js'),
     peopleCtrl = require('./controls/peopleCtrl.js'),
