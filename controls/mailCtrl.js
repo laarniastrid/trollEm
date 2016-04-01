@@ -3,16 +3,6 @@ var Mail = require('../schemas/mailSchema.js'),
     nodemailer = require('nodemailer');
     transporter = nodemailer.createTransport(keys.trollKey);
 
-// var transporter = nodemailer.createTransport("SMTP", {
-//   host: 'smtp.gmail.com',
-//   secureConnection: true,
-//   port: 465,
-//   auth: {
-//     user: 'epictrollem@gmail.com',
-//     pass: 'epictroll'
-//   }
-// });
-
 
 module.exports = {
 

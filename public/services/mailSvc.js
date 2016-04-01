@@ -8,10 +8,10 @@ angular.module('myApp')
 
 
   /* ---------- setters ---------- */
-  this.setMailOptions = function(to, text, html) {
+  this.setMailOptions = function(to, text, username) {
     this.to = to;
     this.text = text;
-    this.html = '<p>' + html + '</p>';
+    this.html = '';
   };
 
 
@@ -29,7 +29,7 @@ angular.module('myApp')
 
   /* ---------- constructors ---------- */
   this.sendMail = function(input) {
-    return $http.
+    return $http.post('/api/messages', input);
   };
 
 

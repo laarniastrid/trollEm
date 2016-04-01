@@ -21,14 +21,15 @@ angular.module('myApp')
     return $http.post('/api/actions', input);
   };
 
+
   // this.getPersonName = function() {  // get person name
   //   return person.name;
   // };
 
 
   // ---------- getters  ----------
-  this.login = function(user) {  // login for user
-    return $http.post('/api/login', user);
+  this.login = function(input) {  // login for user
+    return $http.post('/api/login', input);
   };
   this.getUser = function() {  // gets people listed under user
     return $http.get('/api/userData')

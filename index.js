@@ -91,13 +91,9 @@ app.put('/api/actions/:id', actionCtrl.update);
 app.delete('/api/actions/:id', actionCtrl.destroy);
 
 
-
-
 /* ---------- nodemailer stuff here ---------- */
 var mailCtrl = require('./controls/mailCtrl.js');
 app.post('/api/messages', mailCtrl.create);
-
-
 
 
 
