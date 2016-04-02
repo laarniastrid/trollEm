@@ -6,7 +6,7 @@ angular.module('myApp')
   $scope.personName = $scope.currentPerson.name;
   $scope.actions = mainSvc.getActions($scope.currentPerson)
     .then(function(response) {
-      console.log(response.data); // weird things happening?
+      // console.log(response.data); // weird things happening?
       $scope.list = response.data.actions;
     });
 

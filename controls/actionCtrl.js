@@ -16,7 +16,7 @@ module.exports = {
   // },
   findAll: function(req, res, next) {
     var query = req.params.id;
-    console.log('what\s going on?!', req.params.id); // weird things happening???
+    // console.log('what\s going on?!', req.params.id); // weird things happening???
 
     People.findById(query).populate('actions').exec(function(err, r) {
       return err ? res.status(500).send(err) : res.status(200).send(r);
