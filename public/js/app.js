@@ -24,12 +24,17 @@ angular.module('myApp', ['ui.router'])
       }
     })
     .state('list', {
-      url: '/list',
+      url: '/list/:id',
       templateUrl: './views/list.html',
       controller: 'listCtrl',
       resolve: {
         personInfo: function(mainSvc) {
           return mainSvc.getPerson();
+        },
+        personActions: function(mainSvc, $stateParams) {
+          if ($stateParams.id) {
+            return mainSvc.getActions($stateParams.id);
+          }
         }
       }
     });

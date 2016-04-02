@@ -30,8 +30,8 @@ angular.module('myApp')
     // console.log(input);  // weird things happening???
     mainSvc.setPerson(input);
     mainSvc.setUsername($scope.currentUser.username);
-    $location.path('list');
-    // $state.go('/list')
+    // $location.path('list');
+    $state.go('list', {id: input._id});
   };
 
 

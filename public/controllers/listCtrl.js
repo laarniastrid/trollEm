@@ -1,14 +1,26 @@
 angular.module('myApp')
 
-.controller('listCtrl', function($scope, $state, personInfo, mainSvc) {
+.controller('listCtrl', function($scope, $state, $stateParams, personActions, personInfo, mainSvc) {
 
-  $scope.currentPerson = personInfo;
-  $scope.personName = $scope.currentPerson.name;
-  $scope.actions = mainSvc.getActions($scope.currentPerson)
-    .then(function(response) {
-      // console.log(response.data); // weird things happening?
-      $scope.list = response.data.actions;
-    });
+  // console.log(personActions);
+  var test = mainSvc.getActions($stateParams.id);
+  // console.log(test);
+
+  $scope.currentPerson = personActions.data;
+  // $scope.personName = $scope.currentPerson.name;
+  $scope.personName = personActions.data.name;
+  // $scope.actions = mainSvc.getActions($scope.currentPerson._id)
+  //   .then(function(response) {
+  //     // console.log(response.data); // weird things happening?
+  //     $scope.list = response.data.actions;
+  //   });
+  // $scope.list = personActions.data.actions;
+  $scope.actions = mainSvc.getActions(personActions.data._id)
+  .then(function(response) {
+    // console.log(response.data.actions);
+    $scope.list = response.data.actions;
+  });
+
 
   $scope.addAction = function(input) {
     // console.log(input);

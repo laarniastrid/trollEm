@@ -44,7 +44,8 @@ angular.module('myApp')
   };
   this.getActions = function(input) {
     // console.log(input); // weird things!!!
-    return $http.get('/api/actions/' + input._id);
+    // return $http.get('/api/actions/' + input._id);
+    return $http.get('/api/actions/' + input);
   };
   this.getPerson = function() {
     return person;
