@@ -6,4 +6,9 @@ $(document).ready(function() {
   //   console.log('hello');
   // });
 
+  // $('.item').on('click', function() {
+  //   console.log('hover');
+  // });
+
+
 });

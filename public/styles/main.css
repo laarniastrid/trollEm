@@ -162,7 +162,7 @@ textarea {
 
 }
 
-.people {
+.people, .list {
   font-size: 25px;
   margin-bottom: 25px;
   display: flex;
@@ -170,7 +170,7 @@ textarea {
   justify-content: center;
 }
 
-.people div div {
+.people div div, .list div div {
   /*width: auto;*/
   width: 450px;
   height: auto;
