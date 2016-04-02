@@ -15,7 +15,7 @@
       <!-- {{person._id}} -->
       <section class="aBox" ng-click="actions(this.person)" >
         <div>
-          {{person.name}} <br /> {{person.phone}} <br /> {{person.email}} <br /> {{person.reason}}
+          Name: {{person.name}} <br /> Phone: {{person.phone}} <br /> Email: {{person.email}} <br /> Reason to troll: {{person.reason}}
         </div>
       </section>
     </div>
@@ -33,7 +33,7 @@
       <h2>Add new person!<h2>
         <form ng-submit="addPerson(person)" class="modal-form">
           <input name="name" type="text" placeholder="name" ng-model="person.name" required />
-          <input name="phone" type="phone" placeholder="phone number" ng-model="person.phone" />
+          <input name="phone" type="phone" placeholder="phone number (optional)" ng-model="person.phone" />
           <input name="email" type="email" placeholder="email" ng-model="person.email" required />
           <textarea placeholder="reasons to add to troll list" ng-model="person.reason" required></textarea>
           <!-- <input type="date" value="new Data()" /> -->

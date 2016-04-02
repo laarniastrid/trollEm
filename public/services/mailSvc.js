@@ -13,7 +13,8 @@ angular.module('myApp')
     temp.to = to;
     temp.subject = subject;
     temp.text = text;
-    temp.html = '<h2>Surprise!!</h2><p><strong>' + username + '</strong> has trolled you:</p><p>' + temp.text + '</p>';
+    // temp.html = '<h1>Surprise!!</h1><p><style="font-size: 25px">' + username + '</style> has trolled you with the message:</p><p>' + temp.text + '</p>';
+    temp.html = '<h1>Surprise!! ' + temp.text + '</h1><p>~ from the troll: <strong>' + username + '</strong></p>';
   };
 
 

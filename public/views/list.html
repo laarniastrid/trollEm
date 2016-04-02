@@ -14,8 +14,8 @@
 
   <div class="people">
     <div ng-repeat="action in list">
-      {{actions}}
-      <!-- <div class="item" ng-click="" >{{item.message}} <br />{{item.time}}</div> -->
+      <!-- {{list}} -->
+      <div class="item" ng-click="" >Message: {{action.message}} <br />Time sent: {{action.time | date: short}}</div>
     </div>
   </div>
 

@@ -6,13 +6,13 @@ angular.module('myApp')
   $scope.personName = $scope.currentPerson.name;
   $scope.actions = mainSvc.getActions($scope.currentPerson)
     .then(function(response) {
-      console.log(response.data);
+      // console.log(response.data);
       $scope.list = response.data.actions;
     });
 
   $scope.addAction = function(input) {
-    console.log(input);
-    console.log($scope.currentPerson._id);
+    // console.log(input);
+    // console.log($scope.currentPerson._id);
     // var getPerson = mainSvc.getPerson();
 
     var tempAction = {

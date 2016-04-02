@@ -16,7 +16,7 @@ module.exports = {
             res.status(500).send(err);
             // console.log(err);
           } else {
-            res.status(200).send("message was sent successfully");
+            res.status(200).send("message sent");
             // console.log(rSend);
           }
         });
