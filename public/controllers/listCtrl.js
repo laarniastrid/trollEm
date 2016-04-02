@@ -1,8 +1,8 @@
 angular.module('myApp')
 
-.controller('listCtrl', function($scope, $state , personInfo, mainSvc) {
+.controller('listCtrl', function($scope, $state, personInfo, mainSvc) {
 
-  $scope.currentPerson = mainSvc.getPerson();
+  $scope.currentPerson = personInfo;
   $scope.personName = $scope.currentPerson.name;
   $scope.actions = mainSvc.getActions($scope.currentPerson)
     .then(function(response) {

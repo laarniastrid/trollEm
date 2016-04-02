@@ -315,3 +315,8 @@ textarea {
   margin: 5px;
   font-size: 16px;
 }
+
+/* ---------- back button ---------- */
+.back {
+  font-size: 30px;
+}

@@ -43,7 +43,7 @@ angular.module('myApp')
     return $http.get('/api/people', input);
   };
   this.getActions = function(input) {
-    console.log(input); // weird things!!!
+    // console.log(input); // weird things!!!
     return $http.get('/api/actions/' + input._id);
   };
   this.getPerson = function() {

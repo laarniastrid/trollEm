@@ -27,10 +27,11 @@ angular.module('myApp')
 
   $scope.actions = function(input) {
     // console.log('hello');
-    console.log(input);  // weird things happening???
+    // console.log(input);  // weird things happening???
     mainSvc.setPerson(input);
     mainSvc.setUsername($scope.currentUser.username);
     $location.path('list');
+    // $state.go('/list')
   };
 
 
