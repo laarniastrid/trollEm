@@ -85,7 +85,7 @@ app.delete('/api/people/:id', peopleCtrl.destroy);
 
 /* ---------- haunt action endpoints ---------- */
 app.post('/api/actions', actionCtrl.create);
-app.get('/api/actions', actionCtrl.findAll);
+app.get('/api/actions/:id', actionCtrl.findAll);
 app.get('/api/actions/:id', actionCtrl.findOne);
 app.put('/api/actions/:id', actionCtrl.update);
 app.delete('/api/actions/:id', actionCtrl.destroy);

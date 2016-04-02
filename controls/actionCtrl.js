@@ -15,10 +15,10 @@ module.exports = {
   //   });
   // },
   findAll: function(req, res, next) {
-    var query = req.body;
-    console.log(req.body);
+    var query = req.params.id;
+    console.log('what\s going on?!', req.params.id); // weird things happening???
 
-    People.findOne(req.body).populate('actions').exec(function(err, r) {
+    People.findById(query).populate('actions').exec(function(err, r) {
       return err ? res.status(500).send(err) : res.status(200).send(r);
     });
   },

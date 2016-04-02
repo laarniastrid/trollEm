@@ -6,7 +6,7 @@ angular.module('myApp')
   $scope.personName = $scope.currentPerson.name;
   $scope.actions = mainSvc.getActions($scope.currentPerson)
     .then(function(response) {
-      // console.log(response.data);
+      console.log(response.data); // weird things happening?
       $scope.list = response.data.actions;
     });
 
@@ -45,19 +45,7 @@ angular.module('myApp')
     $scope.showModal = !$scope.showModal;
   };
 
-  /* ---------- testing mailer ---------- */
-  // $scope.sendMessage = function(to, text) {
-  //   console.log('placeholder');
-  //   $scope.username = mainSvc.getUsername();
-  //
-  //   mainSvc.setMailOptions(to, text, $scope.username); // set mail options
-  //   $scope.mailOptions = mainSvc.getMailOptions();
-  //   mainSvc.sendMail($scope.mailOptions)
-  //   .then(function(response) {
-  //     console.log(response);
-  //   });
-  //
-  // };
+
 
 
 });  // end listCtrl

@@ -3,8 +3,8 @@ angular.module('myApp')
 .service('mainSvc', function($http) {
 
   // ---------- vars ----------
-  var person = {};
-  var username = {};
+  this.person = {};
+  this.username = {};
 
 
   // ---------- setters ----------
@@ -43,8 +43,8 @@ angular.module('myApp')
     return $http.get('/api/people', input);
   };
   this.getActions = function(input) {
-    // console.log('hi');
-    return $http.get('/api/actions', input);
+    console.log(input); // weird things!!!
+    return $http.get('/api/actions/' + input._id);
   };
   this.getPerson = function() {
     return person;
