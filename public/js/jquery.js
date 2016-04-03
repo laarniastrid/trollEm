@@ -10,5 +10,8 @@ $(document).ready(function() {
   //   console.log('hover');
   // });
 
+  // $('.test').on('click', function() {
+  //   console.log('hi there');
+  // });
 
 });
