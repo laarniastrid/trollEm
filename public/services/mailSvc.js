@@ -7,7 +7,7 @@ angular.module('myApp')
   var subject = 'You\'ve been trolled!!';
   var temp = {};
 
-  /* ---------- setters ---------- */
+  /* ---------- setters/constructors ---------- */
   this.setMailOptions = function(to, text, username) {
     temp.from = email;
     temp.to = to;
@@ -25,7 +25,7 @@ angular.module('myApp')
   };
 
 
-  /* ---------- constructors ---------- */
+  /* ---------- manipulators ---------- */
   this.sendMail = function(input) {
     return $http.post('/api/messages', input);
   };
