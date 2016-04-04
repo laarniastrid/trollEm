@@ -7,7 +7,9 @@ angular.module('myApp')
 
     $scope.thisTest = mainSvc.getUser()
     .then(function(response) {
-      $scope.mailTo = response.currentUser.email;
+      // $scope.mailTo = response.currentUser.email;
+      var getPerson = mainSvc.getPerson();
+      $scope.mailTo = getPerson.email;
 
       mailSvc.setMailOptions($scope.mailTo, text, $scope.username); // set mail options
       $scope.mailOptions = mailSvc.getMailOptions();
