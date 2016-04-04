@@ -15,7 +15,10 @@ app.use(express.static(__dirname + '/public'));  // use to connect with with fro
 
 /* ---------- connect to mongoose ---------- */
 mongoose.set('debug', true);
-mongoose.connect('mongodb://localhost/trollEm', function(err) {  // hauntEm : name of database
+// mongoose.connect('mongodb://localhost/trollEm', function(err) {  // hauntEm : name of database
+//   if (err) throw err;
+// });
+mongoose.connect(process.env.MONGOLAB_URI, function(err) {  // hauntEm : name of database
   if (err) throw err;
 });
 mongoose.connection.once('open', function(err) {  // show mongoose is connected once open to mongodb
@@ -58,7 +61,7 @@ var testCtrl = require('./controls/testCtrl.js'),
     actionCtrl = require('./controls/actionCtrl.js');
 
 /* ---------- test for login ---------- */
-app.use(session({ secret: keys.mySecret }));
+app.use(session({ secret: process.env.MY_SECRET }));
 app.post('/api/login', testCtrl.login);
 app.get('/api/userData', testCtrl.userData);
 // app.put('/api/user', userCtrl.update);
