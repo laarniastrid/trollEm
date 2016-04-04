@@ -24,7 +24,8 @@
   <div class="list">
     <div ng-repeat="action in list | orderBy: '-time' | filter: {message: actionsFilter}">
       <!-- {{list}} -->
-      <div class="item list-dir" ng-click="" >Message: {{action.message}} <br />Time sent: {{action.time | date: 'medium'}}</div>
+      <div list-dir class="item" ng-click="" >Message: {{action.message}} <br />Time sent: {{action.time | date: 'medium'}}</div>
+
     </div>
   </div>
 

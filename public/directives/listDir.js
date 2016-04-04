@@ -2,10 +2,10 @@ angular.module('myApp')
 
 .directive('listDir', function() {
   return {
-    restrict: 'C',
-    link: function(scope) {
-      $('.link-dir').on('hover', function() {
-        console.log('hover');
+    restrict: 'EA',
+    link: function(scope, ele, attr) {
+      $('.list-dir').on('click', function() {
+        console.log('hello there');
       });
     }
   };
