@@ -23,7 +23,7 @@
     <i class="fa fa-times" ng-click="modalToggle()"></i>
     <div class="modal-content-wrapper">
       <h2>Sign up</h2>
-      <form ng-submit="" class="modal-form">
+      <form ng-submit="addNewUser(user)" class="modal-form">
         <input name="name" type="text" placeholder="name" ng-model="user.name" required />
         <input name="username" type="text" placeholder="username" ng-model="user.username" required />
         <input name="password" type="password" placeholder="create password" ng-model="user.password" required />

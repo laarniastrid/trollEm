@@ -21,6 +21,11 @@ module.exports = {
     People.findById(query).populate('actions').exec(function(err, r) {
       return err ? res.status(500).send(err) : res.status(200).send(r);
     });
+    /* // other option thing, current unused
+    People.findOne(query).populate('actions').exec(function(err, r) {
+      return err ? res.status(500).send(err) : res.status(200).send(r);
+    });
+    */
   },
   findOne: function(req, res, next) {
     var query = req.params.id;

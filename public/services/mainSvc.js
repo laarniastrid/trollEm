@@ -40,7 +40,7 @@ angular.module('myApp')
     });
   };
   this.getPeople = function(input) {
-    return $http.get('/api/people', input);
+    return $http.get('/api/people/' + input._id);
   };
   this.getActions = function(input) {
     // console.log(input); // weird things!!!
@@ -58,14 +58,16 @@ angular.module('myApp')
   };
 
 
-  // ---------- updates (setters/getters?) ----------
+  // ---------- constructors/updates (setters/getters?) ----------
   this.updateUser = function(user, input) {
     return $http.post('/api/user/' + user, input);
   };
   this.updatePerson = function(person, input) {
     return $http.post('/api/person/' + person, input);
   };
-
+  this.addNewUser = function(input) {
+    return $http.post('/api/signup', input);
+  };
 
 
 

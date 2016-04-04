@@ -11,14 +11,19 @@ module.exports = {
   },
   findAll: function(req, res, next) {
     // var query = {};
-    var query = req.body;
+    var query = req.params.id;
     // Person.find(query, function(err, r) {
     //   return err ? res.status(500).send(err) : res.status(200).send(r);
     // });
 
-    User.findOne(req.body).populate('people').exec(function(err, r) {
+    User.findById(query).populate('people').exec(function(err, r) {
       return err ? res.status(500).send(err) : res.status(200).send(r);
     });
+    /*  // other option thing, current unused
+    User.findOne(query).populate('people').exec(function(err, r) {
+      return err ? res.status(500).send(err) : res.status(200).send(r);
+    });
+    */
   },
   findOne: function(req, res, next) {
     var query = req.params.id;

@@ -77,7 +77,7 @@ app.post('/api/person/:id', peopleCtrl.update);
 
 /* ---------- people endpoints ---------- */
 app.post('/api/people', peopleCtrl.create);
-app.get('/api/people', peopleCtrl.findAll);
+app.get('/api/people/:id', peopleCtrl.findAll);
 app.get('/api/people/:id', peopleCtrl.findOne);
 app.put('/api/people/:id', peopleCtrl.update);
 app.delete('/api/people/:id', peopleCtrl.destroy);
