@@ -101,6 +101,6 @@ app.post('/api/messages', mailCtrl.create);
 
 
 
-app.listen(port, function() { // app listen for port
+app.listen(process.env.port, function() { // app listen for port
   console.log('listening on port', port);
 });
