@@ -57,7 +57,10 @@ angular.module('myApp')
     $scope.showModal = !$scope.showModal;
   };
 
-
+  /* ---------- back ---------- */
+  // $scope.back = function() {
+  //   $state.load('people');
+  // };
 
 
 });  // end listCtrl

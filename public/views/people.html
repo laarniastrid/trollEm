@@ -2,16 +2,18 @@
 
   <div class="user">
     <div>
-      {{currentUser.name}}
+      <strong>{{currentUser.name}}</strong>
     </div>
     <div class="add-new" ng-click="modalToggle()">
       <i class="fa fa-plus"></i>
     </div>
   </div>
 
+  <input class="people-filter" placeholder="search by name:" type="text" ng-model="nameFilter" />
+
   <div class="people">
     <!-- <div ng-repeat="person in people"> -->
-    <div ng-repeat="person in list">
+    <div ng-repeat="person in list | orderBy: 'name' | filter: {name: nameFilter}">
       <!-- {{person._id}} -->
       <section class="aBox" ng-click="actions(this.person)" >
         <div>

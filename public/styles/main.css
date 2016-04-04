@@ -62,7 +62,12 @@ textarea {
 }
 
 em {
-  color: blue;
+  color: teal;
+}
+
+em:hover {
+  /*background: rgba(0,0,0,0.15);*/
+  /*box-shadow: 0 0 10px;*/
 }
 
 /* ---------- login styles ---------- */
@@ -157,6 +162,10 @@ em {
   justify-content: space-between;
 }
 
+.people-actions {
+  display: flex;
+}
+
 /*.user button {
   width: 50px;
   font-size: 30px;
@@ -187,6 +196,11 @@ em {
   border: 3px rgba(0,128,128,0.5) solid;
   border-radius: 5px;
   padding: 10px;
+}
+
+.people-filter, .actions-filter {
+  /*border: none;*/
+  background: rgba(0,0,0,0);
 }
 
 /* ---------- modal styles ---------- */
@@ -323,4 +337,15 @@ em {
 /* ---------- back button ---------- */
 .back {
   font-size: 30px;
+  margin-right: 10px;
+}
+
+.back a {
+  text-decoration: none;
+  color: black;
+}
+
+.back a:hover {
+  color: teal;
+  /*box-shadow: 15px;*/
 }
