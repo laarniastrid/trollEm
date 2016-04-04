@@ -61,6 +61,10 @@ textarea {
   /*rows: 10;*/
 }
 
+em {
+  color: blue;
+}
+
 /* ---------- login styles ---------- */
 .login-page {
   width: 70%;

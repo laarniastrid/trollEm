@@ -13,5 +13,24 @@
     </div>
   </form>
 
-  <div class="signup-link">Don't have an account, <em ng-click="">sign up here</em></div>
+  <div class="signup-link">Don't have an account, <em ng-click="modalToggle()">sign up here</em></div>
+</div>
+
+
+<div class="modal" ng-if="showModal">
+  <div class="modal-overlay" ng-click="modalToggle()"></div>
+  <div class="modal-content">
+    <i class="fa fa-times" ng-click="modalToggle()"></i>
+    <div class="modal-content-wrapper">
+      <h2>Sign up</h2>
+      <form ng-submit="" class="modal-form">
+        <input name="name" type="text" placeholder="name" ng-model="user.name" required />
+        <input name="username" type="text" placeholder="username" ng-model="user.username" required />
+        <input name="password" type="password" placeholder="create password" ng-model="user.password" required />
+        <input name="password" type="password" placeholder="confirm password" ng-model="user.passwordConfirm" required />
+        <input name="email" type="email" placeholder="email" ng-model="user.email" required />
+        <button type="submit">Sign up!</button>
+      </form>
+    </div>
+  </div>
 </div>

@@ -17,4 +17,12 @@ angular.module('myApp')
 
 
 
+  /* ---------- show/hide modal ---------- */
+  $scope.showModal = false;
+  $scope.modalToggle = function() {
+    // console.log('hello');
+    $scope.showModal = !$scope.showModal;
+  };
+
+
 });  // end mainCtrl
