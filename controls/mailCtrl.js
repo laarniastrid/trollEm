@@ -1,5 +1,5 @@
 var Mail = require('../schemas/mailSchema.js'),
-    keys = require('../keys.js'),
+    // keys = require('../keys.js'),
     nodemailer = require('nodemailer');
     transporter = nodemailer.createTransport(process.env.TROLL_KEY);
 
