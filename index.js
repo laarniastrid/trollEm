@@ -2,7 +2,8 @@
 var express = require('express'),
     bodyParser = require('body-parser'),
     mongoose = require('mongoose'),
-    port = 80,
+    port = process.env.PORT || 8000,
+    connectPath = process.env.MONGOLAB_URI || process.env.mongoHQ_URL || 'mongodb://localhost:8000',
     app = express(),
     // keys = require('./keys.js'),
     session = require('express-session');
@@ -18,7 +19,7 @@ mongoose.set('debug', true);
 // mongoose.connect('mongodb://localhost/trollEm', function(err) {  // hauntEm : name of database
 //   if (err) throw err;
 // });
-mongoose.connect(process.env.MONGOLAB_URI, function(err) {  // hauntEm : name of database
+mongoose.connect(connectPath, function(err) {  // hauntEm : name of database
   if (err) throw err;
 });
 mongoose.connection.once('open', function(err) {  // show mongoose is connected once open to mongodb
@@ -28,32 +29,6 @@ mongoose.connection.once('open', function(err) {  // show mongoose is connected 
     console.log('connected to MongoDB');
   }
 });
-
-/* ---------- passport local auth ---------- */
-// passport.use(new LocalStrategy(
-//   function(username, password, done) {
-//     User.findOne({ username: username }, function(err, user) {
-//       if (err) { return done(err); }
-//       if (!user) {
-//         return done(null, false, { message: 'Incorrect username' });
-//       }
-//       if (!user.validPassword(password)) {
-//         return done(null, false, { message: 'Incorrect password' });
-//       }
-//       return done(null, user);
-//     });
-//   }
-// ));
-//
-// app.use(express.static('public'));
-// app.use(cookieParser());
-// app.use(session({ secret: keys.mySecret }));
-// app.use(passport.initialize());
-// app.use(passport.session());
-// app.use(router);
-// app.use(express.Router());
-
-
 
 var testCtrl = require('./controls/testCtrl.js'),
     userCtrl = require('./controls/userCtrl.js'),
