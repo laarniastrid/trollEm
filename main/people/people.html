@@ -1,0 +1,41 @@
+<div class="page-content">
+
+  <div class="user">
+    <div>
+      <strong>{{currentUser.name}}</strong>
+    </div>
+    <div class="add-new" ng-click="modalToggle()">
+      <i class="fa fa-plus"></i>
+    </div>
+  </div>
+
+  <input class="people-filter" placeholder="search by name:" type="text" ng-model="nameFilter" />
+
+  <div class="people">
+    <div ng-repeat="person in list | orderBy: 'name' | filter: {name: nameFilter}">
+      <section class="aBox" ng-click="actions(this.person)" >
+        <div>
+          Name: {{person.name}} <br /> Phone: {{person.phone}} <br /> Email: {{person.email}} <br /> Reason to troll: {{person.reason}}
+        </div>
+      </section>
+    </div>
+  </div>
+
+</div>
+
+<div class="modal" ng-if="showModal">
+  <div class="modal-overlay" ng-click="modalToggle()"></div>
+  <div class="modal-content">
+    <i class="fa fa-times" ng-click="modalToggle()"></i>
+    <div class="modal-content-wrapper">
+      <h2>Add new person!<h2>
+        <form ng-submit="addPerson(person)" class="modal-form">
+          <input name="name" type="text" placeholder="name" ng-model="person.name" required />
+          <input name="phone" type="phone" placeholder="phone number (optional)" ng-model="person.phone" />
+          <input name="email" type="email" placeholder="email" ng-model="person.email" required />
+          <textarea placeholder="reasons to add to troll list" ng-model="person.reason" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+    </div>
+  </div>
+</div>
