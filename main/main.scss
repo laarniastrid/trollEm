@@ -51,10 +51,10 @@ textarea {
 
 em {
   color: teal;
-}
 
-em:hover {
+  &:hover {
 
+  }
 }
 
 /* ---------- login styles ---------- */
@@ -70,18 +70,18 @@ em:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
 
-.login-page > div {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  text-align: center;
-  justify-content: center;
-}
+  div {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    text-align: center;
+    justify-content: center;
+  }
 
-.login-page h2 {
-  margin: 15px auto auto 0;
+  h2 {
+    margin: 15px auto auto 0;
+  }
 }
 
 .login {
@@ -91,26 +91,26 @@ em:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
 
-.login div {
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-}
+  div {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
 
-.login div button {
-  font-size: 20px;
-  margin: 10px;
-  background: rgba(100,100,100,0.5);
-  border-radius: 5px;
-}
+    button {
+      font-size: 20px;
+      margin: 10px;
+      background: rgba(100,100,100,0.5);
+      border-radius: 5px;
+    }
+  }
 
-.login input {
-  font-size: 20px;
-  margin: 10px;
-  background: none;
-  border-radius: 5px;
+  input {
+    font-size: 20px;
+    margin: 10px;
+    background: none;
+    border-radius: 5px;
+  }
 }
 
 .signup-link {
@@ -173,12 +173,12 @@ em:hover {
   position: absolute;
   z-index: 100;
   left: 0;
-}
 
-.modal i {
-  position: absolute;
-  top: 0;
-  right: 0;
+  i {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
 
 .modal-overlay {
@@ -198,16 +198,16 @@ em:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
 
-.modal-content .fa {
-  margin-right: 5px;
-  font-size: 30px;
-}
+  .fa {
+    margin-right: 5px;
+    font-size: 30px;
+  }
 
-.modal-content p {
-  width: 400px;
-  margin: 10px;
+  p {
+    width: 400px;
+    margin: 10px;
+  }
 }
 
 .modal-content-wrapper {
@@ -216,16 +216,16 @@ em:hover {
   flex-direction: column;
   align-items: center;
   text-align: center;
-}
 
-.modal-content-wrapper h2 {
-  font-size: 30px;
-  margin: 10px 0 0 0;
-}
+  h2 {
+    font-size: 30px;
+    margin: 10px 0 0 0;
+  }
 
-.modal-content-wrapper input {
-  width: 275px;
-  margin: 5px;
+  input {
+    width: 275px;
+    margin: 5px;
+  }
 }
 
 .modal-form {
@@ -234,17 +234,17 @@ em:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
 
-.modal-form textarea {
-  width: 275px;
-  height: 150px;
-  margin: 5px;
-}
+  textarea {
+    width: 275px;
+    height: 150px;
+    margin: 5px;
+  }
 
-.modal-form button {
-  width: 150px;
-  margin: 5px;
+  button {
+    width: 150px;
+    margin: 5px;
+  }
 }
 
 /* ---------- contact stuff below ---------- */
@@ -277,10 +277,10 @@ em:hover {
 .form-top-left {
   display: flex;
   flex-direction: column;
-}
 
-.form-top-left input {
+  input {
 
+  }
 }
 
 .form-top-right {
@@ -289,11 +289,10 @@ em:hover {
 
 .form-bottom {
 
-}
-
-.form-bottom button {
-  margin: 5px;
-  font-size: 16px;
+  button {
+    margin: 5px;
+    font-size: 16px;
+  }
 }
 
 /* ---------- back button ---------- */

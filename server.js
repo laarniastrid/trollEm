@@ -5,7 +5,9 @@ var express = require('express'),
     port = process.env.PORT || 8000,
     connectPath = process.env.MONGOLAB_URI || 'mongodb://localhost:8000',
     app = express(),
-    session = require('express-session');
+    session = require('express-session'),
+    keys = require('./keys.js'),
+    siteSecret = process.env.MY_SECRET || keys.siteSecret;
 
 
 /* ---------- app.use to do stuff with app ---------- */
@@ -32,7 +34,7 @@ var testCtrl = require('./server/controls/testCtrl.js'),
     actionCtrl = require('./server/controls/actionCtrl.js');
 
 /* ---------- test for login ---------- */
-app.use(session({ secret: process.env.MY_SECRET }));
+app.use(session({ secret: siteSecret }));
 app.post('/api/login', testCtrl.login);
 app.get('/api/userData', testCtrl.userData);
 
@@ -60,7 +62,7 @@ app.delete('/api/actions/:id', actionCtrl.destroy);
 
 
 /* ---------- nodemailer stuff here ---------- */
-var mailCtrl = require('./controls/mailCtrl.js');
+var mailCtrl = require('./server/controls/mailCtrl.js');
 app.post('/api/messages', mailCtrl.create);
 
 
