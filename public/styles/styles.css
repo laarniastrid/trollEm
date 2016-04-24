@@ -57,16 +57,14 @@ em {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); }
-
-.login-page > div {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  text-align: center;
-  justify-content: center; }
-
-.login-page h2 {
-  margin: 15px auto auto 0; }
+  .login-page div {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    text-align: center;
+    justify-content: center; }
+  .login-page h2 {
+    margin: 15px auto auto 0; }
 
 .login {
   width: 100%;
@@ -75,23 +73,20 @@ em {
   flex-direction: column;
   justify-content: center;
   align-items: center; }
-
-.login div {
-  width: 300px;
-  display: flex;
-  flex-direction: column; }
-
-.login div button {
-  font-size: 20px;
-  margin: 10px;
-  background: rgba(100, 100, 100, 0.5);
-  border-radius: 5px; }
-
-.login input {
-  font-size: 20px;
-  margin: 10px;
-  background: none;
-  border-radius: 5px; }
+  .login div {
+    width: 300px;
+    display: flex;
+    flex-direction: column; }
+    .login div button {
+      font-size: 20px;
+      margin: 10px;
+      background: rgba(100, 100, 100, 0.5);
+      border-radius: 5px; }
+  .login input {
+    font-size: 20px;
+    margin: 10px;
+    background: none;
+    border-radius: 5px; }
 
 .signup-link {
   position: absolute;
@@ -142,11 +137,10 @@ em {
   position: absolute;
   z-index: 100;
   left: 0; }
-
-.modal i {
-  position: absolute;
-  top: 0;
-  right: 0; }
+  .modal i {
+    position: absolute;
+    top: 0;
+    right: 0; }
 
 .modal-overlay {
   width: 100vw;
@@ -164,14 +158,12 @@ em {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); }
-
-.modal-content .fa {
-  margin-right: 5px;
-  font-size: 30px; }
-
-.modal-content p {
-  width: 400px;
-  margin: 10px; }
+  .modal-content .fa {
+    margin-right: 5px;
+    font-size: 30px; }
+  .modal-content p {
+    width: 400px;
+    margin: 10px; }
 
 .modal-content-wrapper {
   margin: 10px;
@@ -179,14 +171,12 @@ em {
   flex-direction: column;
   align-items: center;
   text-align: center; }
-
-.modal-content-wrapper h2 {
-  font-size: 30px;
-  margin: 10px 0 0 0; }
-
-.modal-content-wrapper input {
-  width: 275px;
-  margin: 5px; }
+  .modal-content-wrapper h2 {
+    font-size: 30px;
+    margin: 10px 0 0 0; }
+  .modal-content-wrapper input {
+    width: 275px;
+    margin: 5px; }
 
 .modal-form {
   width: auto;
@@ -194,15 +184,13 @@ em {
   display: flex;
   flex-direction: column;
   align-items: center; }
-
-.modal-form textarea {
-  width: 275px;
-  height: 150px;
-  margin: 5px; }
-
-.modal-form button {
-  width: 150px;
-  margin: 5px; }
+  .modal-form textarea {
+    width: 275px;
+    height: 150px;
+    margin: 5px; }
+  .modal-form button {
+    width: 150px;
+    margin: 5px; }
 
 /* ---------- contact stuff below ---------- */
 .contact {
@@ -240,13 +228,11 @@ em {
 .back {
   font-size: 30px;
   margin-right: 10px; }
-
-.back a {
-  text-decoration: none;
-  color: black; }
-
-.back a:hover {
-  color: teal; }
+  .back a {
+    text-decoration: none;
+    color: black; }
+    .back a:hover {
+      color: teal; }
 
 @media only screen and (min-device-width: 300px) and (max-device-width: 450px) {
   /* ----------  ---------- */

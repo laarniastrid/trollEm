@@ -299,13 +299,13 @@ em {
 .back {
   font-size: 30px;
   margin-right: 10px;
-}
 
-.back a {
-  text-decoration: none;
-  color: black;
-}
+  a {
+    text-decoration: none;
+    color: black;
 
-.back a:hover {
-  color: teal;
+    &:hover {
+      color: teal;
+    }
+  }
 }
