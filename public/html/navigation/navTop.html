@@ -1,28 +1,70 @@
-<section class="nav-top-wrapper">
-  <div id="navPlaceholder">
+<div ng-controller="navCtrl">
+  <section class="nav-top-wrapper">
+    <!-- <div id="navPlaceholder">
+    </div> -->
+
+    <div id="logo">
+      <span>Troll 'Em</span>
+    </div>
+
+    <div id="navWrapper">
+      <span>Menu</span>
+      <span><i class="fa fa-bars"></i><span>
+    </div>
+
+  </section>
+
+  <div id="menuNav">
+    <ul>
+      <li ng-click="modalToggle('about')"><span>About</span></li>
+      <li ng-click="modalToggle('contact')"><span>Contact</span></li>
+      <li id="follow"><span>Follow +</span>
+        <ul id="follow-nav">
+          <a href="{{gitLink}}" target="_blank"><li>Github</li></a>
+          <a href="{{linkedLink}}" target="_blank"><li>LinkedIn</li></a>
+          <a href="{{twitterLink}}" target="_blank"><li>Twitter</li></a>
+          <a href="{{youtubeLink}}" target="_blank"><li>Youtube</li></a>
+        </ul>
+      </li>
+    </ul>
   </div>
 
-  <div id="logo">
-    <span>Troll 'Em</span>
+  <div class="modal" ng-if="aboutModal">
+    <div class="modal-overlay" ng-click="modalToggle('about')"></div>
+    <div class="modal-content">
+      <i class="fa fa-times" ng-click="modalToggle('about')"></i>
+      <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </div>
   </div>
 
-  <div id="navWrapper">
-    <span>Menu</span>
+  <div class="modal" ng-if="contactModal">
+    <div class="modal-overlay" ng-click="modalToggle('contact')"></div>
+    <div class="modal-content">
+      <i class="fa fa-times" ng-click="modalToggle('contact')"></i>
+      <div>
+
+        <div class="contact">
+          <form class="contact-form" ng-submit="addPost(formInfo)">
+            <div class="form-top">
+              <div class="form-top-left">
+                <input name="name" ng-model="formInfo.name" type="text" placeholder="Your name :" />
+                <input name="email" ng-model="formInfo.email" type="email" placeholder="Your email :" />
+                <input name="phone" ng-model="formInfo.phone" type="phone" placeholder="Your phone (optional) :" />
+              </div>
+              <div class="form-top-right">
+                <textarea name="text" ng-model="formInfo.text" placeholder="Type your message here :" ></textarea>
+              </div>
+            </div>
+            <div class="form-bottom">
+              <button type="submit" class="contact-submit" type="submit">Send Away!!</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
   </div>
-
-</section>
-
-<div id="menuNav">
-  <ul>
-    <li><span>About</span></li>
-    <li><span>Contact</span></li>
-    <li><span>Follow</span>
-      <ul>
-        <li>Github</li>
-        <li>LinkedIn</li>
-        <li>Twitter</li>
-        <li>Youtube</li>
-      </ul>
-    </li>
-  </ul>
 </div>

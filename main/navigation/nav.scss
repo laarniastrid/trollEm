@@ -1,7 +1,7 @@
 /* ---------- nav top styles ---------- */
 .nav-top-wrapper {
-  width: 100%;
-  height: 60px;
+  width: 100vw;
+  height: 55px;
   font-size: 30px;
   color: #111111;
   background: rgb(0, 128, 128);
@@ -12,50 +12,41 @@
   justify-content: space-between;
   align-items: center;
   z-index: 9;
+
+  div {
+    margin-left: 15px;
+    margin-right: 25px;
+  }
 }
 
 #menuNav {
   background: white;
   position: absolute;
   right: 0;
-  padding-right: 30px;
+  padding-left: 0;
+  padding-right: 20px;
   z-index: 9;
+  border-left: 1px rgba(0,0,0,0.25) solid;
+  border-bottom: 1px rgba(0,0,0,0.25) solid;
+  border-radius: 5px;
+  display: none;
+
+  ul, li {
+    list-style: none;
+    margin: 10px;
+    padding-left: 10px;
+    // display:
+  }
+
+  #follow-nav {
+    display: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
 }
-
-#menuNav ul, #menuNav li {
-  list-style: none;
-  margin: 5px;
-}
-
-/*.nav-top-wrapper i {
-
-}*/
-
-/*.nav-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}*/
-
-/*.nav-top-left {
-
-}*/
-
-/*.nav-top-mid {
-  width: 100%;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}*/
-
-/*.nav-top-mid h3 {
-  /*margin: 0;*/
-/*}*/
-
-/*.nav-top-right {
-  padding-right: 10px;
-}*/
 
 /* ---------- nav bot styles ---------- */
 .nav-bot-wrapper {

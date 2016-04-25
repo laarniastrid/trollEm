@@ -5,6 +5,7 @@
       <strong>{{currentUser.name}}</strong>
     </div>
     <div class="add-new" ng-click="modalToggle()">
+      <span>Add New</span>
       <i class="fa fa-plus"></i>
     </div>
   </div>
@@ -34,7 +35,7 @@
           <input name="phone" type="phone" placeholder="phone number (optional)" ng-model="person.phone" />
           <input name="email" type="email" placeholder="email" ng-model="person.email" required />
           <textarea placeholder="reasons to add to troll list" ng-model="person.reason" required></textarea>
-          <button type="submit">Send Message</button>
+          <button type="submit">Add New Person</button>
         </form>
     </div>
   </div>

@@ -6,11 +6,11 @@ html, body {
 }
 
 body {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   padding: 0;
-  background: #dddddd;
+  // background: #dddddd;
 }
 
 .main-wrapper {
@@ -31,7 +31,7 @@ input {
   font-size: 16px;
   margin: 10px;
   border: none;
-  border-bottom: 4px black solid;
+  border-bottom: 3px rgba(0,0,0,0.5) solid;
   background: rgba(255, 0, 0, 0);
   border-radius: 5px;
   line-height: 30px;
@@ -43,8 +43,8 @@ textarea {
   font-size: 16px;
   margin: 10px;
   border: none;
-  border-bottom: 5px black solid;
-  border-right: 5px black solid;
+  border-bottom: 3px rgba(0,0,0,0.5) solid;
+  border-right: 3px rgba(0,0,0,0.5) solid;
   background: rgba(255, 0, 0, 0);
   border-radius: 5px;
 }
@@ -63,30 +63,32 @@ em {
   max-width: 450px;
   height: auto;
   background: transparent;
-  border: 3px rgb(0,128,128) solid;
-  border: 3px rgba(0,128,128,0.5) solid;
+  border: 2px rgb(0,128,128) solid;
+  border: 2px rgba(0,128,128,0.25) solid;
   border-radius: 5px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
 
-  div {
-    width: 100%;
-    height: auto;
-    position: absolute;
-    text-align: center;
-    justify-content: center;
-  }
+.login-page > div {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  text-align: center;
+  justify-content: center;
+}
 
-  h2 {
-    margin: 15px auto auto 0;
-  }
+.login-page h2 {
+  margin: 15px auto auto 0;
 }
 
 .login {
   width: 100%;
   height: 250px;
+  /*font-size: 20px;*/
+  /*border-radius: 5px;*/
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -102,6 +104,7 @@ em {
       margin: 10px;
       background: rgba(100,100,100,0.5);
       border-radius: 5px;
+      border: none;
     }
   }
 
@@ -132,7 +135,7 @@ em {
 }
 
 .user {
-  font-size: 30px;
+  font-size: 25px;
   margin: auto 15px auto 15px;
   display: flex;
   justify-content: space-between;
@@ -144,10 +147,13 @@ em {
 
 .add-new {
 
+  span {
+    font-size: 15px;
+  }
 }
 
 .people, .list {
-  font-size: 25px;
+  font-size: 20px;
   margin-bottom: 25px;
   display: flex;
   flex-flow: wrap row;
@@ -158,7 +164,7 @@ em {
   width: 450px;
   height: auto;
   margin: 10px;
-  border: 3px rgba(0,128,128,0.5) solid;
+  border: 2px rgba(0,128,128,0.25) solid;
   border-radius: 5px;
   padding: 10px;
 }
@@ -172,6 +178,7 @@ em {
   font-size: 20px;
   position: absolute;
   z-index: 100;
+  top: 0;
   left: 0;
 
   i {
@@ -195,7 +202,7 @@ em {
   position: absolute;
   z-index: 200;
   background: #FFF;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
 
@@ -218,7 +225,7 @@ em {
   text-align: center;
 
   h2 {
-    font-size: 30px;
+    font-size: 25px;
     margin: 10px 0 0 0;
   }
 
@@ -244,6 +251,7 @@ em {
   button {
     width: 150px;
     margin: 5px;
+    border: none;
   }
 }
 

@@ -4,11 +4,10 @@ html, body {
   font-family: Verdana, Arial; }
 
 body {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   margin: 0;
-  padding: 0;
-  background: #dddddd; }
+  padding: 0; }
 
 .main-wrapper {
   width: 100%;
@@ -25,7 +24,7 @@ input {
   font-size: 16px;
   margin: 10px;
   border: none;
-  border-bottom: 4px black solid;
+  border-bottom: 3px rgba(0, 0, 0, 0.5) solid;
   background: rgba(255, 0, 0, 0);
   border-radius: 5px;
   line-height: 30px; }
@@ -36,8 +35,8 @@ textarea {
   font-size: 16px;
   margin: 10px;
   border: none;
-  border-bottom: 5px black solid;
-  border-right: 5px black solid;
+  border-bottom: 3px rgba(0, 0, 0, 0.5) solid;
+  border-right: 3px rgba(0, 0, 0, 0.5) solid;
   background: rgba(255, 0, 0, 0);
   border-radius: 5px; }
 
@@ -50,25 +49,29 @@ em {
   max-width: 450px;
   height: auto;
   background: transparent;
-  border: 3px teal solid;
-  border: 3px rgba(0, 128, 128, 0.5) solid;
+  border: 2px teal solid;
+  border: 2px rgba(0, 128, 128, 0.25) solid;
   border-radius: 5px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); }
-  .login-page div {
-    width: 100%;
-    height: auto;
-    position: absolute;
-    text-align: center;
-    justify-content: center; }
-  .login-page h2 {
-    margin: 15px auto auto 0; }
+
+.login-page > div {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  text-align: center;
+  justify-content: center; }
+
+.login-page h2 {
+  margin: 15px auto auto 0; }
 
 .login {
   width: 100%;
   height: 250px;
+  /*font-size: 20px;*/
+  /*border-radius: 5px;*/
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -81,7 +84,8 @@ em {
       font-size: 20px;
       margin: 10px;
       background: rgba(100, 100, 100, 0.5);
-      border-radius: 5px; }
+      border-radius: 5px;
+      border: none; }
   .login input {
     font-size: 20px;
     margin: 10px;
@@ -105,7 +109,7 @@ em {
   z-index: -1; }
 
 .user {
-  font-size: 30px;
+  font-size: 25px;
   margin: auto 15px auto 15px;
   display: flex;
   justify-content: space-between; }
@@ -113,8 +117,11 @@ em {
 .people-actions {
   display: flex; }
 
+.add-new span {
+  font-size: 15px; }
+
 .people, .list {
-  font-size: 25px;
+  font-size: 20px;
   margin-bottom: 25px;
   display: flex;
   flex-flow: wrap row;
@@ -124,7 +131,7 @@ em {
   width: 450px;
   height: auto;
   margin: 10px;
-  border: 3px rgba(0, 128, 128, 0.5) solid;
+  border: 2px rgba(0, 128, 128, 0.25) solid;
   border-radius: 5px;
   padding: 10px; }
 
@@ -136,6 +143,7 @@ em {
   font-size: 20px;
   position: absolute;
   z-index: 100;
+  top: 0;
   left: 0; }
   .modal i {
     position: absolute;
@@ -155,7 +163,7 @@ em {
   position: absolute;
   z-index: 200;
   background: #FFF;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%); }
   .modal-content .fa {
@@ -172,7 +180,7 @@ em {
   align-items: center;
   text-align: center; }
   .modal-content-wrapper h2 {
-    font-size: 30px;
+    font-size: 25px;
     margin: 10px 0 0 0; }
   .modal-content-wrapper input {
     width: 275px;
@@ -190,7 +198,8 @@ em {
     margin: 5px; }
   .modal-form button {
     width: 150px;
-    margin: 5px; }
+    margin: 5px;
+    border: none; }
 
 /* ---------- contact stuff below ---------- */
 .contact {
@@ -318,8 +327,8 @@ em {
 
 /* ---------- nav top styles ---------- */
 .nav-top-wrapper {
-  width: 100%;
-  height: 60px;
+  width: 100vw;
+  height: 55px;
   font-size: 30px;
   color: #111111;
   background: teal;
@@ -330,42 +339,31 @@ em {
   justify-content: space-between;
   align-items: center;
   z-index: 9; }
+  .nav-top-wrapper div {
+    margin-left: 15px;
+    margin-right: 25px; }
 
 #menuNav {
   background: white;
   position: absolute;
   right: 0;
-  padding-right: 30px;
-  z-index: 9; }
+  padding-left: 0;
+  padding-right: 20px;
+  z-index: 9;
+  border-left: 1px rgba(0, 0, 0, 0.25) solid;
+  border-bottom: 1px rgba(0, 0, 0, 0.25) solid;
+  border-radius: 5px;
+  display: none; }
+  #menuNav ul, #menuNav li {
+    list-style: none;
+    margin: 10px;
+    padding-left: 10px; }
+  #menuNav #follow-nav {
+    display: none; }
+  #menuNav a {
+    text-decoration: none;
+    color: black; }
 
-#menuNav ul, #menuNav li {
-  list-style: none;
-  margin: 5px; }
-
-/*.nav-top-wrapper i {
-
-}*/
-/*.nav-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}*/
-/*.nav-top-left {
-
-}*/
-/*.nav-top-mid {
-  width: 100%;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}*/
-/*.nav-top-mid h3 {
-  /*margin: 0;*/
-/*}*/
-/*.nav-top-right {
-  padding-right: 10px;
-}*/
 /* ---------- nav bot styles ---------- */
 .nav-bot-wrapper {
   width: 100%;
