@@ -36,14 +36,10 @@
   <div class="modal-content">
     <i class="fa fa-times" ng-click="modalToggle()"></i>
     <div class="modal-content-wrapper">
-      <!-- <div>modal heading</div> -->
-      <!-- <div>modal stuff</div> -->
       <h2>Send new message!</h2>
       <div ng-controller="mailCtrl">
         <form ng-submit="addAction(message); sendMessage(message)" class="modal-form">
-        <!-- <form ng-submit="sendMessage(message)" class="modal-form"> -->
           <textarea placeholder="message" ng-model="message" required></textarea>
-          <!-- <input type="date" value="new Data()" /> -->
           <button type="submit">Send Message</button>
         </form>
       </div>
