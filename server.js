@@ -6,8 +6,9 @@ var express = require('express'),
     connectPath = process.env.MONGOLAB_URI || 'mongodb://localhost:8000',
     app = express(),
     session = require('express-session'),
-    keys = require('./keys.js'),
-    siteSecret = process.env.MY_SECRET || keys.siteSecret;
+    // keys = require('./keys.js'),
+    // siteSecret = process.env.MY_SECRET || keys.siteSecret;
+    siteSecret = process.env.MY_SECRET;
 
 
 /* ---------- app.use to do stuff with app ---------- */
