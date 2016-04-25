@@ -1,0 +1,102 @@
+/* ---------- nav top styles ---------- */
+.nav-top-wrapper {
+  width: 100vw;
+  height: 55px;
+  font-size: 30px;
+  color: #111111;
+  background: rgb(0, 128, 128);
+  background: rgba(0, 128, 128, 0.7);
+  position: relative;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9;
+
+  div {
+    margin-left: 15px;
+    margin-right: 25px;
+  }
+}
+
+#menuNav {
+  background: white;
+  position: absolute;
+  right: 0;
+  padding-left: 0;
+  padding-right: 20px;
+  z-index: 9;
+  border-left: 1px rgba(0,0,0,0.25) solid;
+  border-bottom: 1px rgba(0,0,0,0.25) solid;
+  border-radius: 5px;
+  display: none;
+
+  ul, li {
+    list-style: none;
+    margin: 10px;
+    padding-left: 10px;
+    // display:
+  }
+
+  #follow-nav {
+    display: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+/* ---------- nav bot styles ---------- */
+.nav-bot-wrapper {
+  width: 100%;
+  height: 60px;
+  font-size: 30px;
+  color: #111111;
+  background: rgb(0, 128, 128);
+  background: rgba(0, 128, 128, 0.7);
+  position: fixed;
+  bottom: 0;
+}
+
+.nav-bot-wrapper i {
+  font-size: 45px;
+}
+
+.nav-bot {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-bot-left {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-bot-left > div {
+  margin: 10px;
+}
+
+.nav-bot-left > div:hover, .nav-bot-right a:hover {
+  color: white;
+}
+
+.nav-bot-right {
+  padding-right: 10px;
+}
+
+.nav-bot-right > div {
+  margin: 10px;
+}
+
+.nav-bot-right a {
+  text-decoration: none;
+  color: #111111;
+}
+
+.nav-bot-right a:hover {
+
+}

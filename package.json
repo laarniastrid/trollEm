@@ -2,10 +2,10 @@
   "name": "haunt-em",
   "version": "1.0.0",
   "description": "my trolling site",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,11 @@
     "body-parser": "^1.15.0",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-sass": "^2.3.1",
+    "gulp-uglifycss": "^1.0.6",
     "mongoose": "^4.4.8",
     "nodemailer": "^2.3.0"
   },
