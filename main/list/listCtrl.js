@@ -29,7 +29,6 @@ angular.module('myApp')
     $scope.modalToggle();
   };
 
-
   /* ---------- show/hide modal ---------- */
   $scope.showModal = false;
   $scope.modalToggle = function() {

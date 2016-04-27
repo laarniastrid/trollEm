@@ -22,5 +22,4 @@ angular.module('myApp')
     $scope.modalToggle('contact');
   };
 
-
 });  // end navCtrl
