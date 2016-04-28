@@ -1,6 +1,6 @@
 angular.module('myApp')
 
-.controller('navCtrl', function($scope) {
+.controller('navCtrl', function($scope, loginService) {
 
   $scope.aboutModal = false;
   $scope.contactModal = false;
@@ -21,5 +21,9 @@ angular.module('myApp')
 
     $scope.modalToggle('contact');
   };
+
+  $scope.logoutUser = () => {
+    loginService.logoutUser();
+  }
 
 });  // end navCtrl

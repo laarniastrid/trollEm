@@ -149,6 +149,58 @@ angular.module('myApp')
 
 angular.module('myApp')
 
+.controller('listCtrl', ["$scope", "$state", "$stateParams", "personActions", "personInfo", "mainSvc", function($scope, $state, $stateParams, personActions, personInfo, mainSvc) {
+
+  var test = mainSvc.getActions($stateParams.id);
+
+  $scope.currentPerson = personActions.data;
+  $scope.personName = personActions.data.name;
+  $scope.actions = mainSvc.getActions(personActions.data._id)
+  .then(function(response) {
+    $scope.list = response.data.actions;
+  });
+
+  $scope.addAction = function(input) {
+    var tempAction = {
+      message: input,
+      time: new Date(),
+      person: $scope.currentPerson._id
+    };
+
+    mainSvc.addNewAction(tempAction)
+      .then(function(response) {
+        var temp = {
+          action: response.data._id
+        };
+        mainSvc.updatePerson($scope.currentPerson._id, temp);
+        $state.reload();
+      });
+    $scope.modalToggle();
+  };
+
+  /* ---------- show/hide modal ---------- */
+  $scope.showModal = false;
+  $scope.modalToggle = function() {
+    $scope.showModal = !$scope.showModal;
+  };
+
+}]);  // end listCtrl
+
+angular.module('myApp')
+
+.directive('listDir', function() {
+  return {
+    restrict: 'EA',
+    link: function(scope, ele, attr) {
+      $('.list-dir').on('click', function() {
+        console.log('hello there');
+      });
+    }
+  };
+}); // end listDir
+
+angular.module('myApp')
+
 .controller('mailCtrl', ["$scope", "mainSvc", "mailSvc", function($scope, mainSvc, mailSvc) {
 
   $scope.sendMessage = function(text) {
@@ -200,43 +252,6 @@ angular.module('myApp')
 
 angular.module('myApp')
 
-.controller('peopleCtrl', ["$scope", "$location", "$state", "userInfo", "mainSvc", function($scope, $location, $state, userInfo, mainSvc) {
-
-  $scope.currentUser = userInfo.currentUser;
-  $scope.people = mainSvc.getPeople(userInfo.currentUser)
-    .then(function(response) {
-      $scope.list = response.data.people;
-    });
-
-  $scope.addPerson = function(input) {
-    mainSvc.addNewPerson(input)
-      .then(function(response) {
-        var temp = {
-          people: response.data._id
-        };
-        mainSvc.updateUser($scope.currentUser._id, temp);
-        $state.reload();
-      });
-    $scope.modalToggle();
-  };
-
-  $scope.actions = function(input) {
-    mainSvc.setPerson(input);
-    mainSvc.setUsername($scope.currentUser.username);
-    $state.go('list', {id: input._id});
-  };
-
-
-  /* ---------- show/hide modal ---------- */
-  $scope.showModal = false;
-  $scope.modalToggle = function() {
-    $scope.showModal = !$scope.showModal;
-  };
-
-}]);  // end peopleCtrl
-
-angular.module('myApp')
-
 .directive('iconDir', ["$controller", function($controller) {
   return {
     restrict: 'E',
@@ -272,7 +287,7 @@ angular.module('myApp')
 
 angular.module('myApp')
 
-.controller('navCtrl', ["$scope", function($scope) {
+.controller('navCtrl', ["$scope", "loginService", function($scope, loginService) {
 
   $scope.aboutModal = false;
   $scope.contactModal = false;
@@ -293,6 +308,10 @@ angular.module('myApp')
 
     $scope.modalToggle('contact');
   };
+
+  $scope.logoutUser = () => {
+    loginService.logoutUser();
+  }
 
 }]);  // end navCtrl
 
@@ -326,34 +345,32 @@ angular.module('myApp')
 
 angular.module('myApp')
 
-.controller('listCtrl', ["$scope", "$state", "$stateParams", "personActions", "personInfo", "mainSvc", function($scope, $state, $stateParams, personActions, personInfo, mainSvc) {
+.controller('peopleCtrl', ["$scope", "$location", "$state", "userInfo", "mainSvc", function($scope, $location, $state, userInfo, mainSvc) {
 
-  var test = mainSvc.getActions($stateParams.id);
+  $scope.currentUser = userInfo.currentUser;
+  $scope.people = mainSvc.getPeople(userInfo.currentUser)
+    .then(function(response) {
+      $scope.list = response.data.people;
+    });
 
-  $scope.currentPerson = personActions.data;
-  $scope.personName = personActions.data.name;
-  $scope.actions = mainSvc.getActions(personActions.data._id)
-  .then(function(response) {
-    $scope.list = response.data.actions;
-  });
-
-  $scope.addAction = function(input) {
-    var tempAction = {
-      message: input,
-      time: new Date(),
-      person: $scope.currentPerson._id
-    };
-
-    mainSvc.addNewAction(tempAction)
+  $scope.addPerson = function(input) {
+    mainSvc.addNewPerson(input)
       .then(function(response) {
         var temp = {
-          action: response.data._id
+          people: response.data._id
         };
-        mainSvc.updatePerson($scope.currentPerson._id, temp);
+        mainSvc.updateUser($scope.currentUser._id, temp);
         $state.reload();
       });
     $scope.modalToggle();
   };
+
+  $scope.actions = function(input) {
+    mainSvc.setPerson(input);
+    mainSvc.setUsername($scope.currentUser.username);
+    $state.go('list', {id: input._id});
+  };
+
 
   /* ---------- show/hide modal ---------- */
   $scope.showModal = false;
@@ -361,17 +378,4 @@ angular.module('myApp')
     $scope.showModal = !$scope.showModal;
   };
 
-}]);  // end listCtrl
-
-angular.module('myApp')
-
-.directive('listDir', function() {
-  return {
-    restrict: 'EA',
-    link: function(scope, ele, attr) {
-      $('.list-dir').on('click', function() {
-        console.log('hello there');
-      });
-    }
-  };
-}); // end listDir
+}]);  // end peopleCtrl

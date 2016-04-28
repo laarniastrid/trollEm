@@ -61,12 +61,12 @@ app.get('/api/actions/:id', actionCtrl.findOne);
 app.put('/api/actions/:id', actionCtrl.update);
 app.delete('/api/actions/:id', actionCtrl.destroy);
 
-
 /* ---------- nodemailer stuff here ---------- */
 var mailCtrl = require('./server/controls/mailCtrl.js');
 app.post('/api/messages', mailCtrl.create);
 
-
+/* ---------- logout user ---------- */
+app.get('/logout', userCtrl.logoutUser);
 
 app.listen(port, function() { // app listen for port
   console.log('listening on port', port);
