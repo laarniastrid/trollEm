@@ -14,16 +14,17 @@
 
   <div id="menuNav">
     <ul>
-      <li ng-click="modalToggle('about')"><span>About</span></li>
-      <li ng-click="modalToggle('contact')"><span>Contact</span></li>
-      <li id="follow"><span>Follow +</span>
-        <ul id="follow-nav">
-          <a href="{{gitLink}}" target="_blank"><li>Github</li></a>
-          <a href="{{linkedLink}}" target="_blank"><li>LinkedIn</li></a>
-          <a href="{{twitterLink}}" target="_blank"><li>Twitter</li></a>
-          <a href="{{youtubeLink}}" target="_blank"><li>Youtube</li></a>
+      <li class="nav-menu" ng-click="modalToggle('about')"><span>About</span></li>
+      <li class="nav-menu" ng-click="modalToggle('contact')"><span>Contact</span></li>
+      <li class="nav-menu" id="follow"><span>Follow +</span>
+        <ul class="nav-menu" id="follow-nav">
+          <a class="nav-menu" href="{{gitLink}}" target="_blank"><li>Github</li></a>
+          <a class="nav-menu" href="{{linkedLink}}" target="_blank"><li>LinkedIn</li></a>
+          <a class="nav-menu" href="{{twitterLink}}" target="_blank"><li>Twitter</li></a>
+          <a class="nav-menu" href="{{youtubeLink}}" target="_blank"><li>Youtube</li></a>
         </ul>
       </li>
+      <li class="nav-menu" ng-click=""><span>Logout</span></li>
     </ul>
   </div>
 

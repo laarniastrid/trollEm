@@ -161,9 +161,10 @@ em {
   width: 450px;
   height: auto;
   margin: 10px;
-  border: 2px rgba(0,128,128,0.25) solid;
+  border: 2px rgba(0,128,128,1) solid;
   border-radius: 5px;
   padding: 10px;
+  cursor: pointer;
 }
 
 .people-filter, .actions-filter {
@@ -313,4 +314,8 @@ em {
       color: teal;
     }
   }
+}
+
+.nav-menu {
+  cursor: pointer;
 }
