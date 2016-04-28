@@ -54,6 +54,9 @@ angular.module('myApp')
 
   /* ---------- add user ---------- */
   $scope.addNewUser = function(input) {
+    if (input.username.length < 6) {
+      alert('Username needs to be at least 6 characters long');
+    }
     if (input.password !== input.passwordConfirm) {
       alert('passwords don\'t match, please re-enter passwords');
     } else {
@@ -200,6 +203,21 @@ angular.module('myApp')
 
 angular.module('myApp')
 
+.service('loginService', ["$http", function($http) {
+
+  // this.logoutUser = () => {
+  //   return $http({
+  //     method: 'GET',
+  //     url: '/logout'
+  //   }).success(function() {
+  //     $state.go('/');
+  //   })
+  // }
+
+}])  // end loginsvc
+
+angular.module('myApp')
+
 .controller('mailCtrl', ["$scope", "mainSvc", "mailSvc", function($scope, mainSvc, mailSvc) {
 
   $scope.sendMessage = function(text) {
@@ -248,21 +266,6 @@ angular.module('myApp')
   };
 
 }]);  // end mailSvc
-
-angular.module('myApp')
-
-.service('loginService', ["$http", function($http) {
-
-  // this.logoutUser = () => {
-  //   return $http({
-  //     method: 'GET',
-  //     url: '/logout'
-  //   }).success(function() {
-  //     $state.go('/');
-  //   })
-  // }
-
-}])  // end loginsvc
 
 angular.module('myApp')
 
