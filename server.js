@@ -66,7 +66,7 @@ var mailCtrl = require('./server/controls/mailCtrl.js');
 app.post('/api/messages', mailCtrl.create);
 
 /* ---------- logout user ---------- */
-app.get('/logout', userCtrl.logoutUser);
+// app.get('/logout', userCtrl.logoutUser);
 
 app.listen(port, function() { // app listen for port
   console.log('listening on port', port);
