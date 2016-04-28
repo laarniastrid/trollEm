@@ -4,7 +4,7 @@ angular.module('myApp', ['ui.router'])
 
   $stateProvider
     .state('login', {
-      url: '/',
+      url: '/login',
       templateUrl: '../html/login/login.html',
       controller: 'mainCtrl'
     })
@@ -34,5 +34,5 @@ angular.module('myApp', ['ui.router'])
       }
     });
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/login');
 }); // end config

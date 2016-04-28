@@ -24,7 +24,7 @@ angular.module('myApp')
 
   $scope.logoutUser = () => {
     // loginService.logoutUser();
-    $state.go('/');
+    $state.go('/login');
   }
 
 });  // end navCtrl

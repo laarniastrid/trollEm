@@ -4,7 +4,7 @@ angular.module('myApp', ['ui.router'])
 
   $stateProvider
     .state('login', {
-      url: '/',
+      url: '/login',
       templateUrl: '../html/login/login.html',
       controller: 'mainCtrl'
     })
@@ -34,7 +34,7 @@ angular.module('myApp', ['ui.router'])
       }
     });
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/login');
 }]); // end config
 
 angular.module('myApp')
@@ -325,7 +325,7 @@ angular.module('myApp')
 
   $scope.logoutUser = () => {
     // loginService.logoutUser();
-    $state.go('/');
+    $state.go('/login');
   }
 
 }]);  // end navCtrl
