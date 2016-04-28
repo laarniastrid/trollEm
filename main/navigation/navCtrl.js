@@ -22,9 +22,9 @@ angular.module('myApp')
     $scope.modalToggle('contact');
   };
 
-  $scope.logoutUser = () => {
-    // loginService.logoutUser();
-    $state.go('/login');
-  }
+  // $scope.logoutUser = () => {
+  //   // loginService.logoutUser();
+  //   $state.go('/login');
+  // }
 
 });  // end navCtrl
