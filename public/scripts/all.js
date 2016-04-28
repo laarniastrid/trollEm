@@ -200,21 +200,6 @@ angular.module('myApp')
 
 angular.module('myApp')
 
-.service('loginService', ["$http", function($http) {
-
-  this.logoutUser = () => {
-    return $http({
-      method: 'GET',
-      url: '/logout'
-    }).success(function() {
-      $state.go('/');
-    })
-  }
-
-}])  // end loginsvc
-
-angular.module('myApp')
-
 .controller('mailCtrl', ["$scope", "mainSvc", "mailSvc", function($scope, mainSvc, mailSvc) {
 
   $scope.sendMessage = function(text) {
@@ -266,6 +251,21 @@ angular.module('myApp')
 
 angular.module('myApp')
 
+.service('loginService', ["$http", function($http) {
+
+  // this.logoutUser = () => {
+  //   return $http({
+  //     method: 'GET',
+  //     url: '/logout'
+  //   }).success(function() {
+  //     $state.go('/');
+  //   })
+  // }
+
+}])  // end loginsvc
+
+angular.module('myApp')
+
 .directive('iconDir', ["$controller", function($controller) {
   return {
     restrict: 'E',
@@ -301,7 +301,7 @@ angular.module('myApp')
 
 angular.module('myApp')
 
-.controller('navCtrl', ["$scope", "loginService", function($scope, loginService) {
+.controller('navCtrl', ["$scope", "$state", "loginService", function($scope, $state, loginService) {
 
   $scope.aboutModal = false;
   $scope.contactModal = false;
@@ -324,7 +324,8 @@ angular.module('myApp')
   };
 
   $scope.logoutUser = () => {
-    loginService.logoutUser();
+    // loginService.logoutUser();
+    $state.go('/');
   }
 
 }]);  // end navCtrl
