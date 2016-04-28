@@ -50,7 +50,7 @@ em {
   height: auto;
   background: transparent;
   border: 2px teal solid;
-  border: 2px rgba(0, 128, 128, 0.25) solid;
+  border: 2px rgba(0, 128, 128, 0.5) solid;
   border-radius: 5px;
   position: absolute;
   top: 50%;
@@ -70,8 +70,6 @@ em {
 .login {
   width: 100%;
   height: 250px;
-  /*font-size: 20px;*/
-  /*border-radius: 5px;*/
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -163,7 +161,7 @@ em {
   position: absolute;
   z-index: 200;
   background: #FFF;
-  top: 45%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); }
   .modal-content .fa {
@@ -329,7 +327,8 @@ em {
 .nav-top-wrapper {
   width: 100vw;
   height: 55px;
-  font-size: 30px;
+  font-size: 25px;
+  font-weight: bold;
   color: #111111;
   background: teal;
   background: rgba(0, 128, 128, 0.7);

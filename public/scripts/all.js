@@ -148,60 +148,6 @@ angular.module('myApp')
 
 angular.module('myApp')
 
-.controller('mailCtrl', ["$scope", "mainSvc", "mailSvc", function($scope, mainSvc, mailSvc) {
-
-  $scope.sendMessage = function(text) {
-    $scope.username = mainSvc.getUsername();
-    $scope.thisTest = mainSvc.getUser()
-    .then(function(response) {
-      var getPerson = mainSvc.getPerson();
-      $scope.mailTo = getPerson.email;
-      mailSvc.setMailOptions($scope.mailTo, text, $scope.username); // set mail options
-      $scope.mailOptions = mailSvc.getMailOptions();
-      mailSvc.sendMail($scope.mailOptions)
-      .then(function(response) {
-        console.log(response);
-      });
-    });
-  };
-
-}]);  // end mailCtr
-
-angular.module('myApp')
-
-.service('mailSvc', ["$http", function($http) {
-
-  /* ---------- mailSvc vars ---------- */
-  var email = 'epictrollem@gmail.com';
-  var subject = 'You\'ve been trolled!!';
-  var temp = {};
-
-
-  /* ---------- setters/constructors ---------- */
-  this.setMailOptions = function(to, text, username) {
-    temp.from = email;
-    temp.to = to;
-    temp.subject = subject;
-    temp.text = text;
-    temp.html = '<h1>Surprise!! ' + temp.text + '</h1><p>~ from the troll: <strong>' + username + '</strong></p>';
-  };
-
-
-  /* ---------- getters ---------- */
-  this.getMailOptions = function() { // mail object to send to post
-    return temp;
-  };
-
-
-  /* ---------- manipulators ---------- */
-  this.sendMail = function(input) {
-    return $http.post('/api/messages', input);
-  };
-
-}]);  // end mailSvc
-
-angular.module('myApp')
-
 .controller('listCtrl', ["$scope", "$state", "$stateParams", "personActions", "personInfo", "mainSvc", function($scope, $state, $stateParams, personActions, personInfo, mainSvc) {
 
   var test = mainSvc.getActions($stateParams.id);
@@ -231,7 +177,6 @@ angular.module('myApp')
     $scope.modalToggle();
   };
 
-
   /* ---------- show/hide modal ---------- */
   $scope.showModal = false;
   $scope.modalToggle = function() {
@@ -252,6 +197,57 @@ angular.module('myApp')
     }
   };
 }); // end listDir
+
+angular.module('myApp')
+
+.controller('mailCtrl', ["$scope", "mainSvc", "mailSvc", function($scope, mainSvc, mailSvc) {
+
+  $scope.sendMessage = function(text) {
+    $scope.username = mainSvc.getUsername();
+    $scope.thisTest = mainSvc.getUser()
+    .then(function(response) {
+      var getPerson = mainSvc.getPerson();
+      $scope.mailTo = getPerson.email;
+      mailSvc.setMailOptions($scope.mailTo, text, $scope.username); // set mail options
+      $scope.mailOptions = mailSvc.getMailOptions();
+      mailSvc.sendMail($scope.mailOptions)
+      .then(function(response) {
+        console.log(response);
+      });
+    });
+  };
+
+}]);  // end mailCtr
+
+angular.module('myApp')
+
+.service('mailSvc', ["$http", function($http) {
+
+  /* ---------- mailSvc vars ---------- */
+  var email = 'epictrollem@gmail.com';
+  var subject = 'You\'ve been trolled!!';
+  var temp = {};
+
+  /* ---------- setters/constructors ---------- */
+  this.setMailOptions = function(to, text, username) {
+    temp.from = email;
+    temp.to = to;
+    temp.subject = subject;
+    temp.text = text;
+    temp.html = '<h1>Surprise!! ' + temp.text + '</h1><p>~ from the troll: <strong>' + username + '</strong></p>';
+  };
+
+  /* ---------- getters ---------- */
+  this.getMailOptions = function() { // mail object to send to post
+    return temp;
+  };
+
+  /* ---------- manipulators ---------- */
+  this.sendMail = function(input) {
+    return $http.post('/api/messages', input);
+  };
+
+}]);  // end mailSvc
 
 angular.module('myApp')
 
@@ -312,7 +308,6 @@ angular.module('myApp')
     $scope.modalToggle('contact');
   };
 
-
 }]);  // end navCtrl
 
 angular.module('myApp')
@@ -332,9 +327,9 @@ angular.module('myApp')
         $('#menuNav').toggle('expand');
       })
 
-      $('#menuNav').on('click', function() {
-        $('#menuNav').toggle('expand');
-      })
+      // $('#menuNav').on('click', function() {
+      //   $('#menuNav').toggle('expand');
+      // })
 
       $('#follow').on('click', function() {
         $('#follow-nav').toggle('expand');
