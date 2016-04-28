@@ -146,6 +146,20 @@ angular.module('myApp')
 
 }]);  // end mainSvc
 
+angular.module('myApp')
+
+.service('loginService', ["$http", function($http) {
+
+  this.logoutUser = () => {
+    return $http({
+      method: 'GET',
+      url: '/logout'
+    }).success(function() {
+      $state.go('/');
+    })
+  }
+
+}])  // end loginsvc
 
 angular.module('myApp')
 
