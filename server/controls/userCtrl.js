@@ -37,6 +37,6 @@ module.exports = {
   logoutUser: function(req, res, next) {
     req.logout();
     req.session.destroy();
-    res.redirect('/');
-  }
+    res.redirect( '/' );
+  },
 };

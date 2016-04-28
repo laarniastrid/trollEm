@@ -148,21 +148,6 @@ angular.module('myApp')
 
 angular.module('myApp')
 
-.service('loginService', ["$http", function($http) {
-
-  this.logoutUser = () => {
-    return $http({
-      method: 'GET',
-      url: '/logout'
-    }).success(function() {
-      $state.go('/');
-    })
-  }
-
-}])  // end loginsvc
-
-angular.module('myApp')
-
 .controller('listCtrl', ["$scope", "$state", "$stateParams", "personActions", "personInfo", "mainSvc", function($scope, $state, $stateParams, personActions, personInfo, mainSvc) {
 
   var test = mainSvc.getActions($stateParams.id);
@@ -212,6 +197,21 @@ angular.module('myApp')
     }
   };
 }); // end listDir
+
+angular.module('myApp')
+
+.service('loginService', ["$http", function($http) {
+
+  this.logoutUser = () => {
+    return $http({
+      method: 'GET',
+      url: '/logout'
+    }).success(function() {
+      $state.go('/');
+    })
+  }
+
+}])  // end loginsvc
 
 angular.module('myApp')
 
@@ -351,7 +351,8 @@ angular.module('myApp')
       // })
 
       $('#follow').on('click', function() {
-        $('#follow-nav').toggle('expand');
+        $('#follow').toggle('expand');
+        // $('#follow-nav').toggle('expand');
       })
     }
   });

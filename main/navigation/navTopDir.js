@@ -20,7 +20,8 @@ angular.module('myApp')
       // })
 
       $('#follow').on('click', function() {
-        $('#follow-nav').toggle('expand');
+        $('#follow').toggle('expand');
+        // $('#follow-nav').toggle('expand');
       })
     }
   });
