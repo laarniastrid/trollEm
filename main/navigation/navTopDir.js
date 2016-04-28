@@ -15,9 +15,9 @@ angular.module('myApp')
         $('#menuNav').toggle('expand');
       })
 
-      $('#menuNav').on('click', function() {
-        $('#menuNav').toggle('expand');
-      })
+      // $('#menuNav').on('click', function() {
+      //   $('#menuNav').toggle('expand');
+      // })
 
       $('#follow').on('click', function() {
         $('#follow-nav').toggle('expand');
