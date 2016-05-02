@@ -150,21 +150,6 @@ angular.module('myApp')
 
 angular.module('myApp')
 
-.service('loginService', ["$http", function($http) {
-
-  // this.logoutUser = () => {
-  //   return $http({
-  //     method: 'GET',
-  //     url: '/logout'
-  //   }).success(function() {
-  //     $state.go('/');
-  //   })
-  // }
-
-}])  // end loginsvc
-
-angular.module('myApp')
-
 .controller('listCtrl', ["$scope", "$state", "$stateParams", "personActions", "personInfo", "mainSvc", function($scope, $state, $stateParams, personActions, personInfo, mainSvc) {
 
   var test = mainSvc.getActions($stateParams.id);
@@ -217,6 +202,21 @@ angular.module('myApp')
 
 angular.module('myApp')
 
+.service('loginService', ["$http", function($http) {
+
+  // this.logoutUser = () => {
+  //   return $http({
+  //     method: 'GET',
+  //     url: '/logout'
+  //   }).success(function() {
+  //     $state.go('/');
+  //   })
+  // }
+
+}])  // end loginsvc
+
+angular.module('myApp')
+
 .controller('mailCtrl', ["$scope", "mainSvc", "mailSvc", function($scope, mainSvc, mailSvc) {
 
   $scope.sendMessage = function(text) {
@@ -241,7 +241,7 @@ angular.module('myApp')
 .service('mailSvc', ["$http", function($http) {
 
   /* ---------- mailSvc vars ---------- */
-  var email = 'epictrollem@gmail.com';
+  var email = 'epictrollem@yahoo.com';
   var subject = 'You\'ve been trolled!!';
   var temp = {};
 
@@ -266,6 +266,43 @@ angular.module('myApp')
   };
 
 }]);  // end mailSvc
+
+angular.module('myApp')
+
+.controller('peopleCtrl', ["$scope", "$location", "$state", "userInfo", "mainSvc", function($scope, $location, $state, userInfo, mainSvc) {
+
+  $scope.currentUser = userInfo.currentUser;
+  $scope.people = mainSvc.getPeople(userInfo.currentUser)
+    .then(function(response) {
+      $scope.list = response.data.people;
+    });
+
+  $scope.addPerson = function(input) {
+    mainSvc.addNewPerson(input)
+      .then(function(response) {
+        var temp = {
+          people: response.data._id
+        };
+        mainSvc.updateUser($scope.currentUser._id, temp);
+        $state.reload();
+      });
+    $scope.modalToggle();
+  };
+
+  $scope.actions = function(input) {
+    mainSvc.setPerson(input);
+    mainSvc.setUsername($scope.currentUser.username);
+    $state.go('list', {id: input._id});
+  };
+
+
+  /* ---------- show/hide modal ---------- */
+  $scope.showModal = false;
+  $scope.modalToggle = function() {
+    $scope.showModal = !$scope.showModal;
+  };
+
+}]);  // end peopleCtrl
 
 angular.module('myApp')
 
@@ -361,40 +398,3 @@ angular.module('myApp')
     }
   });
 });  // end navTopDir
-
-angular.module('myApp')
-
-.controller('peopleCtrl', ["$scope", "$location", "$state", "userInfo", "mainSvc", function($scope, $location, $state, userInfo, mainSvc) {
-
-  $scope.currentUser = userInfo.currentUser;
-  $scope.people = mainSvc.getPeople(userInfo.currentUser)
-    .then(function(response) {
-      $scope.list = response.data.people;
-    });
-
-  $scope.addPerson = function(input) {
-    mainSvc.addNewPerson(input)
-      .then(function(response) {
-        var temp = {
-          people: response.data._id
-        };
-        mainSvc.updateUser($scope.currentUser._id, temp);
-        $state.reload();
-      });
-    $scope.modalToggle();
-  };
-
-  $scope.actions = function(input) {
-    mainSvc.setPerson(input);
-    mainSvc.setUsername($scope.currentUser.username);
-    $state.go('list', {id: input._id});
-  };
-
-
-  /* ---------- show/hide modal ---------- */
-  $scope.showModal = false;
-  $scope.modalToggle = function() {
-    $scope.showModal = !$scope.showModal;
-  };
-
-}]);  // end peopleCtrl

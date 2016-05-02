@@ -3,7 +3,7 @@ angular.module('myApp')
 .service('mailSvc', function($http) {
 
   /* ---------- mailSvc vars ---------- */
-  var email = 'epictrollem@gmail.com';
+  var email = 'epictrollem@yahoo.com';
   var subject = 'You\'ve been trolled!!';
   var temp = {};
 

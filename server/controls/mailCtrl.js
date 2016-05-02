@@ -6,8 +6,8 @@ var Mail = require('../models/mailSchema.js'),
       host: 'smtp.mail.yahoo.com',
       port: 465,
       auth: {
-        user: 'process.env.EMAILER_NAME',
-        pass: 'process.env.EMAILER_SECRET'
+        user: process.env.EMAILER_NAME,
+        pass: process.env.EMAILER_SECRET
       }
     }))
 
