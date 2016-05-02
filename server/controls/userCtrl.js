@@ -2,6 +2,7 @@ var User = require('../models/userSchema.js');
 
 module.exports = {
   create: function(req, res, next) {
+    console.log(req.body);
     var user = new User(req.body);
     user.save(function(err, r) {
       return err ? res.status(500).send(err) : res.status(200).send(r);
