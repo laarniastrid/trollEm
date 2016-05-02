@@ -16,11 +16,11 @@ var mailSchema = new Schema({
   },
   text: {
     type: String,
-    required: true
+    // required: true
   },
   html: {
     type: String,
-    required: true
+    // required: true
   }
 });
 

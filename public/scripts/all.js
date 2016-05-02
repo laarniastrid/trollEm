@@ -56,8 +56,7 @@ angular.module('myApp')
   $scope.addNewUser = function(input) {
     if (input.username.length < 6) {
       alert('Username needs to be at least 6 characters long');
-    }
-    if (input.password !== input.passwordConfirm) {
+    } else if (input.password !== input.passwordConfirm) {
       alert('passwords don\'t match, please re-enter passwords');
     } else {
       var temp = {
