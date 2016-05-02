@@ -11,9 +11,9 @@ angular.module('myApp')
       mailSvc.setMailOptions($scope.mailTo, text, $scope.username); // set mail options
       $scope.mailOptions = mailSvc.getMailOptions();
       mailSvc.sendMail($scope.mailOptions)
-      .then(function(response) {
-        console.log(response);
-      });
+      // .then(function(response) {
+        // console.log(response);
+      // });
     });
   };
 

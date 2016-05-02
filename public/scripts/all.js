@@ -228,9 +228,9 @@ angular.module('myApp')
       mailSvc.setMailOptions($scope.mailTo, text, $scope.username); // set mail options
       $scope.mailOptions = mailSvc.getMailOptions();
       mailSvc.sendMail($scope.mailOptions)
-      .then(function(response) {
-        console.log(response);
-      });
+      // .then(function(response) {
+        // console.log(response);
+      // });
     });
   };
 
@@ -261,48 +261,11 @@ angular.module('myApp')
 
   /* ---------- manipulators ---------- */
   this.sendMail = function(input) {
-    console.log(input);
+    // console.log(input);
     return $http.post('/api/messages', input);
   };
 
 }]);  // end mailSvc
-
-angular.module('myApp')
-
-.controller('peopleCtrl', ["$scope", "$location", "$state", "userInfo", "mainSvc", function($scope, $location, $state, userInfo, mainSvc) {
-
-  $scope.currentUser = userInfo.currentUser;
-  $scope.people = mainSvc.getPeople(userInfo.currentUser)
-    .then(function(response) {
-      $scope.list = response.data.people;
-    });
-
-  $scope.addPerson = function(input) {
-    mainSvc.addNewPerson(input)
-      .then(function(response) {
-        var temp = {
-          people: response.data._id
-        };
-        mainSvc.updateUser($scope.currentUser._id, temp);
-        $state.reload();
-      });
-    $scope.modalToggle();
-  };
-
-  $scope.actions = function(input) {
-    mainSvc.setPerson(input);
-    mainSvc.setUsername($scope.currentUser.username);
-    $state.go('list', {id: input._id});
-  };
-
-
-  /* ---------- show/hide modal ---------- */
-  $scope.showModal = false;
-  $scope.modalToggle = function() {
-    $scope.showModal = !$scope.showModal;
-  };
-
-}]);  // end peopleCtrl
 
 angular.module('myApp')
 
@@ -398,3 +361,40 @@ angular.module('myApp')
     }
   });
 });  // end navTopDir
+
+angular.module('myApp')
+
+.controller('peopleCtrl', ["$scope", "$location", "$state", "userInfo", "mainSvc", function($scope, $location, $state, userInfo, mainSvc) {
+
+  $scope.currentUser = userInfo.currentUser;
+  $scope.people = mainSvc.getPeople(userInfo.currentUser)
+    .then(function(response) {
+      $scope.list = response.data.people;
+    });
+
+  $scope.addPerson = function(input) {
+    mainSvc.addNewPerson(input)
+      .then(function(response) {
+        var temp = {
+          people: response.data._id
+        };
+        mainSvc.updateUser($scope.currentUser._id, temp);
+        $state.reload();
+      });
+    $scope.modalToggle();
+  };
+
+  $scope.actions = function(input) {
+    mainSvc.setPerson(input);
+    mainSvc.setUsername($scope.currentUser.username);
+    $state.go('list', {id: input._id});
+  };
+
+
+  /* ---------- show/hide modal ---------- */
+  $scope.showModal = false;
+  $scope.modalToggle = function() {
+    $scope.showModal = !$scope.showModal;
+  };
+
+}]);  // end peopleCtrl
