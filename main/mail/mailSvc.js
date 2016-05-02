@@ -23,6 +23,7 @@ angular.module('myApp')
 
   /* ---------- manipulators ---------- */
   this.sendMail = function(input) {
+    console.log(input);
     return $http.post('/api/messages', input);
   };
 
