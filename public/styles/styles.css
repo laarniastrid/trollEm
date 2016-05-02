@@ -131,7 +131,9 @@ em {
   margin: 10px;
   border: 2px teal solid;
   border-radius: 5px;
-  padding: 10px;
+  padding: 10px; }
+
+.people div div {
   cursor: pointer; }
 
 .people-filter, .actions-filter {
