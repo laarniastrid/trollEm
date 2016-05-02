@@ -1,6 +1,15 @@
 var Mail = require('../models/mailSchema.js'),
     nodemailer = require('nodemailer'),
-    transporter = nodemailer.createTransport(process.env.TROLL_KEY);
+    smtpTransport = require('nodemailer-smtp-transport'),
+    // transporter = nodemailer.createTransport(process.env.TROLL_KEY);
+    transporter = nodemailer.createTransport(smtpTransport({
+      host: 'smtp.mail.yahoo.com',
+      port: 465,
+      auth: {
+        user: 'process.env.EMAILER_NAME',
+        pass: 'process.env.EMAILER_SECRET'
+      }
+    }))
 
 
 module.exports = {
