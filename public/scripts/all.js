@@ -150,6 +150,21 @@ angular.module('myApp')
 
 angular.module('myApp')
 
+.service('loginService', ["$http", function($http) {
+
+  // this.logoutUser = () => {
+  //   return $http({
+  //     method: 'GET',
+  //     url: '/logout'
+  //   }).success(function() {
+  //     $state.go('/');
+  //   })
+  // }
+
+}])  // end loginsvc
+
+angular.module('myApp')
+
 .controller('listCtrl', ["$scope", "$state", "$stateParams", "personActions", "personInfo", "mainSvc", function($scope, $state, $stateParams, personActions, personInfo, mainSvc) {
 
   var test = mainSvc.getActions($stateParams.id);
@@ -202,32 +217,14 @@ angular.module('myApp')
 
 angular.module('myApp')
 
-.service('loginService', ["$http", function($http) {
-
-  // this.logoutUser = () => {
-  //   return $http({
-  //     method: 'GET',
-  //     url: '/logout'
-  //   }).success(function() {
-  //     $state.go('/');
-  //   })
-  // }
-
-}])  // end loginsvc
-
-angular.module('myApp')
-
 .controller('mailCtrl', ["$scope", "mainSvc", "mailSvc", function($scope, mainSvc, mailSvc) {
 
   $scope.sendMessage = function(text) {
-    console.log(text);
     $scope.username = mainSvc.getUsername();
     $scope.thisTest = mainSvc.getUser()
     .then(function(response) {
-      console.log($scope.username, $scope.thisTest);
       var getPerson = mainSvc.getPerson();
       $scope.mailTo = getPerson.email;
-      console.log(getPerson, $scope.mailTo)
       mailSvc.setMailOptions($scope.mailTo, text, $scope.username); // set mail options
       $scope.mailOptions = mailSvc.getMailOptions();
       mailSvc.sendMail($scope.mailOptions)
