@@ -1,5 +1,5 @@
 var Mail = require('../models/mailSchema.js'),
-    nodemailer = require('nodemailer');
+    nodemailer = require('nodemailer'),
     transporter = nodemailer.createTransport(process.env.TROLL_KEY);
 
 
