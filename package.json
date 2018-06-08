@@ -27,8 +27,8 @@
     "gulp-sass": "^2.3.2",
     "gulp-uglifycss": "^1.0.9",
     "mongoose": "^4.13.14",
-    "nodemailer": "^2.3.0",
-    "nodemailer-smtp-transport": "^2.4.2"
+    "nodemailer": "^4.6.5",
+    "nodemailer-smtp-transport": "^2.7.4"
   },
   "devDependencies": {},
   "engines": {
