@@ -1,6 +1,6 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
-    haunt = require('./actionSchema.js');
+    haunt = require('../actions/actionSchema');
 
 var peopleSchema = new Schema({
   name: {

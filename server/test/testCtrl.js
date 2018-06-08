@@ -1,4 +1,4 @@
-var users = require('../models/userSchema.js');
+var users = require('../user/userSchema');
 
 module.exports = {
   login: function(req, res, next) {

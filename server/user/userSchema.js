@@ -1,6 +1,6 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
-    person = require('./peopleSchema.js');
+    person = require('../people/peopleSchema');
 
 var userSchema = new Schema({
   name: {

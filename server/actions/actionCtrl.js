@@ -1,43 +1,39 @@
-var People = require('../models/peopleSchema.js'),
-    User = require('../models/userSchema.js');
+var Actions = require('../actions/actionSchema'),
+    People = require('../people/peopleSchema');
 
 module.exports = {
   create: function(req, res, next) {
-    var person = new People(req.body);
-    person.save(function(err, r) {
+    var action = new Actions(req.body);
+    action.save(function(err, r) {
       return err ? res.status(500).send(err) : res.status(200).send(r);
     });
   },
   findAll: function(req, res, next) {
     var query = req.params.id;
-    User.findById(query).populate('people').exec(function(err, r) {
+
+    People.findById(query).populate('actions').exec(function(err, r) {
       return err ? res.status(500).send(err) : res.status(200).send(r);
     });
   },
   findOne: function(req, res, next) {
     var query = req.params.id;
-    People.findById(query, function(err, r) {
+    Actions.findById(query, function(err, r) {
       return err ? res.status(500).send(err) : res.status(200).send(r);
     });
   },
   update: function(req, res, next) {
-    console.log('here');
-    People.findById(req.params.id, function(err, r) {
-      if (err) {
-        res.status(500).send(err);
-      } else {
-        r.actions.push(req.body.action);
-        r.save(function(err, r) {
-          return err ? res.status(500).send(err) : res.status(200).send(r);
-        });
-      }
+    var query = {
+      _id: req.params.id
+    };
+    Actions.update(query, req.body, function(err, r) {
+      return err ? res.status(500).send(err) : res.status(200).send(r);
     });
   },
   destroy: function(req, res, next) {
     var query = {
       _id: req.params.id
     };
-    People.remove(query, function(err, r) {
+    Actions.remove(query, function(err, r) {
       return err ? res.status(500).send(err) : res.status(200).send(r);
     });
   }

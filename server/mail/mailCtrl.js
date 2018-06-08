@@ -1,4 +1,4 @@
-var Mail = require('../models/mailSchema.js'),
+var Mail = require('../mail/mailSchema'),
     nodemailer = require('nodemailer'),
     smtpTransport = require('nodemailer-smtp-transport'),
     // transporter = nodemailer.createTransport(process.env.TROLL_KEY);
