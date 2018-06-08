@@ -3,7 +3,7 @@ angular.module('myApp')
 .directive('navTopDir', function() {
   return ({
     restrict: 'E',
-    templateUrl: './html/navigation/navTop.html',
+    templateUrl: './html/header/navTop.html',
     controller: function($scope) {
       $scope.gitLink = 'https://github.com/laarniastrid';
       $scope.linkedLink = 'https://www.linkedin.com/in/laarniastrid';

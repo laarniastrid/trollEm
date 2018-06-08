@@ -3,7 +3,7 @@ angular.module('myApp')
 .directive('navBotDir', function() {
   return ({
     restrict: 'E',
-    templateUrl: './html/navigation/navBot.html',
+    templateUrl: './html/footer/navBot.html',
     controller: function($scope) {
       /* ---------- nav bot icons ----------- */
       $scope.myGithub = 'fa fa-github-alt';

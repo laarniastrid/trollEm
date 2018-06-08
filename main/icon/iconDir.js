@@ -3,7 +3,7 @@ angular.module('myApp')
 .directive('iconDir', function($controller) {
   return {
     restrict: 'E',
-    templateUrl: './html/navigation/icons.html',
+    templateUrl: './html/icon/icons.html',
     scope: {
       icon: '=',
       link: '='

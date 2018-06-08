@@ -1,251 +1,85 @@
-@import url(https://fonts.googleapis.com/css?family=Kaushan+Script);
-html, body {
-  box-sizing: border-box;
-  font-family: Verdana, Arial; }
+@import url("https://fonts.googleapis.com/css?family=Kaushan+Script");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 
-body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0; }
-
-.main-wrapper {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-
-i {
-  font-size: 45px; }
-
-input {
-  width: 275px;
-  font-size: 16px;
-  margin: 10px;
-  border: none;
-  border-bottom: 3px rgba(0, 0, 0, 0.5) solid;
-  background: rgba(255, 0, 0, 0);
-  border-radius: 5px;
-  line-height: 30px; }
-
-textarea {
-  width: 275px;
-  height: 168px;
-  font-size: 16px;
-  margin: 10px;
-  border: none;
-  border-bottom: 3px rgba(0, 0, 0, 0.5) solid;
-  border-right: 3px rgba(0, 0, 0, 0.5) solid;
-  background: rgba(255, 0, 0, 0);
-  border-radius: 5px; }
-
-em {
-  color: teal; }
-
-/* ---------- login styles ---------- */
-.login-page {
-  width: 70%;
-  max-width: 450px;
-  height: auto;
-  background: transparent;
-  border: 2px teal solid;
-  border: 2px rgba(0, 128, 128, 0.5) solid;
-  border-radius: 5px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
-
-.login-page > div {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  text-align: center;
-  justify-content: center; }
-
-.login-page h2 {
-  margin: 15px auto auto 0; }
-
-.login {
-  width: 100%;
-  height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
-  .login div {
-    width: 300px;
-    display: flex;
-    flex-direction: column; }
-    .login div button {
-      font-size: 20px;
-      margin: 10px;
-      background: rgba(100, 100, 100, 0.5);
-      border-radius: 5px;
-      border: none; }
-  .login input {
-    font-size: 20px;
-    margin: 10px;
-    background: none;
-    border-radius: 5px; }
-
-.signup-link {
-  position: absolute;
-  bottom: 5px; }
-
-/* ---------- page content styles ---------- */
-.page-content {
-  width: 80%;
-  height: auto;
-  margin-bottom: 75px;
-  background: transparent;
-  position: absolute;
-  top: 20%;
-  left: 10%;
-  right: auto;
-  z-index: -1; }
-
-.user {
-  font-size: 25px;
-  margin: auto 15px auto 15px;
-  display: flex;
-  justify-content: space-between; }
-
-.people-actions {
-  display: flex; }
-
-.add-new span {
-  font-size: 15px; }
-
-.people, .list {
-  font-size: 20px;
-  margin-bottom: 25px;
-  display: flex;
-  flex-flow: wrap row;
-  justify-content: center; }
-
-.people div div, .list div div {
-  width: 450px;
-  height: auto;
-  margin: 10px;
-  border: 2px teal solid;
-  border-radius: 5px;
-  padding: 10px; }
-
-.people div div {
-  cursor: pointer; }
-
-.people-filter, .actions-filter {
-  background: transparent; }
-
-/* ---------- modal styles ---------- */
-.modal {
-  font-size: 20px;
-  position: absolute;
-  z-index: 100;
-  top: 0;
-  left: 0; }
-  .modal i {
-    position: absolute;
-    top: 0;
-    right: 0; }
-
-.modal-overlay {
+/* ---------- nav top styles ---------- */
+.nav-top-wrapper {
   width: 100vw;
-  height: 100vh;
-  background: black;
-  opacity: 0.5; }
-
-.modal-content {
-  width: auto;
-  height: auto;
-  border-radius: 5px;
-  position: absolute;
-  z-index: 200;
-  background: #FFF;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
-  .modal-content .fa {
-    margin-right: 5px;
-    font-size: 30px; }
-  .modal-content p {
-    width: 400px;
-    margin: 10px; }
-
-.modal-content-wrapper {
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center; }
-  .modal-content-wrapper h2 {
-    font-size: 25px;
-    margin: 10px 0 0 0; }
-  .modal-content-wrapper input {
-    width: 275px;
-    margin: 5px; }
-
-.modal-form {
-  width: auto;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center; }
-  .modal-form textarea {
-    width: 275px;
-    height: 150px;
-    margin: 5px; }
-  .modal-form button {
-    width: 150px;
-    margin: 5px;
-    border: none; }
-
-/* ---------- contact stuff below ---------- */
-.contact {
-  height: auto;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 55px;
+  font-size: 25px;
+  font-weight: bold;
+  color: #111111;
+  background: teal;
+  background: rgba(0, 128, 128, 0.7);
   position: relative;
-  margin-top: 5%; }
-
-.contact-form {
-  width: auto;
-  height: auto;
-  margin: 15px;
+  top: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center; }
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9; }
+  .nav-top-wrapper div {
+    margin-left: 15px;
+    margin-right: 25px; }
 
-.form-top {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around; }
-
-.form-top-left {
-  display: flex;
-  flex-direction: column; }
-
-.form-bottom button {
-  margin: 5px;
-  font-size: 16px; }
-
-/* ---------- back button ---------- */
-.back {
-  font-size: 30px;
-  margin-right: 10px; }
-  .back a {
+#menuNav {
+  background: white;
+  position: absolute;
+  right: 0;
+  padding-left: 0;
+  padding-right: 20px;
+  z-index: 9;
+  border-left: 1px rgba(0, 0, 0, 0.25) solid;
+  border-bottom: 1px rgba(0, 0, 0, 0.25) solid;
+  border-radius: 5px;
+  display: none; }
+  #menuNav ul, #menuNav li {
+    list-style: none;
+    margin: 10px;
+    padding-left: 10px; }
+  #menuNav #follow-nav {
+    display: none; }
+  #menuNav a {
     text-decoration: none;
     color: black; }
-    .back a:hover {
-      color: teal; }
 
-.nav-menu {
-  cursor: pointer; }
+/* ---------- nav bot styles ---------- */
+.nav-bot-wrapper {
+  width: 100%;
+  height: 60px;
+  font-size: 30px;
+  color: #111111;
+  background: teal;
+  background: rgba(0, 128, 128, 0.7);
+  position: fixed;
+  bottom: 0; }
+
+.nav-bot-wrapper i {
+  font-size: 45px; }
+
+.nav-bot {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+
+.nav-bot-left {
+  display: flex;
+  flex-direction: row; }
+
+.nav-bot-left > div {
+  margin: 10px; }
+
+.nav-bot-left > div:hover, .nav-bot-right a:hover {
+  color: white; }
+
+.nav-bot-right {
+  padding-right: 10px; }
+
+.nav-bot-right > div {
+  margin: 10px; }
+
+.nav-bot-right a {
+  text-decoration: none;
+  color: #111111; }
 
 @media only screen and (min-device-width: 300px) and (max-device-width: 450px) {
   /* ----------  ---------- */
@@ -328,83 +162,3 @@ em {
 
 /* ---------- modal styles ---------- */
 /* ---------- contact stuff below ---------- */
-
-/* ---------- nav top styles ---------- */
-.nav-top-wrapper {
-  width: 100vw;
-  height: 55px;
-  font-size: 25px;
-  font-weight: bold;
-  color: #111111;
-  background: teal;
-  background: rgba(0, 128, 128, 0.7);
-  position: relative;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 9; }
-  .nav-top-wrapper div {
-    margin-left: 15px;
-    margin-right: 25px; }
-
-#menuNav {
-  background: white;
-  position: absolute;
-  right: 0;
-  padding-left: 0;
-  padding-right: 20px;
-  z-index: 9;
-  border-left: 1px rgba(0, 0, 0, 0.25) solid;
-  border-bottom: 1px rgba(0, 0, 0, 0.25) solid;
-  border-radius: 5px;
-  display: none; }
-  #menuNav ul, #menuNav li {
-    list-style: none;
-    margin: 10px;
-    padding-left: 10px; }
-  #menuNav #follow-nav {
-    display: none; }
-  #menuNav a {
-    text-decoration: none;
-    color: black; }
-
-/* ---------- nav bot styles ---------- */
-.nav-bot-wrapper {
-  width: 100%;
-  height: 60px;
-  font-size: 30px;
-  color: #111111;
-  background: teal;
-  background: rgba(0, 128, 128, 0.7);
-  position: fixed;
-  bottom: 0; }
-
-.nav-bot-wrapper i {
-  font-size: 45px; }
-
-.nav-bot {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center; }
-
-.nav-bot-left {
-  display: flex;
-  flex-direction: row; }
-
-.nav-bot-left > div {
-  margin: 10px; }
-
-.nav-bot-left > div:hover, .nav-bot-right a:hover {
-  color: white; }
-
-.nav-bot-right {
-  padding-right: 10px; }
-
-.nav-bot-right > div {
-  margin: 10px; }
-
-.nav-bot-right a {
-  text-decoration: none;
-  color: #111111; }

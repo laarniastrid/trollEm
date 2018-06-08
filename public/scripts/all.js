@@ -150,6 +150,70 @@ angular.module('myApp')
 
 angular.module('myApp')
 
+.directive('navBotDir', function() {
+  return ({
+    restrict: 'E',
+    templateUrl: './html/footer/navBot.html',
+    controller: ["$scope", function($scope) {
+      /* ---------- nav bot icons ----------- */
+      $scope.myGithub = 'fa fa-github-alt';
+      $scope.myLinkedin = 'fa fa-linkedin';
+      $scope.myTwitter = 'fa fa-twitter';
+      $scope.myYoutube = 'fa fa-youtube-play';
+
+      /* ---------- nav bot icons links ----------- */
+      $scope.gitLink = 'https://github.com/laarniastrid';
+      $scope.linkedLink = 'https://www.linkedin.com/in/laarniastrid';
+      $scope.twitterLink = 'https://twitter.com/laarniastrid';
+      $scope.youtubeLink = 'https://www.youtube.com/user/HardsuitLoL';
+    }]
+  });
+});  // end navBotDir
+
+angular.module('myApp')
+
+.directive('navTopDir', function() {
+  return ({
+    restrict: 'E',
+    templateUrl: './html/header/navTop.html',
+    controller: ["$scope", function($scope) {
+      $scope.gitLink = 'https://github.com/laarniastrid';
+      $scope.linkedLink = 'https://www.linkedin.com/in/laarniastrid';
+      $scope.twitterLink = 'https://twitter.com/laarniastrid';
+      $scope.youtubeLink = 'https://www.youtube.com/user/HardsuitLoL';
+    }],
+    link: function(scope, ele, attr) {
+      $('#navWrapper').on('click', function() {
+        $('#menuNav').toggle('expand');
+      })
+
+      // $('#menuNav').on('click', function() {
+      //   $('#menuNav').toggle('expand');
+      // })
+
+      $('#follow').on('click', function() {
+        // $('#follow').toggle('expand');
+        $('#follow-nav').toggle('expand');
+      })
+    }
+  });
+});  // end navTopDir
+
+angular.module('myApp')
+
+.directive('iconDir', ["$controller", function($controller) {
+  return {
+    restrict: 'E',
+    templateUrl: './html/icon/icons.html',
+    scope: {
+      icon: '=',
+      link: '='
+    }
+  };
+}]);  // end iconDir
+
+angular.module('myApp')
+
 .controller('listCtrl', ["$scope", "$state", "$stateParams", "personActions", "personInfo", "mainSvc", function($scope, $state, $stateParams, personActions, personInfo, mainSvc) {
 
   var test = mainSvc.getActions($stateParams.id);
@@ -269,41 +333,6 @@ angular.module('myApp')
 
 angular.module('myApp')
 
-.directive('iconDir', ["$controller", function($controller) {
-  return {
-    restrict: 'E',
-    templateUrl: './html/navigation/icons.html',
-    scope: {
-      icon: '=',
-      link: '='
-    }
-  };
-}]);  // end iconDir
-
-angular.module('myApp')
-
-.directive('navBotDir', function() {
-  return ({
-    restrict: 'E',
-    templateUrl: './html/navigation/navBot.html',
-    controller: ["$scope", function($scope) {
-      /* ---------- nav bot icons ----------- */
-      $scope.myGithub = 'fa fa-github-alt';
-      $scope.myLinkedin = 'fa fa-linkedin';
-      $scope.myTwitter = 'fa fa-twitter';
-      $scope.myYoutube = 'fa fa-youtube-play';
-
-      /* ---------- nav bot icons links ----------- */
-      $scope.gitLink = 'https://github.com/laarniastrid';
-      $scope.linkedLink = 'https://www.linkedin.com/in/laarniastrid';
-      $scope.twitterLink = 'https://twitter.com/laarniastrid';
-      $scope.youtubeLink = 'https://www.youtube.com/user/HardsuitLoL';
-    }]
-  });
-});  // end navBotDir
-
-angular.module('myApp')
-
 .controller('navCtrl', ["$scope", "$state", "loginService", function($scope, $state, loginService) {
 
   $scope.aboutModal = false;
@@ -332,35 +361,6 @@ angular.module('myApp')
   // }
 
 }]);  // end navCtrl
-
-angular.module('myApp')
-
-.directive('navTopDir', function() {
-  return ({
-    restrict: 'E',
-    templateUrl: './html/navigation/navTop.html',
-    controller: ["$scope", function($scope) {
-      $scope.gitLink = 'https://github.com/laarniastrid';
-      $scope.linkedLink = 'https://www.linkedin.com/in/laarniastrid';
-      $scope.twitterLink = 'https://twitter.com/laarniastrid';
-      $scope.youtubeLink = 'https://www.youtube.com/user/HardsuitLoL';
-    }],
-    link: function(scope, ele, attr) {
-      $('#navWrapper').on('click', function() {
-        $('#menuNav').toggle('expand');
-      })
-
-      // $('#menuNav').on('click', function() {
-      //   $('#menuNav').toggle('expand');
-      // })
-
-      $('#follow').on('click', function() {
-        // $('#follow').toggle('expand');
-        $('#follow-nav').toggle('expand');
-      })
-    }
-  });
-});  // end navTopDir
 
 angular.module('myApp')
 
