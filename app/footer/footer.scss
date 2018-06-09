@@ -1,0 +1,9 @@
+@import '../global.scss';
+
+.footer {
+	width: 100%;
+	height: 50px;
+	background-color: $color-blue-dark;
+	position: fixed;
+	bottom: 0;
+}
