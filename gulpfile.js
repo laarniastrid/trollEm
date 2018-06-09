@@ -31,7 +31,7 @@
 	});
 
 	gulp.task('styles', () => {
-		return gulp.src('./app/**/*.scss')
+		return gulp.src(['./app/colors.scss', './app/**/*.scss'])
 			.pipe(sass())
 			.pipe(concat('styles.css'))
 			.pipe(gulp.dest('./public/styles'))
