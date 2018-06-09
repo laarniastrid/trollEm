@@ -195,6 +195,19 @@ em {
     .back a:hover {
       color: teal; }
 
+.content-wrapper {
+  background: #FFFFFF;
+  margin: 70px auto;
+  width: 80%;
+  height: 75%;
+  box-shadow: 0 0 6px #B9B9B9; }
+
+.content-wrapper {
+  background: #FFFFFF;
+  margin: 70px auto;
+  width: 80%;
+  height: 75%;
+  box-shadow: 0 0 6px #B9B9B9; }
 
 .footer {
   width: 100%;
@@ -202,6 +215,13 @@ em {
   background-color: #5A657F;
   position: fixed;
   bottom: 0; }
+
+.content-wrapper {
+  background: #FFFFFF;
+  margin: 70px auto;
+  width: 80%;
+  height: 75%;
+  box-shadow: 0 0 6px #B9B9B9; }
 
 /* ---------- nav top styles ---------- */
 .header {

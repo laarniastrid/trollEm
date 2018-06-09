@@ -2,12 +2,25 @@
 $color-blue-light: #EDF1FA;
 $color-blue-mid: #8898BF;
 $color-blue-dark: #5A657F;
+$color-white: #FFFFFF;
 $color-text-default: #242933;
 $color-text-light: #FFFFFF;
 $color-hr-default: #DAE1F2;
 $color-hover-default: #EDF1FA;
+$color-shadow-default: #B9B9B9;
 
 // fonts
 $font-size-sm: 12px;
 $font-size-med: 16px;
 $font-size-lg: 20px;
+
+
+
+// content wrapper
+.content-wrapper {
+	background: $color-white;
+	margin: 70px auto;
+	width: 80%;
+	height: 75%;
+	box-shadow: 0 0 6px $color-shadow-default;
+}
