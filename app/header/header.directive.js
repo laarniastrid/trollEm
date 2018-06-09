@@ -1,31 +1,36 @@
 (() => {
 	angular.module('myApp')
+		.directive('header', header);
+	
+	header.$inject = [];
 
-		.directive('navTopDir', function () {
-			return ({
-				restrict: 'E',
-				templateUrl: './html/header/header.html',
-				controller: function ($scope) {
-					$scope.gitLink = 'https://github.com/laarniastrid';
-					$scope.linkedLink = 'https://www.linkedin.com/in/laarniastrid';
-					$scope.twitterLink = 'https://twitter.com/laarniastrid';
-					$scope.youtubeLink = 'https://www.youtube.com/user/HardsuitLoL';
-				},
-				link: function (scope, ele, attr) {
-					$('#navWrapper').on('click', function () {
-						$('#menuNav').toggle('expand');
-					})
+	function header() {
+		return {
+			restrict: 'E',
+			templateUrl: './html/header/header.html',
+			controller: controller,
+			controllerAs: '$ctrl',
+			link: link,
+		}
 
-					// $('#menuNav').on('click', function() {
-					//   $('#menuNav').toggle('expand');
-					// })
+		function controller() {
+			var self = this;
 
-					$('#follow').on('click', function () {
-						// $('#follow').toggle('expand');
-						$('#follow-nav').toggle('expand');
-					})
-				}
+			self.gitLink = 'https://github.com/laarniastrid';
+			self.linkedLink = 'https://www.linkedin.com/in/laarniastrid';
+			self.twitterLink = 'https://twitter.com/laarniastrid';
+			self.youtubeLink = 'https://www.youtube.com/user/HardsuitLoL';
+		}
+
+		function link(scope, ele, attr) {
+			$('#navWrapper').on('click', function () {
+				$('#menuNav').toggle('expand');
 			});
-		}); // end navTopDir
 
+			$('#follow').on('click', function () {
+				// $('#follow').toggle('expand');
+				$('#follow-nav').toggle('expand');
+			});
+		}
+	}
 })();
