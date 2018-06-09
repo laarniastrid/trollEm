@@ -42,6 +42,13 @@ angular.module('myApp', ['ui.router'])
     $urlRouterProvider.otherwise('/login');
 }]); // end config
 
+$(document).ready(function() {
+
+  console.log('document is ready');
+
+
+});
+
 angular.module('myApp')
 
 .controller('mainCtrl', ["$scope", "$location", "$state", "mainSvc", function($scope, $location, $state, mainSvc) {
@@ -219,6 +226,21 @@ angular.module('myApp')
 
 angular.module('myApp')
 
+.service('loginService', ["$http", function($http) {
+
+  // this.logoutUser = () => {
+  //   return $http({
+  //     method: 'GET',
+  //     url: '/logout'
+  //   }).success(function() {
+  //     $state.go('/');
+  //   })
+  // }
+
+}])  // end loginsvc
+
+angular.module('myApp')
+
 .controller('listCtrl', ["$scope", "$state", "$stateParams", "personActions", "personInfo", "mainSvc", function($scope, $state, $stateParams, personActions, personInfo, mainSvc) {
 
   var test = mainSvc.getActions($stateParams.id);
@@ -268,21 +290,6 @@ angular.module('myApp')
     }
   };
 }); // end listDir
-
-angular.module('myApp')
-
-.service('loginService', ["$http", function($http) {
-
-  // this.logoutUser = () => {
-  //   return $http({
-  //     method: 'GET',
-  //     url: '/logout'
-  //   }).success(function() {
-  //     $state.go('/');
-  //   })
-  // }
-
-}])  // end loginsvc
 
 angular.module('myApp')
 

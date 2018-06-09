@@ -4,7 +4,6 @@
 	let concat = require('gulp-concat');
 	let uglifyCss = require('gulp-uglifycss');
 	let ngAnnotate = require('gulp-ng-annotate');
-	let browserSync = require('browser-sync').create();
 
 	let watchFiles = [
 		'./app/**/*.scss',
@@ -20,7 +19,7 @@
 		'html',
 	]);
 
-	gulp.task('watch', ['browserSync', 'styles', 'js', 'html'], () => {
+	gulp.task('watch', ['styles', 'js', 'html'], () => {
 		gulp.watch(watchFiles, ['default'])
 	});
 
@@ -39,31 +38,17 @@
 			.pipe(sass())
 			.pipe(concat('styles.css'))
 			.pipe(gulp.dest('./public/styles'))
-			.pipe(browserSync.reload({
-				stream: true
-			}))
 	});
 
 	gulp.task('js', () => {
-		return gulp.src('./app/**/*.js')
-			.pipe(ngAnnotate)
+		return gulp.src(['./app/**/*.js'])
+			.pipe(ngAnnotate())
 			.pipe(concat('scripts.js'))
-			.pipe(gulp.dest('./public'))
+			.pipe(gulp.dest('./public/scripts'))
 	});
 
 	gulp.task('html', () => {
 		gulp.src('./app/**/*.html')
 			.pipe(gulp.dest('./public/html'))
-			.pipe(browserSync.reload({
-				stream: true
-			}))
 	});
-
-	gulp.task('browserSync', () => {
-		browserSync.init({
-			server: {
-				baseDir: 'public'
-			}
-		})
-	})
 })();
