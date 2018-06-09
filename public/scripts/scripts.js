@@ -42,12 +42,188 @@ angular.module('myApp', ['ui.router'])
     $urlRouterProvider.otherwise('/login');
 }]); // end config
 
-$(document).ready(function() {
+angular.module('myApp')
 
-  console.log('document is ready');
+.directive('navBotDir', function() {
+  return ({
+    restrict: 'E',
+    templateUrl: './html/footer/navBot.html',
+    controller: ["$scope", function($scope) {
+      /* ---------- nav bot icons ----------- */
+      $scope.myGithub = 'fa fa-github-alt';
+      $scope.myLinkedin = 'fa fa-linkedin';
+      $scope.myTwitter = 'fa fa-twitter';
+      $scope.myYoutube = 'fa fa-youtube-play';
 
+      /* ---------- nav bot icons links ----------- */
+      $scope.gitLink = 'https://github.com/laarniastrid';
+      $scope.linkedLink = 'https://www.linkedin.com/in/laarniastrid';
+      $scope.twitterLink = 'https://twitter.com/laarniastrid';
+      $scope.youtubeLink = 'https://www.youtube.com/user/HardsuitLoL';
+    }]
+  });
+});  // end navBotDir
 
-});
+angular.module('myApp')
+
+.directive('navTopDir', function() {
+  return ({
+    restrict: 'E',
+    templateUrl: './html/header/header.html',
+    controller: ["$scope", function($scope) {
+      $scope.gitLink = 'https://github.com/laarniastrid';
+      $scope.linkedLink = 'https://www.linkedin.com/in/laarniastrid';
+      $scope.twitterLink = 'https://twitter.com/laarniastrid';
+      $scope.youtubeLink = 'https://www.youtube.com/user/HardsuitLoL';
+    }],
+    link: function(scope, ele, attr) {
+      $('#navWrapper').on('click', function() {
+        $('#menuNav').toggle('expand');
+      })
+
+      // $('#menuNav').on('click', function() {
+      //   $('#menuNav').toggle('expand');
+      // })
+
+      $('#follow').on('click', function() {
+        // $('#follow').toggle('expand');
+        $('#follow-nav').toggle('expand');
+      })
+    }
+  });
+});  // end navTopDir
+
+angular.module('myApp')
+
+.directive('iconDir', ["$controller", function($controller) {
+  return {
+    restrict: 'E',
+    templateUrl: './html/icon/icons.html',
+    scope: {
+      icon: '=',
+      link: '='
+    }
+  };
+}]);  // end iconDir
+
+angular.module('myApp')
+
+.controller('listCtrl', ["$scope", "$state", "$stateParams", "personActions", "personInfo", "mainSvc", function($scope, $state, $stateParams, personActions, personInfo, mainSvc) {
+
+  var test = mainSvc.getActions($stateParams.id);
+
+  $scope.currentPerson = personActions.data;
+  $scope.personName = personActions.data.name;
+  $scope.actions = mainSvc.getActions(personActions.data._id)
+  .then(function(response) {
+    $scope.list = response.data.actions;
+  });
+
+  $scope.addAction = function(input) {
+    var tempAction = {
+      message: input,
+      time: new Date(),
+      person: $scope.currentPerson._id
+    };
+
+    mainSvc.addNewAction(tempAction)
+      .then(function(response) {
+        var temp = {
+          action: response.data._id
+        };
+        mainSvc.updatePerson($scope.currentPerson._id, temp);
+        $state.reload();
+      });
+    $scope.modalToggle();
+  };
+
+  /* ---------- show/hide modal ---------- */
+  $scope.showModal = false;
+  $scope.modalToggle = function() {
+    $scope.showModal = !$scope.showModal;
+  };
+
+}]);  // end listCtrl
+
+angular.module('myApp')
+
+.directive('listDir', function() {
+  return {
+    restrict: 'EA',
+    link: function(scope, ele, attr) {
+      $('.list-dir').on('click', function() {
+        console.log('hello there');
+      });
+    }
+  };
+}); // end listDir
+
+angular.module('myApp')
+
+.service('loginService', ["$http", function($http) {
+
+  // this.logoutUser = () => {
+  //   return $http({
+  //     method: 'GET',
+  //     url: '/logout'
+  //   }).success(function() {
+  //     $state.go('/');
+  //   })
+  // }
+
+}])  // end loginsvc
+
+angular.module('myApp')
+
+.controller('mailCtrl', ["$scope", "mainSvc", "mailSvc", function($scope, mainSvc, mailSvc) {
+
+  $scope.sendMessage = function(text) {
+    $scope.username = mainSvc.getUsername();
+    $scope.thisTest = mainSvc.getUser()
+    .then(function(response) {
+      var getPerson = mainSvc.getPerson();
+      $scope.mailTo = getPerson.email;
+      mailSvc.setMailOptions($scope.mailTo, text, $scope.username); // set mail options
+      $scope.mailOptions = mailSvc.getMailOptions();
+      mailSvc.sendMail($scope.mailOptions)
+      // .then(function(response) {
+        // console.log(response);
+      // });
+    });
+  };
+
+}]);  // end mailCtr
+
+angular.module('myApp')
+
+.service('mailSvc', ["$http", function($http) {
+
+  /* ---------- mailSvc vars ---------- */
+  var email = 'epictrollem@yahoo.com';
+  var subject = 'You\'ve been trolled!!';
+  var temp = {};
+
+  /* ---------- setters/constructors ---------- */
+  this.setMailOptions = function(to, text, username) {
+    temp.from = email;
+    temp.to = to;
+    temp.subject = subject;
+    temp.text = text;
+    temp.html = '<h1>Surprise!! ' + temp.text + '</h1><p>~ from the troll: <strong>' + username + '</strong></p>';
+  };
+
+  /* ---------- getters ---------- */
+  this.getMailOptions = function() { // mail object to send to post
+    return temp;
+  };
+
+  /* ---------- manipulators ---------- */
+  this.sendMail = function(input) {
+    // console.log(input);
+    return $http.post('/api/messages', input);
+  };
+
+}]);  // end mailSvc
 
 angular.module('myApp')
 
@@ -159,189 +335,6 @@ angular.module('myApp')
   };
 
 }]);  // end mainSvc
-
-angular.module('myApp')
-
-.directive('navBotDir', function() {
-  return ({
-    restrict: 'E',
-    templateUrl: './html/footer/navBot.html',
-    controller: ["$scope", function($scope) {
-      /* ---------- nav bot icons ----------- */
-      $scope.myGithub = 'fa fa-github-alt';
-      $scope.myLinkedin = 'fa fa-linkedin';
-      $scope.myTwitter = 'fa fa-twitter';
-      $scope.myYoutube = 'fa fa-youtube-play';
-
-      /* ---------- nav bot icons links ----------- */
-      $scope.gitLink = 'https://github.com/laarniastrid';
-      $scope.linkedLink = 'https://www.linkedin.com/in/laarniastrid';
-      $scope.twitterLink = 'https://twitter.com/laarniastrid';
-      $scope.youtubeLink = 'https://www.youtube.com/user/HardsuitLoL';
-    }]
-  });
-});  // end navBotDir
-
-angular.module('myApp')
-
-.directive('navTopDir', function() {
-  return ({
-    restrict: 'E',
-    templateUrl: './html/header/navTop.html',
-    controller: ["$scope", function($scope) {
-      $scope.gitLink = 'https://github.com/laarniastrid';
-      $scope.linkedLink = 'https://www.linkedin.com/in/laarniastrid';
-      $scope.twitterLink = 'https://twitter.com/laarniastrid';
-      $scope.youtubeLink = 'https://www.youtube.com/user/HardsuitLoL';
-    }],
-    link: function(scope, ele, attr) {
-      $('#navWrapper').on('click', function() {
-        $('#menuNav').toggle('expand');
-      })
-
-      // $('#menuNav').on('click', function() {
-      //   $('#menuNav').toggle('expand');
-      // })
-
-      $('#follow').on('click', function() {
-        // $('#follow').toggle('expand');
-        $('#follow-nav').toggle('expand');
-      })
-    }
-  });
-});  // end navTopDir
-
-angular.module('myApp')
-
-.controller('listCtrl', ["$scope", "$state", "$stateParams", "personActions", "personInfo", "mainSvc", function($scope, $state, $stateParams, personActions, personInfo, mainSvc) {
-
-  var test = mainSvc.getActions($stateParams.id);
-
-  $scope.currentPerson = personActions.data;
-  $scope.personName = personActions.data.name;
-  $scope.actions = mainSvc.getActions(personActions.data._id)
-  .then(function(response) {
-    $scope.list = response.data.actions;
-  });
-
-  $scope.addAction = function(input) {
-    var tempAction = {
-      message: input,
-      time: new Date(),
-      person: $scope.currentPerson._id
-    };
-
-    mainSvc.addNewAction(tempAction)
-      .then(function(response) {
-        var temp = {
-          action: response.data._id
-        };
-        mainSvc.updatePerson($scope.currentPerson._id, temp);
-        $state.reload();
-      });
-    $scope.modalToggle();
-  };
-
-  /* ---------- show/hide modal ---------- */
-  $scope.showModal = false;
-  $scope.modalToggle = function() {
-    $scope.showModal = !$scope.showModal;
-  };
-
-}]);  // end listCtrl
-
-angular.module('myApp')
-
-.directive('listDir', function() {
-  return {
-    restrict: 'EA',
-    link: function(scope, ele, attr) {
-      $('.list-dir').on('click', function() {
-        console.log('hello there');
-      });
-    }
-  };
-}); // end listDir
-
-angular.module('myApp')
-
-.directive('iconDir', ["$controller", function($controller) {
-  return {
-    restrict: 'E',
-    templateUrl: './html/icon/icons.html',
-    scope: {
-      icon: '=',
-      link: '='
-    }
-  };
-}]);  // end iconDir
-
-angular.module('myApp')
-
-.service('loginService', ["$http", function($http) {
-
-  // this.logoutUser = () => {
-  //   return $http({
-  //     method: 'GET',
-  //     url: '/logout'
-  //   }).success(function() {
-  //     $state.go('/');
-  //   })
-  // }
-
-}])  // end loginsvc
-
-angular.module('myApp')
-
-.controller('mailCtrl', ["$scope", "mainSvc", "mailSvc", function($scope, mainSvc, mailSvc) {
-
-  $scope.sendMessage = function(text) {
-    $scope.username = mainSvc.getUsername();
-    $scope.thisTest = mainSvc.getUser()
-    .then(function(response) {
-      var getPerson = mainSvc.getPerson();
-      $scope.mailTo = getPerson.email;
-      mailSvc.setMailOptions($scope.mailTo, text, $scope.username); // set mail options
-      $scope.mailOptions = mailSvc.getMailOptions();
-      mailSvc.sendMail($scope.mailOptions)
-      // .then(function(response) {
-        // console.log(response);
-      // });
-    });
-  };
-
-}]);  // end mailCtr
-
-angular.module('myApp')
-
-.service('mailSvc', ["$http", function($http) {
-
-  /* ---------- mailSvc vars ---------- */
-  var email = 'epictrollem@yahoo.com';
-  var subject = 'You\'ve been trolled!!';
-  var temp = {};
-
-  /* ---------- setters/constructors ---------- */
-  this.setMailOptions = function(to, text, username) {
-    temp.from = email;
-    temp.to = to;
-    temp.subject = subject;
-    temp.text = text;
-    temp.html = '<h1>Surprise!! ' + temp.text + '</h1><p>~ from the troll: <strong>' + username + '</strong></p>';
-  };
-
-  /* ---------- getters ---------- */
-  this.getMailOptions = function() { // mail object to send to post
-    return temp;
-  };
-
-  /* ---------- manipulators ---------- */
-  this.sendMail = function(input) {
-    // console.log(input);
-    return $http.post('/api/messages', input);
-  };
-
-}]);  // end mailSvc
 
 angular.module('myApp')
 

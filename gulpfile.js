@@ -24,12 +24,9 @@
 	});
 
 	watcher.on('change', (event) =>  {
-		console.log('file ' + 
-			event.path + 
-			' was ' + 
-			event.type + 
-			' at ' +
-			new Date() +
+		console.log('file ' + event.path + 
+			' was ' + event.type + 
+			' at ' + new Date() +
 			', running tasks...');
 	});
 
@@ -41,7 +38,7 @@
 	});
 
 	gulp.task('js', () => {
-		return gulp.src(['./app/**/*.js'])
+		return gulp.src(['./app/**/*.js', '!./app/jquery.js'])
 			.pipe(ngAnnotate())
 			.pipe(concat('scripts.js'))
 			.pipe(gulp.dest('./public/scripts'))
