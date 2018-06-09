@@ -4,7 +4,7 @@
 
 	main.$inject = [];
 
-	main = () => {
+	function main() {
 		return {
 			restrict: 'E',
 			templateUrl: './html/main/main.html',
