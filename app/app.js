@@ -3,11 +3,11 @@ angular.module('myApp', ['ui.router'])
 .config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
-	.state('main', {
-		url: '/',
-		templateUrl: '',
-		controller: 'mainCtrl'
-	})
+	// .state('main', {
+	// 	url: '/',
+	// 	templateUrl: '<></>',
+	// 	controller: 'mainCtrl'
+	// })
     .state('login', {
       url: '/login',
       templateUrl: '../html/login/login.html',

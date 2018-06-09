@@ -3,11 +3,11 @@ angular.module('myApp', ['ui.router'])
 .config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
-	.state('main', {
-		url: '/',
-		templateUrl: '',
-		controller: 'mainCtrl'
-	})
+	// .state('main', {
+	// 	url: '/',
+	// 	templateUrl: '<></>',
+	// 	controller: 'mainCtrl'
+	// })
     .state('login', {
       url: '/login',
       templateUrl: '../html/login/login.html',
@@ -95,6 +95,19 @@ angular.module('myApp')
 
 angular.module('myApp')
 
+.directive('iconDir', ["$controller", function($controller) {
+  return {
+    restrict: 'E',
+    templateUrl: './html/icon/icons.html',
+    scope: {
+      icon: '=',
+      link: '='
+    }
+  };
+}]);  // end iconDir
+
+angular.module('myApp')
+
 .controller('listCtrl', ["$scope", "$state", "$stateParams", "personActions", "personInfo", "mainSvc", function($scope, $state, $stateParams, personActions, personInfo, mainSvc) {
 
   var test = mainSvc.getActions($stateParams.id);
@@ -147,19 +160,6 @@ angular.module('myApp')
 
 angular.module('myApp')
 
-.directive('iconDir', ["$controller", function($controller) {
-  return {
-    restrict: 'E',
-    templateUrl: './html/icon/icons.html',
-    scope: {
-      icon: '=',
-      link: '='
-    }
-  };
-}]);  // end iconDir
-
-angular.module('myApp')
-
 .service('loginService', ["$http", function($http) {
 
   // this.logoutUser = () => {
@@ -173,57 +173,19 @@ angular.module('myApp')
 
 }])  // end loginsvc
 
-angular.module('myApp')
+(() => {
+	angular.module('myApp')
+		.directive('main', main);
 
-.controller('mailCtrl', ["$scope", "mainSvc", "mailSvc", function($scope, mainSvc, mailSvc) {
+	main.$inject = [];
 
-  $scope.sendMessage = function(text) {
-    $scope.username = mainSvc.getUsername();
-    $scope.thisTest = mainSvc.getUser()
-    .then(function(response) {
-      var getPerson = mainSvc.getPerson();
-      $scope.mailTo = getPerson.email;
-      mailSvc.setMailOptions($scope.mailTo, text, $scope.username); // set mail options
-      $scope.mailOptions = mailSvc.getMailOptions();
-      mailSvc.sendMail($scope.mailOptions)
-      // .then(function(response) {
-        // console.log(response);
-      // });
-    });
-  };
-
-}]);  // end mailCtr
-
-angular.module('myApp')
-
-.service('mailSvc', ["$http", function($http) {
-
-  /* ---------- mailSvc vars ---------- */
-  var email = 'epictrollem@yahoo.com';
-  var subject = 'You\'ve been trolled!!';
-  var temp = {};
-
-  /* ---------- setters/constructors ---------- */
-  this.setMailOptions = function(to, text, username) {
-    temp.from = email;
-    temp.to = to;
-    temp.subject = subject;
-    temp.text = text;
-    temp.html = '<h1>Surprise!! ' + temp.text + '</h1><p>~ from the troll: <strong>' + username + '</strong></p>';
-  };
-
-  /* ---------- getters ---------- */
-  this.getMailOptions = function() { // mail object to send to post
-    return temp;
-  };
-
-  /* ---------- manipulators ---------- */
-  this.sendMail = function(input) {
-    // console.log(input);
-    return $http.post('/api/messages', input);
-  };
-
-}]);  // end mailSvc
+	main = () => {
+		return {
+			restrict: 'E',
+			templateUrl: './html/main/main.html',
+		};
+	};
+})();
 
 angular.module('myApp')
 
@@ -335,6 +297,58 @@ angular.module('myApp')
   };
 
 }]);  // end mainSvc
+
+angular.module('myApp')
+
+.controller('mailCtrl', ["$scope", "mainSvc", "mailSvc", function($scope, mainSvc, mailSvc) {
+
+  $scope.sendMessage = function(text) {
+    $scope.username = mainSvc.getUsername();
+    $scope.thisTest = mainSvc.getUser()
+    .then(function(response) {
+      var getPerson = mainSvc.getPerson();
+      $scope.mailTo = getPerson.email;
+      mailSvc.setMailOptions($scope.mailTo, text, $scope.username); // set mail options
+      $scope.mailOptions = mailSvc.getMailOptions();
+      mailSvc.sendMail($scope.mailOptions)
+      // .then(function(response) {
+        // console.log(response);
+      // });
+    });
+  };
+
+}]);  // end mailCtr
+
+angular.module('myApp')
+
+.service('mailSvc', ["$http", function($http) {
+
+  /* ---------- mailSvc vars ---------- */
+  var email = 'epictrollem@yahoo.com';
+  var subject = 'You\'ve been trolled!!';
+  var temp = {};
+
+  /* ---------- setters/constructors ---------- */
+  this.setMailOptions = function(to, text, username) {
+    temp.from = email;
+    temp.to = to;
+    temp.subject = subject;
+    temp.text = text;
+    temp.html = '<h1>Surprise!! ' + temp.text + '</h1><p>~ from the troll: <strong>' + username + '</strong></p>';
+  };
+
+  /* ---------- getters ---------- */
+  this.getMailOptions = function() { // mail object to send to post
+    return temp;
+  };
+
+  /* ---------- manipulators ---------- */
+  this.sendMail = function(input) {
+    // console.log(input);
+    return $http.post('/api/messages', input);
+  };
+
+}]);  // end mailSvc
 
 angular.module('myApp')
 
