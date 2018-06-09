@@ -44,28 +44,36 @@ angular.module('myApp', ['ui.router'])
 
 (() => {
 	angular.module('myApp')
+		.directive('footer', footer);
 
-		.directive('navBotDir', function () {
-			return ({
-				restrict: 'E',
-				templateUrl: './html/footer/navBot.html',
-				controller: function ($scope) {
-					/* ---------- nav bot icons ----------- */
-					$scope.myGithub = 'fa fa-github-alt';
-					$scope.myLinkedin = 'fa fa-linkedin';
-					$scope.myTwitter = 'fa fa-twitter';
-					$scope.myYoutube = 'fa fa-youtube-play';
+	footer.$inject = [];
 
-					/* ---------- nav bot icons links ----------- */
-					$scope.gitLink = 'https://github.com/laarniastrid';
-					$scope.linkedLink = 'https://www.linkedin.com/in/laarniastrid';
-					$scope.twitterLink = 'https://twitter.com/laarniastrid';
-					$scope.youtubeLink = 'https://www.youtube.com/user/HardsuitLoL';
-				}
-			});
-		}); // end navBotDir
+	function footer() {
+		return {
+			restrict: 'E',
+			templateUrl: './html/footer/footer.html',
+			controller: controller,
+			controllerAs: '$ctrl',
+		}
 
+		function controller() {
+			var self = this;
+
+			/* ---------- nav bot icons ----------- */
+			self.myGithub = 'fa fa-github-alt';
+			self.myLinkedin = 'fa fa-linkedin';
+			self.myTwitter = 'fa fa-twitter';
+			self.myYoutube = 'fa fa-youtube-play';
+
+			/* ---------- nav bot icons links ----------- */
+			self.gitLink = 'https://github.com/laarniastrid';
+			self.linkedLink = 'https://www.linkedin.com/in/laarniastrid';
+			self.twitterLink = 'https://twitter.com/laarniastrid';
+			self.youtubeLink = 'https://www.youtube.com/user/HardsuitLoL';
+		}
+	}
 })();
+
 (() => {
 	angular.module('myApp')
 		.directive('header', header);
@@ -378,6 +386,39 @@ angular.module('myApp', ['ui.router'])
 (() => {
 	angular.module('myApp')
 
+		.controller('navCtrl', function ($scope, $state, loginService) {
+
+			$scope.aboutModal = false;
+			$scope.contactModal = false;
+
+			$scope.modalToggle = function (type) {
+				if (type == 'about') {
+					$scope.aboutModal = !$scope.aboutModal;
+				} else if (type == 'contact') {
+					$scope.contactModal = !$scope.contactModal;
+				}
+			};
+
+			$scope.addPost = function (data) {
+				data.name = '';
+				data.email = '';
+				data.phone = '';
+				data.text = '';
+
+				$scope.modalToggle('contact');
+			};
+
+			// $scope.logoutUser = () => {
+			//   // loginService.logoutUser();
+			//   $state.go('/login');
+			// }
+
+		}); // end navCtrl
+
+})();
+(() => {
+	angular.module('myApp')
+
 		.controller('peopleCtrl', function ($scope, $location, $state, userInfo, mainSvc) {
 
 			$scope.currentUser = userInfo.currentUser;
@@ -414,38 +455,5 @@ angular.module('myApp', ['ui.router'])
 			};
 
 		}); // end peopleCtrl
-
-})();
-(() => {
-	angular.module('myApp')
-
-		.controller('navCtrl', function ($scope, $state, loginService) {
-
-			$scope.aboutModal = false;
-			$scope.contactModal = false;
-
-			$scope.modalToggle = function (type) {
-				if (type == 'about') {
-					$scope.aboutModal = !$scope.aboutModal;
-				} else if (type == 'contact') {
-					$scope.contactModal = !$scope.contactModal;
-				}
-			};
-
-			$scope.addPost = function (data) {
-				data.name = '';
-				data.email = '';
-				data.phone = '';
-				data.text = '';
-
-				$scope.modalToggle('contact');
-			};
-
-			// $scope.logoutUser = () => {
-			//   // loginService.logoutUser();
-			//   $state.go('/login');
-			// }
-
-		}); // end navCtrl
 
 })();
