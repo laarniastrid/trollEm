@@ -1,21 +1,20 @@
 @import '../global.scss';
-
 /* ---------- nav top styles ---------- */
+
 .header {
-	max-width: 1920px;
+	// max-width: 1920px;
 	height: 60px;
 	color: $color-text-default;
 	background-color: $color-blue-mid;
 	position: relative;
 	display: flex;
 	align-items: center;
-
 	&-title {
 		margin: auto;
-
 		.h1 {
 			margin: 0;
 			font-size: $font-size-lg;
+			font-weight: normal;
 		}
 	}
 }
