@@ -128,23 +128,6 @@ angular.module('myApp', ['ui.router'])
 (() => {
 	angular.module('myApp')
 
-		.service('loginService', function ($http) {
-
-			// this.logoutUser = () => {
-			//   return $http({
-			//     method: 'GET',
-			//     url: '/logout'
-			//   }).success(function() {
-			//     $state.go('/');
-			//   })
-			// }
-
-		}) // end loginsvc
-
-})();
-(() => {
-	angular.module('myApp')
-
 		.controller('listCtrl', function ($scope, $state, $stateParams, personActions, personInfo, mainSvc) {
 
 			var test = mainSvc.getActions($stateParams.id);
@@ -196,6 +179,23 @@ angular.module('myApp', ['ui.router'])
 				}
 			};
 		}); // end listDir
+
+})();
+(() => {
+	angular.module('myApp')
+
+		.service('loginService', function ($http) {
+
+			// this.logoutUser = () => {
+			//   return $http({
+			//     method: 'GET',
+			//     url: '/logout'
+			//   }).success(function() {
+			//     $state.go('/');
+			//   })
+			// }
+
+		}) // end loginsvc
 
 })();
 (() => {
