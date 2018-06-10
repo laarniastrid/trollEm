@@ -192,20 +192,70 @@ em {
   margin: 70px auto;
   width: 80%;
   height: 75%;
-  box-shadow: 0 0 6px #B9B9B9;
   position: relative;
   display: flex;
-  display: -webkit-flex; }
+  display: -webkit-flex;
+  box-shadow: 0 0 6px #B9B9B9; }
+
+.button {
+  width: 200px;
+  height: 50px;
+  border: 1px solid #5A657F;
+  border-radius: 5px;
+  background: #5A657F;
+  font-size: 16px;
+  color: #FFFFFF; }
+  .button.button-secondary {
+    background: #FFFFFF;
+    color: #242933;
+    border: none;
+    box-shadow: 0 0 6px #B9B9B9; }
+
+.label {
+  font-size: 16px; }
+
+.input {
+  width: 500px;
+  height: 50px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 6px #B9B9B9; }
 
 .content-wrapper {
   background: #FFFFFF;
   margin: 70px auto;
   width: 80%;
   height: 75%;
-  box-shadow: 0 0 6px #B9B9B9;
   position: relative;
   display: flex;
-  display: -webkit-flex; }
+  display: -webkit-flex;
+  box-shadow: 0 0 6px #B9B9B9; }
+
+.button {
+  width: 200px;
+  height: 50px;
+  border: 1px solid #5A657F;
+  border-radius: 5px;
+  background: #5A657F;
+  font-size: 16px;
+  color: #FFFFFF; }
+  .button.button-secondary {
+    background: #FFFFFF;
+    color: #242933;
+    border: none;
+    box-shadow: 0 0 6px #B9B9B9; }
+
+.label {
+  font-size: 16px; }
+
+.input {
+  width: 500px;
+  height: 50px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 6px #B9B9B9; }
 
 .footer {
   width: 100%;
@@ -219,10 +269,35 @@ em {
   margin: 70px auto;
   width: 80%;
   height: 75%;
-  box-shadow: 0 0 6px #B9B9B9;
   position: relative;
   display: flex;
-  display: -webkit-flex; }
+  display: -webkit-flex;
+  box-shadow: 0 0 6px #B9B9B9; }
+
+.button {
+  width: 200px;
+  height: 50px;
+  border: 1px solid #5A657F;
+  border-radius: 5px;
+  background: #5A657F;
+  font-size: 16px;
+  color: #FFFFFF; }
+  .button.button-secondary {
+    background: #FFFFFF;
+    color: #242933;
+    border: none;
+    box-shadow: 0 0 6px #B9B9B9; }
+
+.label {
+  font-size: 16px; }
+
+.input {
+  width: 500px;
+  height: 50px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 6px #B9B9B9; }
 
 /* ---------- nav top styles ---------- */
 .header {
@@ -244,18 +319,43 @@ em {
   margin: 70px auto;
   width: 80%;
   height: 75%;
-  box-shadow: 0 0 6px #B9B9B9;
   position: relative;
   display: flex;
-  display: -webkit-flex; }
+  display: -webkit-flex;
+  box-shadow: 0 0 6px #B9B9B9; }
+
+.button {
+  width: 200px;
+  height: 50px;
+  border: 1px solid #5A657F;
+  border-radius: 5px;
+  background: #5A657F;
+  font-size: 16px;
+  color: #FFFFFF; }
+  .button.button-secondary {
+    background: #FFFFFF;
+    color: #242933;
+    border: none;
+    box-shadow: 0 0 6px #B9B9B9; }
+
+.label {
+  font-size: 16px; }
+
+.input {
+  width: 500px;
+  height: 50px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 6px #B9B9B9; }
 
 /* ---------- login styles ---------- */
 .login-form {
   background-color: #EDF1FA;
-  box-shadow: 0 3px 6px #B9B9B9;
   width: 600px;
   height: 300px;
-  margin: 120px auto; }
+  margin: 120px auto;
+  box-shadow: 0 0 6px #B9B9B9; }
 
 @media only screen and (min-device-width: 300px) and (max-device-width: 450px) {
   /* ----------  ---------- */

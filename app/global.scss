@@ -14,7 +14,9 @@ $font-size-sm: 12px;
 $font-size-med: 16px;
 $font-size-lg: 20px;
 
-
+@mixin boxShadow() {
+	box-shadow: 0 0 6px $color-shadow-default;
+}
 
 // content wrapper
 .content-wrapper {
@@ -22,8 +24,38 @@ $font-size-lg: 20px;
 	margin: 70px auto;
 	width: 80%;
 	height: 75%;
-	box-shadow: 0 0 6px $color-shadow-default;
 	position: relative;
 	display: flex;
 	display: -webkit-flex;
+	@include boxShadow();
+}
+
+.button {
+	width: 200px;
+	height: 50px;
+	border: 1px solid $color-blue-dark;
+	border-radius: 5px;
+	background: $color-blue-dark;
+	font-size: $font-size-med;
+	color: $color-text-light;
+
+	&.button-secondary {
+		background: $color-white;
+		color: $color-text-default;
+		border: none;
+		@include boxShadow();
+	}
+}
+
+.label {
+	font-size: $font-size-med;
+}
+
+.input {
+	width: 500px;
+	height: 50px;
+	font-size: $font-size-med;
+	border-radius: 5px;
+	border: none;
+	@include boxShadow();
 }

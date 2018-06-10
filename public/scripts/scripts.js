@@ -76,21 +76,6 @@ angular.module('myApp', ['ui.router'])
 
 (() => {
 	angular.module('myApp')
-
-		.directive('iconDir', function ($controller) {
-			return {
-				restrict: 'E',
-				templateUrl: './html/icon/icons.html',
-				scope: {
-					icon: '=',
-					link: '='
-				}
-			};
-		}); // end iconDir
-
-})();
-(() => {
-	angular.module('myApp')
 		.directive('header', header);
 	
 	header.$inject = [];
@@ -124,6 +109,38 @@ angular.module('myApp', ['ui.router'])
 			});
 		}
 	}
+})();
+(() => {
+	angular.module('myApp')
+
+		.directive('iconDir', function ($controller) {
+			return {
+				restrict: 'E',
+				templateUrl: './html/icon/icons.html',
+				scope: {
+					icon: '=',
+					link: '='
+				}
+			};
+		}); // end iconDir
+
+})();
+(() => {
+	angular.module('myApp')
+
+		.service('loginService', function ($http) {
+
+			// this.logoutUser = () => {
+			//   return $http({
+			//     method: 'GET',
+			//     url: '/logout'
+			//   }).success(function() {
+			//     $state.go('/');
+			//   })
+			// }
+
+		}) // end loginsvc
+
 })();
 (() => {
 	angular.module('myApp')
@@ -179,23 +196,6 @@ angular.module('myApp', ['ui.router'])
 				}
 			};
 		}); // end listDir
-
-})();
-(() => {
-	angular.module('myApp')
-
-		.service('loginService', function ($http) {
-
-			// this.logoutUser = () => {
-			//   return $http({
-			//     method: 'GET',
-			//     url: '/logout'
-			//   }).success(function() {
-			//     $state.go('/');
-			//   })
-			// }
-
-		}) // end loginsvc
 
 })();
 (() => {
