@@ -203,7 +203,9 @@ em {
   width: 80%;
   height: 75%;
   box-shadow: 0 0 6px #B9B9B9;
-  position: relative; }
+  position: relative;
+  display: flex;
+  display: -webkit-flex; }
 
 .content-wrapper {
   background: #FFFFFF;
@@ -211,7 +213,9 @@ em {
   width: 80%;
   height: 75%;
   box-shadow: 0 0 6px #B9B9B9;
-  position: relative; }
+  position: relative;
+  display: flex;
+  display: -webkit-flex; }
 
 .footer {
   width: 100%;
@@ -226,7 +230,9 @@ em {
   width: 80%;
   height: 75%;
   box-shadow: 0 0 6px #B9B9B9;
-  position: relative; }
+  position: relative;
+  display: flex;
+  display: -webkit-flex; }
 
 /* ---------- nav top styles ---------- */
 .header {
@@ -243,7 +249,24 @@ em {
       font-size: 20px;
       font-weight: normal; }
 
+.content-wrapper {
+  background: #FFFFFF;
+  margin: 70px auto;
+  width: 80%;
+  height: 75%;
+  box-shadow: 0 0 6px #B9B9B9;
+  position: relative;
+  display: flex;
+  display: -webkit-flex; }
+
 /* ---------- login styles ---------- */
+.login-form {
+  background-color: #EDF1FA;
+  box-shadow: 0 3px 6px #B9B9B9;
+  width: 600px;
+  height: 300px;
+  margin: 120px auto; }
+
 .login-page {
   width: 70%;
   max-width: 450px;
