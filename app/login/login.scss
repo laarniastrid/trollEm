@@ -1,9 +1,15 @@
 /* ---------- login styles ---------- */
 .login-wrapper {
-	
+
 }
 
-
+.login-form {
+	background-color: $color-blue-light;
+	box-shadow: 0 3px 6px $color-shadow-default;
+	width: 600px;
+	height: 300px;
+	margin: 120px auto;
+}
 
 
 

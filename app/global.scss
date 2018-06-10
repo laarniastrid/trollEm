@@ -24,4 +24,6 @@ $font-size-lg: 20px;
 	height: 75%;
 	box-shadow: 0 0 6px $color-shadow-default;
 	position: relative;
+	display: flex;
+	display: -webkit-flex;
 }
