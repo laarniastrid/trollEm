@@ -20,16 +20,6 @@ body {
 i {
   font-size: 45px; }
 
-input {
-  width: 275px;
-  font-size: 16px;
-  margin: 10px;
-  border: none;
-  border-bottom: 3px rgba(0, 0, 0, 0.5) solid;
-  background: rgba(255, 0, 0, 0);
-  border-radius: 5px;
-  line-height: 30px; }
-
 textarea {
   width: 275px;
   height: 168px;
@@ -267,56 +257,6 @@ em {
   height: 300px;
   margin: 120px auto; }
 
-.login-page {
-  width: 70%;
-  max-width: 450px;
-  height: auto;
-  background: transparent;
-  border: 2px teal solid;
-  border: 2px rgba(0, 128, 128, 0.5) solid;
-  border-radius: 5px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
-
-.login-page > div {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  text-align: center;
-  justify-content: center; }
-
-.login-page h2 {
-  margin: 15px auto auto 0; }
-
-.login {
-  width: 100%;
-  height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
-  .login div {
-    width: 300px;
-    display: flex;
-    flex-direction: column; }
-    .login div button {
-      font-size: 20px;
-      margin: 10px;
-      background: rgba(100, 100, 100, 0.5);
-      border-radius: 5px;
-      border: none; }
-  .login input {
-    font-size: 20px;
-    margin: 10px;
-    background: none;
-    border-radius: 5px; }
-
-.signup-link {
-  position: absolute;
-  bottom: 5px; }
-
 @media only screen and (min-device-width: 300px) and (max-device-width: 450px) {
   /* ----------  ---------- */
   i {
@@ -329,9 +269,6 @@ em {
     margin-top: 50px; }
   .login div button {
     font-size: 30px;
-    margin: 10px; }
-  .login input {
-    font-size: 40px;
     margin: 10px; }
   /* ---------- page content styles ---------- */
   .user {
