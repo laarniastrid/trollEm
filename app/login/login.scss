@@ -11,4 +11,21 @@
 	height: 300px;
 	margin: 120px auto;
 	@include boxShadow();
+
+	form-item {
+		display: grid;
+		display: -ms-grid;
+		margin-top: 30px;
+		position: relative;
+
+		&-wrap {
+			display: grid;
+			display: -ms-grid;
+			margin: auto;
+		}
+
+		&-button {
+			
+		}
+	}
 }
