@@ -372,6 +372,15 @@ em {
 .padding-left--30 {
   padding-left: 30px; }
 
+.text-center {
+  text-align: center; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
+
 .content-wrapper {
   background: #FFFFFF;
   margin: 70px auto;
@@ -556,6 +565,15 @@ em {
 
 .padding-left--30 {
   padding-left: 30px; }
+
+.text-center {
+  text-align: center; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
 
 .footer {
   width: 100%;
@@ -748,6 +766,15 @@ em {
 
 .padding-left--30 {
   padding-left: 30px; }
+
+.text-center {
+  text-align: center; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
 
 /* ---------- nav top styles ---------- */
 .header {
@@ -949,17 +976,26 @@ em {
 .padding-left--30 {
   padding-left: 30px; }
 
+.text-center {
+  text-align: center; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
+
 /* ---------- login styles ---------- */
-.login-form {
+.form {
   background-color: #EDF1FA;
   width: 600px;
   height: 300px;
   margin: 120px auto;
   box-shadow: 0 0 6px #B9B9B9; }
-  .login-form .form {
+  .form-item {
     display: flex;
     display: -webkit-flex; }
-    .login-form .form-item {
+    .form-item div {
       margin: auto; }
 
 @media only screen and (min-device-width: 300px) and (max-device-width: 450px) {
