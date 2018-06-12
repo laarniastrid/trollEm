@@ -8,11 +8,11 @@
 	margin: 120px auto;
 	@include boxShadow();
 
-	form-item {
-		margin: auto;
+	form {
+		@include flex();
 
-		&-wrapper {
-			@include flex();
+		&-item {
+			margin: auto;
 		}
 
 		// &-button {
