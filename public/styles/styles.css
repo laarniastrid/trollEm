@@ -958,7 +958,7 @@ em {
   box-shadow: 0 0 6px #B9B9B9; }
   .login-form form-item {
     margin: auto; }
-    .login-form form-item-wrap {
+    .login-form form-item-wrapper {
       display: flex;
       display: -webkit-flex; }
 
