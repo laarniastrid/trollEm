@@ -134,3 +134,20 @@ $sizes: 5, 10, 15, 20, 30;
 		}
 	}
 }
+
+// forms
+.form {
+	background-color: $color-blue-light;
+	width: 600px;
+	height: 300px;
+	margin: 120px auto;
+	@include boxShadow();
+
+	&-item {
+		@include flex();
+
+		div {
+			margin: auto;
+		}
+	}
+}
