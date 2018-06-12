@@ -393,6 +393,9 @@ em {
     .form-item div {
       margin: auto; }
 
+.spinner {
+  margin: auto; }
+
 .content-wrapper {
   background: #FFFFFF;
   margin: 70px auto;
@@ -598,6 +601,9 @@ em {
     display: -webkit-flex; }
     .form-item div {
       margin: auto; }
+
+.spinner {
+  margin: auto; }
 
 .footer {
   width: 100%;
@@ -811,6 +817,9 @@ em {
     display: -webkit-flex; }
     .form-item div {
       margin: auto; }
+
+.spinner {
+  margin: auto; }
 
 /* ---------- nav top styles ---------- */
 .header {
