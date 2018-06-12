@@ -1,17 +1,17 @@
 @import '../global.scss';
 
 /* ---------- login styles ---------- */
-.login-form {
+.form {
 	background-color: $color-blue-light;
 	width: 600px;
 	height: 300px;
 	margin: 120px auto;
 	@include boxShadow();
 
-	.form {
+	&-item {
 		@include flex();
 
-		&-item {
+		div {
 			margin: auto;
 		}
 

@@ -122,3 +122,15 @@ $sizes: 5, 10, 15, 20, 30;
 		}
 	}
 }
+
+// text aligns
+.text {
+	& {
+		$directions: center, left, right;
+		@each $direction in $directions {
+			&-#{$direction} {
+				text-align: #{$direction};
+			}
+		}
+	}
+}
