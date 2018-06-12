@@ -8,7 +8,7 @@
 	margin: 120px auto;
 	@include boxShadow();
 
-	form {
+	.form {
 		@include flex();
 
 		&-item {

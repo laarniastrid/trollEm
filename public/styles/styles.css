@@ -956,10 +956,10 @@ em {
   height: 300px;
   margin: 120px auto;
   box-shadow: 0 0 6px #B9B9B9; }
-  .login-form form {
+  .login-form .form {
     display: flex;
     display: -webkit-flex; }
-    .login-form form-item {
+    .login-form .form-item {
       margin: auto; }
 
 @media only screen and (min-device-width: 300px) and (max-device-width: 450px) {
