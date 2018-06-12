@@ -76,21 +76,6 @@ angular.module('myApp', ['ui.router'])
 
 (() => {
 	angular.module('myApp')
-
-		.directive('iconDir', function ($controller) {
-			return {
-				restrict: 'E',
-				templateUrl: './html/icon/icons.html',
-				scope: {
-					icon: '=',
-					link: '='
-				}
-			};
-		}); // end iconDir
-
-})();
-(() => {
-	angular.module('myApp')
 		.directive('header', header);
 	
 	header.$inject = [];
@@ -124,6 +109,21 @@ angular.module('myApp', ['ui.router'])
 			});
 		}
 	}
+})();
+(() => {
+	angular.module('myApp')
+
+		.directive('iconDir', function ($controller) {
+			return {
+				restrict: 'E',
+				templateUrl: './html/icon/icons.html',
+				scope: {
+					icon: '=',
+					link: '='
+				}
+			};
+		}); // end iconDir
+
 })();
 (() => {
 	angular.module('myApp')
@@ -386,6 +386,39 @@ angular.module('myApp', ['ui.router'])
 (() => {
 	angular.module('myApp')
 
+		.controller('navCtrl', function ($scope, $state, loginService) {
+
+			$scope.aboutModal = false;
+			$scope.contactModal = false;
+
+			$scope.modalToggle = function (type) {
+				if (type == 'about') {
+					$scope.aboutModal = !$scope.aboutModal;
+				} else if (type == 'contact') {
+					$scope.contactModal = !$scope.contactModal;
+				}
+			};
+
+			$scope.addPost = function (data) {
+				data.name = '';
+				data.email = '';
+				data.phone = '';
+				data.text = '';
+
+				$scope.modalToggle('contact');
+			};
+
+			// $scope.logoutUser = () => {
+			//   // loginService.logoutUser();
+			//   $state.go('/login');
+			// }
+
+		}); // end navCtrl
+
+})();
+(() => {
+	angular.module('myApp')
+
 		.controller('peopleCtrl', function ($scope, $location, $state, userInfo, mainSvc) {
 
 			$scope.currentUser = userInfo.currentUser;
@@ -422,38 +455,5 @@ angular.module('myApp', ['ui.router'])
 			};
 
 		}); // end peopleCtrl
-
-})();
-(() => {
-	angular.module('myApp')
-
-		.controller('navCtrl', function ($scope, $state, loginService) {
-
-			$scope.aboutModal = false;
-			$scope.contactModal = false;
-
-			$scope.modalToggle = function (type) {
-				if (type == 'about') {
-					$scope.aboutModal = !$scope.aboutModal;
-				} else if (type == 'contact') {
-					$scope.contactModal = !$scope.contactModal;
-				}
-			};
-
-			$scope.addPost = function (data) {
-				data.name = '';
-				data.email = '';
-				data.phone = '';
-				data.text = '';
-
-				$scope.modalToggle('contact');
-			};
-
-			// $scope.logoutUser = () => {
-			//   // loginService.logoutUser();
-			//   $state.go('/login');
-			// }
-
-		}); // end navCtrl
 
 })();

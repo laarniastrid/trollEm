@@ -9,15 +9,10 @@
 	@include boxShadow();
 
 	form-item {
-		display: grid;
-		display: -ms-grid;
-		margin-top: 30px;
-		position: relative;
+		margin: auto;
 
 		&-wrap {
-			display: grid;
-			display: -ms-grid;
-			margin: auto;
+			@include flex();
 		}
 
 		// &-button {

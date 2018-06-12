@@ -203,7 +203,7 @@ em {
   border: 1px solid #5A657F;
   border-radius: 5px;
   background: #5A657F;
-  font-size: 16px;
+  font-size: 14px;
   color: #FFFFFF; }
   .button.button-secondary {
     background: #FFFFFF;
@@ -212,12 +212,12 @@ em {
     box-shadow: 0 0 6px #B9B9B9; }
 
 .label {
-  font-size: 16px; }
+  font-size: 14px; }
 
 .input {
   width: 500px;
   height: 50px;
-  font-size: 16px;
+  font-size: 14px;
   border-radius: 5px;
   border: none;
   box-shadow: 0 0 6px #B9B9B9; }
@@ -388,7 +388,7 @@ em {
   border: 1px solid #5A657F;
   border-radius: 5px;
   background: #5A657F;
-  font-size: 16px;
+  font-size: 14px;
   color: #FFFFFF; }
   .button.button-secondary {
     background: #FFFFFF;
@@ -397,12 +397,12 @@ em {
     box-shadow: 0 0 6px #B9B9B9; }
 
 .label {
-  font-size: 16px; }
+  font-size: 14px; }
 
 .input {
   width: 500px;
   height: 50px;
-  font-size: 16px;
+  font-size: 14px;
   border-radius: 5px;
   border: none;
   box-shadow: 0 0 6px #B9B9B9; }
@@ -580,7 +580,7 @@ em {
   border: 1px solid #5A657F;
   border-radius: 5px;
   background: #5A657F;
-  font-size: 16px;
+  font-size: 14px;
   color: #FFFFFF; }
   .button.button-secondary {
     background: #FFFFFF;
@@ -589,12 +589,12 @@ em {
     box-shadow: 0 0 6px #B9B9B9; }
 
 .label {
-  font-size: 16px; }
+  font-size: 14px; }
 
 .input {
   width: 500px;
   height: 50px;
-  font-size: 16px;
+  font-size: 14px;
   border-radius: 5px;
   border: none;
   box-shadow: 0 0 6px #B9B9B9; }
@@ -761,7 +761,7 @@ em {
     margin: auto; }
     .header-title .h1 {
       margin: 0;
-      font-size: 20px;
+      font-size: 16px;
       font-weight: normal; }
 
 .content-wrapper {
@@ -780,7 +780,7 @@ em {
   border: 1px solid #5A657F;
   border-radius: 5px;
   background: #5A657F;
-  font-size: 16px;
+  font-size: 14px;
   color: #FFFFFF; }
   .button.button-secondary {
     background: #FFFFFF;
@@ -789,12 +789,12 @@ em {
     box-shadow: 0 0 6px #B9B9B9; }
 
 .label {
-  font-size: 16px; }
+  font-size: 14px; }
 
 .input {
   width: 500px;
   height: 50px;
-  font-size: 16px;
+  font-size: 14px;
   border-radius: 5px;
   border: none;
   box-shadow: 0 0 6px #B9B9B9; }
@@ -957,14 +957,10 @@ em {
   margin: 120px auto;
   box-shadow: 0 0 6px #B9B9B9; }
   .login-form form-item {
-    display: grid;
-    display: -ms-grid;
-    margin-top: 30px;
-    position: relative; }
+    margin: auto; }
     .login-form form-item-wrap {
-      display: grid;
-      display: -ms-grid;
-      margin: auto; }
+      display: flex;
+      display: -webkit-flex; }
 
 @media only screen and (min-device-width: 300px) and (max-device-width: 450px) {
   /* ----------  ---------- */
