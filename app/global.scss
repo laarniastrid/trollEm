@@ -59,3 +59,55 @@ $font-size-lg: 20px;
 	border: none;
 	@include boxShadow();
 }
+
+// margins and padding
+$sizes: 5, 10, 15, 20, 30;
+.margin-all {
+	& {
+		@each $size in $sizes {
+			&--#{$size} {
+				margin: $size;
+			}
+		}
+	}
+}
+
+.margin {
+	& {
+		$directions: top, right, bottom, left;
+		@each $direction in $directions {
+			&-#{$direction} {
+				@each $size in $sizes {
+					&--#{$size} {
+						margin-#{$direction}: #{$size}px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.padding-all {
+	& {
+		@each $size in $sizes {
+			&--#{$size} {
+				padding: $size;
+			}
+		}
+	}
+}
+
+.padding {
+	& {
+		$directions: top, right, bottom, left;
+		@each $direction in $directions {
+			&-#{$direction} {
+				@each $size in $sizes {
+					&--#{$size} {
+						padding-#{$direction}: #{$size}px;
+					}
+				}
+			}
+		}
+	}
+}
